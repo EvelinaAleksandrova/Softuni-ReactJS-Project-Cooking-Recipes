@@ -1,1 +1,1 @@
-# Softuni-ReactJS-Project-Cooking-Recipes
+# Softuni-ReactJS-Project-Cooking-Ideas
