@@ -1,10 +1,10 @@
 import {Routes, Route, Link} from "react-router-dom";
-import RecipeList from "../PetList/RecipeList";
-import CocktailsList from "../PetList/CocktailsList";
-import VeganList from "../PetList/VeganList";
-import SoupList from "../PetList/SoupList";
-import MeatList from "../PetList/MeatList";
-import ChristmasList from "../PetList/ChristmasList";
+import RecipeList from "../RecipeList/RecipeList";
+import CocktailsList from "../RecipeList/CocktailsList";
+import VeganList from "../RecipeList/VeganList";
+import SoupList from "../RecipeList/SoupList";
+import MeatList from "../RecipeList/MeatList";
+import ChristmasList from "../RecipeList/ChristmasList";
 
 
 const DashboardPage = () => {
