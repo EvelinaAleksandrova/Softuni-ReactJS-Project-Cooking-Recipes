@@ -5,7 +5,7 @@ import VeganList from "../RecipeList/VeganList";
 import SoupList from "../RecipeList/SoupList";
 import MeatList from "../RecipeList/MeatList";
 import ChristmasList from "../RecipeList/ChristmasList";
-
+import styles from 'DashboardPage.module.css';
 
 const DashboardPage = () => {
 
