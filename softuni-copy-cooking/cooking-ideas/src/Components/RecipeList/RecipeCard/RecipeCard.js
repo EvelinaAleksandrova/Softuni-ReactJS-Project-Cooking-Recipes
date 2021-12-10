@@ -4,7 +4,7 @@ const RecipeCard = ({
      recipe
                  }) => {
     return (
-        <li className="otherPet">
+        <li className="otherRecipe">
 
             <h3>{recipe.name}</h3>
             <p>{recipe.type}</p>
