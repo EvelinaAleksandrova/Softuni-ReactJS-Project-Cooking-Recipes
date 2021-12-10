@@ -30,4 +30,4 @@ const ArticlesList = () => {
 
 }
 
-export default RecipeList;
+export default ArticlesList;
