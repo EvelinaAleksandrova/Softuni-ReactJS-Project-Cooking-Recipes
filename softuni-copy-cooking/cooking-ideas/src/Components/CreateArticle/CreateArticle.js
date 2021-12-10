@@ -1,4 +1,4 @@
-import * as recipesService from '../../services/recipesService';
+import * as articlesService from '../../services/articlesService';
 import {useNavigate} from "react-router-dom";
 
 const CreateArticle = () => {
