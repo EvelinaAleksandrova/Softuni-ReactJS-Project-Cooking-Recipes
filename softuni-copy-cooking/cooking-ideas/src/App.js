@@ -11,6 +11,9 @@ import CreateRecipe from "./Components/CreateRecipe/CreateRecipe";
 import DetailsRecipe from "./Components/DetailsRecipe/DetailsRecipe";
 import LogoutPage from "./Components/LogoutPage/LogoutPage";
 import Footer from "./Components/Footer/Footer";
+import MyArticlesPage from "./Components/MyArticlesPage/MyArticlesPage";
+import CreateArticle from "./Components/CreateArticle/CreateArticle";
+import ArticlesList from "./Components/ArticlesList/ArticlesList";
 
 function App() {
     const [userInfo, setUserInfo] = useState({isAuthenticated: false, username: ''});
@@ -52,6 +55,10 @@ function App() {
                     <Route path="/my-recipes" element={<MyRecipesPage/>}/>
                     <Route path="/create" element={<CreateRecipe/>}/>
                     <Route path="/details/:recipeId" element={<DetailsRecipe/>}/>
+                    <Route path="/my-articles" elemetnt={<MyArticlesPage/>}/>
+                    <Route path="/create-article" elemetnt={<CreateArticle/>}/>
+                    <Route path="/articlesList" elemetnt={<ArticlesList/>}/>
+
                 </Routes>
             </main>
             <Footer/>
