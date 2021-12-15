@@ -21,6 +21,7 @@ const AllArticlesPage = () => {
 
                 <Routes>
                     <Route path="/" element={<ArticlesList/>}/>
+                    <Route path="/all-articles-category" element={<AllArticlesCategory/>}/>
                     <Route path="/fruit" element={<Fruit/>}/>
                     <Route path="/vegetable" element={<Vegetable/>}/>
                     <Route path="/herbs" element={<Herbs/>}/>
