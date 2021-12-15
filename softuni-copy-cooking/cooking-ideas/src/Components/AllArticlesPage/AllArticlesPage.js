@@ -18,8 +18,9 @@ const AllArticlesPage = () => {
             </nav>
 
             <section>
+
                 <Routes>
-                    <Route path="/articles" element={<ArticlesList/>}/>
+                    <Route path="/" element={<ArticlesList/>}/>
                     <Route path="/fruit" element={<Fruit/>}/>
                     <Route path="/vegetable" element={<Vegetable/>}/>
                     <Route path="/herbs" element={<Herbs/>}/>
