@@ -5,6 +5,8 @@ const Header = ({
                 }) => {
     let guestNavigation = (
         <div id="guest">
+            <Link className="button" to="/all-recipes">All Recipes</Link>
+            <Link className="button" to="/all-articles">All Articles</Link>
             <Link className="button" to="/login">Login</Link>
             <Link to="/register" className="button">Register</Link>
         </div>
