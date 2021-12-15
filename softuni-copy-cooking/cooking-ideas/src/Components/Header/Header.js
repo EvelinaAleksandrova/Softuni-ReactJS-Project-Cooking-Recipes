@@ -14,6 +14,7 @@ const Header = ({
         <div id="user">
 
             <span>Welcome, {user}</span>
+            <Link className="button" to="/all-recipes">All Recipes</Link>
             <Link className="button" to="/my-recipes">My Recipes</Link>
             <Link className="button" to="/create">Add Recipe</Link>
             <Link className="button" to="/all-articles">All Articles</Link>

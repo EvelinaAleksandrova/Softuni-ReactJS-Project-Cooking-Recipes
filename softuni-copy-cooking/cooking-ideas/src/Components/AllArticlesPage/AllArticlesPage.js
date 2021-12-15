@@ -3,6 +3,7 @@ import ArticlesList from "../ArticlesList/ArticlesList";
 import Fruit from "../ArticlesList/Fruit";
 import Vegetable from "../ArticlesList/Vegetable";
 import Herbs from "../ArticlesList/Herbs";
+import AllArticlesCategory from "../ArticlesList/AllArticlesCategory";
 
 
 const AllArticlesPage = () => {
@@ -12,6 +13,7 @@ const AllArticlesPage = () => {
             <h1>All Articles</h1>
 
             <nav>
+                <Link to="all-articles-category" style={{"margin": "50px","font-size": "30px"}}>All</Link>
                 <Link to="fruit" style={{"margin": "50px","font-size": "30px"}}>Fruit</Link>
                 <Link to="vegetable" style={{"margin": "50px","font-size": "30px"}}>Vegetable</Link>
                 <Link to="herbs" style={{"margin": "50px","font-size": "30px"}}>Herbs</Link>

@@ -28,7 +28,7 @@ const DashboardPage = () => {
 
                 <Routes>
                     <Route path="/" element={<RecipeList/>}/>
-                    <Route path="/all" element={<AllRecipeCategory/>}/>
+                    <Route path="/all-recipes-category" element={<AllRecipeCategory/>}/>
                     <Route path="/soup" element={<SoupList/>}/>
                     <Route path="/meat" element={<MeatList/>}/>
                     <Route path="/vegan" element={<VeganList/>}/>
