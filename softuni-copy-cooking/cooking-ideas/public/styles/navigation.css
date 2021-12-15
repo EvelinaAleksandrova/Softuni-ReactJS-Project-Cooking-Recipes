@@ -49,10 +49,11 @@ nav.navbar ul li a {
 .button:hover,
 nav.navbar ul li a:hover,
 nav.navbar ul li:hover > a {
-  background: rgba(193, 192, 192, 0);
-  color: rgb(0, 0, 0);
+  background: rgb(255, 209, 196);
+  color: #000000;
   font-weight: bold;
-    margin-right: 30px;
+    /*margin-right: 30px;*/
+
 }
 
 

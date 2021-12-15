@@ -19,7 +19,7 @@ const CreateArticle = () => {
             imageUrl,
             type
         }).then(result => {
-            navigate('/dashboard');
+            navigate('/all-articles');
         });
     }
 
@@ -52,7 +52,7 @@ const CreateArticle = () => {
                             <select id="type" name="type">
                                 <option value="fruit">Fruit</option>
                                 <option value="vegetable">Vegetable</option>
-                                <option value="other">Other</option>
+                                <option value="herbs">Herbs</option>
                             </select>
                         </span>
                     </p>

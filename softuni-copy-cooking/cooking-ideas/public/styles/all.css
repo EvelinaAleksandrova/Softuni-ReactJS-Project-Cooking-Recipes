@@ -44,6 +44,7 @@ body {
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
+    margin-right: 10px;
 }
 
 a {

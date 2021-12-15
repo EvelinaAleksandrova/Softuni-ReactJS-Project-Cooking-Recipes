@@ -11,7 +11,7 @@ const DashboardPage = () => {
 
     return (
         <section id="dashboard-page" className="dashboard">
-            <h1>Recipes</h1>
+            <h1>All Recipes</h1>
 
             <nav>
                 <Link to="soup" style={{"margin": "50px","font-size": "30px"}}>Soup</Link>

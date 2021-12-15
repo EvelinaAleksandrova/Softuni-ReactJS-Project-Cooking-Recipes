@@ -3,11 +3,10 @@ const baseUrl = 'https://softuni-custom-server-routepet.herokuapp.com/jsonstore'
 
 export const getAll = async () => {
     let response = await fetch(`${baseUrl}/articles`);
-    let recipes = await response.json();
-    let result = Object.values(recipes);
+    let articles = await response.json();
+    let result = Object.values(articles);
 
     return result;
-
 }
 
 export const create = async (articleData) => {
