@@ -3,7 +3,7 @@ import {Routes, Route} from 'react-router-dom';
 
 import * as authService from './services/authService';
 import Header from "./Components/Header/Header";
-import DashboardPage from "./Components/DashboardPage/DashboardPage";
+import HomePage from "./Components/HomePage/HomePage";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import RegisterPage from "./Components/RegisterPage/RegisterPage";
 import MyRecipesPage from "./Components/MyRecipesPage/MyRecipesPage";
@@ -49,7 +49,7 @@ function App() {
 
             <main id="site-content">
                 <Routes>
-                    <Route path="/home/*" element={<DashboardPage/>}/>
+                    <Route path="/home/*" element={<HomePage/>}/>
                     <Route path="/login" element={<LoginPage onLogin={onLogin}/>}/>
                     <Route path="/logout" element={<LogoutPage onLogout={onLogout}/>}/>
                     <Route path="/register" element={<RegisterPage/>}/>
