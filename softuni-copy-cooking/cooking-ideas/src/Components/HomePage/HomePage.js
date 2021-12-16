@@ -4,14 +4,13 @@ const HomePage = () => {
 
     return (
         <>
-        <div style={{
-            backgroundImage: "url(images/pexels-ella-olsson-1640774.jpg)",
-            backgroundSize: "cover",
-            height: "1000px",
-
+        <div className="home-image" style={{
+            // backgroundImage: "url(images/pexels-ella-olsson-1640774.jpg)",
+            // backgroundSize: "cover",
+            // height: "1000px",
         }}>
 
-            <p className="par">Cooking<br/>Ideas</p>
+            <p className="p-on-home-image">Cooking<br/>Ideas</p>
         </div>
         </>
     );

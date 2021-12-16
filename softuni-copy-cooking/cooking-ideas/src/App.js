@@ -46,10 +46,13 @@ function App() {
     return (
         <div id="container">
             <Header {...userInfo} />
+            <Routes>
+                <Route path="/home/*" element={<HomePage/>}/>
+            </Routes>
 
             <main id="site-content">
                 <Routes>
-                    <Route path="/home/*" element={<HomePage/>}/>
+                    {/*<Route path="/home/*" element={<HomePage/>}/>*/}
                     <Route path="/login" element={<LoginPage onLogin={onLogin}/>}/>
                     <Route path="/logout" element={<LogoutPage onLogout={onLogout}/>}/>
                     <Route path="/register" element={<RegisterPage/>}/>
