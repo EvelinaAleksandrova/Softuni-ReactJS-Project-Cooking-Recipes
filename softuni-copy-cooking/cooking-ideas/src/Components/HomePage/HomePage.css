@@ -125,11 +125,12 @@ body {
     padding-bottom: 1em;
 }
 .card-person {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.66);
     max-width: 350px;
     text-align: center;
     font-family: arial, serif;
     margin: 1em;
+    border: 4px double darkred;
 
 }
 .profession {
