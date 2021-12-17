@@ -29,7 +29,9 @@ const HomePage = () => {
 
             <div className="about-section">
                 <h1>About Us Page</h1>
-                <p>We love cooking, eating, and connecting with people from around the world.</p>
+                <h4>We love cooking, eating, and connecting with people from around the world.</h4>
+                <h4>Take a look through thousands of recipes on our website,
+                    where you’ll also find all the information you need about your favourite food.</h4>
 
             </div>
 
