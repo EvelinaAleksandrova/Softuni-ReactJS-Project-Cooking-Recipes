@@ -1,17 +1,24 @@
-
 import './HomePage.css';
+
 const HomePage = () => {
 
     return (
         <>
-        <div className="home-image" style={{
-            // backgroundImage: "url(images/pexels-ella-olsson-1640774.jpg)",
-            // backgroundSize: "cover",
-            // height: "1000px",
-        }}>
+            <div className="home-image">
+                <p className="p-on-home-image">
+                    Cooking<br/>
+                    Ideas
+                </p>
+            </div>
+            <div className="about-us-image">
+                <p className="p-on-about-us-image">
+                    Enjoy delicious food with the tips of Cooking Ideas.<br/>
+                    Cook with thousands of chefs from all over the
+                    world!
+                </p>
 
-            <p className="p-on-home-image">Cooking<br/>Ideas</p>
-        </div>
+            </div>
+
         </>
     );
 }
