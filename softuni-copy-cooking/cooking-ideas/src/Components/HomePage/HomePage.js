@@ -34,26 +34,36 @@ const HomePage = () => {
             </div>
 
             <h2>Our Team</h2>
-            <div className="container-of-team">
-
-
+            <div className="team">
                 <div className="card-person">
-                    <p>Hello</p>
-                    <img className="image-person" src="https://image.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg"/>
+                    <img className="image-team" src="https://t4.ftcdn.net/jpg/03/30/25/97/360_F_330259751_tGPEAq5F5bjxkkliGrb97X2HhtXBDc9x.jpg"
+                         alt=""/>
+                    <h3>Olivia Williams</h3>
+                    <p className="profession">CEO & Founder</p>
+                    <p>Email: olivia.williams@gmail.com</p>
+                    <p>Phone: 0031 5534 861 </p>
+                    <br/>
                 </div>
-
-                <div className="card-person2">
-                    <p>Hello</p>
-                    <img className="image-person" src="team-photos/Screenshot%202021-12-17%20213311.png"/>
+                <div className="card-person">
+                    <img className="image-team" src="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
+                         alt=""/>
+                    <h3>James Johnson</h3>
+                    <p  className="profession">Moderator</p>
+                    <p>Email: james.johnson@gmail.com</p>
+                    <p>Phone: 0011 0034 863 </p>
+                    <br/>
                 </div>
-                <div className="card-person3">
-                    <p>Hello</p>
-                    <img className="image-person" src=""/>
+                <div className="card-person">
+                    <img className="image-team" src="https://image.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg"
+                         alt=""/>
+                    <h3>Emma Miller</h3>
+                    <p  className="profession">Designer</p>
+                    <p>Email: emma.miller@gmail.com</p>
+                    <p>Phone: 0021 1234 567 </p>
+                    <br/>
                 </div>
-
 
             </div>
-
 
 
             {/*        <div className="container mb-4">*/}

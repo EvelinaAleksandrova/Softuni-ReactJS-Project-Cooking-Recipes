@@ -118,35 +118,32 @@ body {
     background-color: #474e5d;
     color: white;
 }
-
-.container-of-team {
-    width: 100%;
-    border: 3px solid black;
+.team{
     display: flex;
-    justify-content: space-between;
-    padding-bottom: 200px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
 }
-
 .card-person {
-    border: 10px solid black;
-    width: 300px;
-    height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    text-align: center;
+    font-family: arial, serif;
+    margin: 1em;
+
 }
-.card-person2 {
-    border: 10px solid black;
-    width: 300px;
-    height: 300px;
+.profession {
+    color: #9f2828;
+    font-size: 22px;
+    font-weight: bold;
 }
-.card-person3 {
-    border: 10px solid black;
-    width: 300px;
-    height: 300px;
-}
+.image-team{
+
+width: 350px;
+height: 300px;
+position: relative;
 
 
-.image-person {
-    width: 15%;
-    margin-left: 2%;
 }
 
 
@@ -165,10 +162,3 @@ h2 {
     }
 }
 
-
-/*background-image: url("photos/pexels-ella-olsson-1640774.jpg");*/
-/*display: block;*/
-/*background-size: cover;*/
-/*width: 100%;*/
-/*height: auto;*/
-/*max-height: 100%;*/
