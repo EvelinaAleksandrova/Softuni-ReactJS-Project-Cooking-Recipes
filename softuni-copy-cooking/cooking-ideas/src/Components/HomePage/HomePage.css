@@ -49,27 +49,29 @@ body {
 .about-us-image {
     background-image: url("photos/brooke-lark-08bOYnH_r_E-unsplash.jpg");
     background-repeat: no-repeat;
-    background-size: 900px;
+    background-size: 50%;
     display: block;
     /*width: auto;*/
     /*max-width: 100%;*/
     /*height: auto;*/
     /*max-height: 100%;*/
-    height: 710px;
+    height: 500px;
 }
 
 .p-on-about-us-image {
     color: #9f2828;
     margin-top: 0;
-    margin-left: 53%;
-    margin-right: 57%;
-    padding: 170px;
-    width: 10em;
+    /*margin-left: 53%;*/
+    /*margin-right: 57%;*/
+    /*padding: 170px;*/
+    /*width: 10em;*/
     font-size: 45px;
     font-family: 'Londrina Outline', cursive;
     font-weight: bold;
     text-align: center;
     letter-spacing: 3px;
+    width: 50%;
+    float: right;
 
 }
 
@@ -169,5 +171,7 @@ h2 {
         width: 100%;
         display: block;
     }
+
+
 }
 
