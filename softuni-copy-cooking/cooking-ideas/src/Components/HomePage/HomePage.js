@@ -35,8 +35,8 @@ const HomePage = () => {
                     <h5>Olivia Williams</h5>
                     <p className="profession">CEO & Founder</p>
                     <p className="p-card-info">Contact Info</p>
-                    <p>Email: olivia.williams@gmail.com</p>
-                    <p>Phone: 0031 5534 861 </p>
+                    <p><b>email:</b> olivia.williams@gmail.com</p>
+                    <p><b>phone:</b>  0031 5534 861 </p>
                     <br/>
                 </div>
                 <div className="card-person">
@@ -46,8 +46,8 @@ const HomePage = () => {
                     <h5>James Johnson</h5>
                     <p className="profession">Moderator</p>
                     <p className="p-card-info">Contact Info</p>
-                    <p>Email: james.johnson@gmail.com</p>
-                    <p>Phone: 0011 0034 863 </p>
+                    <p><b>email:</b>  james.johnson@gmail.com</p>
+                    <p><b>phone:</b> 0011 0034 863 </p>
                     <br/>
                 </div>
                 <div className="card-person">
@@ -57,8 +57,8 @@ const HomePage = () => {
                     <h5>Emma Miller</h5>
                     <p className="profession">Designer</p>
                     <p className="p-card-info">Contact Info</p>
-                    <p>Email: emma.miller@gmail.com</p>
-                    <p>Phone: 0021 1234 567 </p>
+                    <p><b>email:</b> emma.miller@gmail.com</p>
+                    <p><b>phone:</b>0021 1234 567 </p>
                     <br/>
                 </div>
 
