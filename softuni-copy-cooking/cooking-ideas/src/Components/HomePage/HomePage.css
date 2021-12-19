@@ -43,14 +43,14 @@ body {
 .p-on-about-us-image {
     color: #9f2828;
     margin-top: 0;
-    font-size: 45px;
+    font-size: 35px;
     font-family: 'Londrina Outline', cursive;
     font-weight: bold;
     text-align: center;
     letter-spacing: 3px;
     width: 50%;
     float: right;
-    padding-top: 100px;
+    padding-top: 150px;
 }
 
 .contact-us-image {
