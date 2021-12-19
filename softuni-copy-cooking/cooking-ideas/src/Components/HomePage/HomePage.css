@@ -43,7 +43,6 @@ body {
     max-width: 100%;
     height: auto;
     max-height: 100%;
-    /*margin-bottom: 20px;*/
 }
 
 .about-us-image {
@@ -51,20 +50,12 @@ body {
     background-repeat: no-repeat;
     background-size: 50%;
     display: block;
-    /*width: auto;*/
-    /*max-width: 100%;*/
-    /*height: auto;*/
-    /*max-height: 100%;*/
     height: 500px;
 }
 
 .p-on-about-us-image {
     color: #9f2828;
     margin-top: 0;
-    /*margin-left: 53%;*/
-    /*margin-right: 57%;*/
-    /*padding: 170px;*/
-    /*width: 10em;*/
     font-size: 45px;
     font-family: 'Londrina Outline', cursive;
     font-weight: bold;
@@ -73,26 +64,13 @@ body {
     width: 50%;
     float: right;
     padding-top: 100px;
-
 }
 
 .contact-us-image {
     background-image: url("photos/Screenshot 2021-12-17 163506.png");
     max-width: 100%;
-    /*background-size: 900px;*/
-    /*!* Center and scale the image nicely *!*/
-    /*background-position: right;*/
-    /*background-repeat: no-repeat;*/
-    /*!*background-size: cover;*!*/
-    /*margin-top: 20px;*/
-    /*margin-bottom: 0;*/
-
-
-    /* Center and scale the image nicely */
-    /*background-position: center;*/
     background-repeat: no-repeat;
     background-size: contain;
-
 }
 
 .p-on-contact-us-image {
@@ -107,13 +85,7 @@ body {
     text-align: center;
     letter-spacing: 3px;
     margin-bottom: 0;
-    /*padding-bottom: 100px;*/
-
 }
-
-/**, *:before, *:after {*/
-/*    box-sizing: inherit;*/
-/*}*/
 
 .about-section {
     padding: 50px;
@@ -146,8 +118,6 @@ body {
 width: 350px;
 height: 300px;
 position: relative;
-
-
 }
 
 .about-section h1{
@@ -168,9 +138,6 @@ h2 {
 }
 
 @media screen and (max-width: 650px) {
-    /*.home-image{*/
-    /*    width: 650px;*/
-    /*}*/
     .p-on-home-image{
         font-size: 80px;
         margin: 0;
@@ -215,61 +182,17 @@ h2 {
         width: 50%;
         float: right;
         padding-top: 0;
-
     }
-
-
 }
 @media screen and (min-width: 1000px) {
-
-    .p-on-home-image{
-
-
-    }
-    .p-on-home-image:hover{
-
-
-    }
-
     .column {
         width: 100%;
         display: block;
     }
-    .about-us-image {
-        /*background-image: url("photos/brooke-lark-08bOYnH_r_E-unsplash.jpg");*/
-        /*background-repeat: no-repeat;*/
-        /*background-size: 100%;*/
-        /*display: block;*/
-        /*!*height: 360px;*!*/
-    }
-
-    .p-on-about-us-image {
-        /*color: #9f2828;*/
-        /*margin-top: 0;*/
-        /*font-size: 30px;*/
-        /*font-family: 'Londrina Outline', cursive;*/
-        /*font-weight: bold;*/
-        /*text-align: center;*/
-        /*letter-spacing: 3px;*/
-        /*width: 50%;*/
-        /*float: right;*/
-        /*padding-top: 1px;*/
-
-    }
-
 
 }
 
 @media screen and (min-width: 1300px) {
-    .about-us-image {
-        /*background-image: url("photos/brooke-lark-08bOYnH_r_E-unsplash.jpg");*/
-        /*background-repeat: no-repeat;*/
-        /*background-size: 100%;*/
-        /*display: block;*/
-        /*!*height: 500px;*!*/
-    }
-
-
 
 }
 
