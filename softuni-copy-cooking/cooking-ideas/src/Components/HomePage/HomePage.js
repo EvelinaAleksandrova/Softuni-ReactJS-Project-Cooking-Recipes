@@ -19,10 +19,10 @@ const HomePage = () => {
             </div>
 
             <div className="about-section">
-                <h1>About Us Page</h1>
-                <h4>We love cooking, eating, and connecting with people from around the world.</h4>
-                <h4>Take a look through thousands of recipes on our website,
-                    where you’ll also find all the information you need about your favourite food.</h4>
+                <p className="p-about-us">About Us Page</p>
+                <h5>We love cooking, eating, and connecting with people from around the world.</h5>
+                <h5>Take a look through thousands of recipes on our website,
+                    where you’ll also find all the information you need about your favourite food.</h5>
 
             </div>
 
@@ -91,23 +91,23 @@ const HomePage = () => {
                     <label htmlFor="fname">First Name</label>
                     <input type="text" id="first-name" name="firstname" placeholder="Your name.."/>
 
-                        <label htmlFor="lname">Last Name</label>
-                        <input type="text" id="last-name" name="lastname" placeholder="Your last name.."/>
+                    <label htmlFor="lname">Last Name</label>
+                    <input type="text" id="last-name" name="lastname" placeholder="Your last name.."/>
 
-                            <label htmlFor="country">Country</label>
-                            <select id="country" name="country">
-                                <option value="australia">Bulgaria</option>
-                                <option value="canada">Canada</option>
-                                <option value="usa">USA</option>
-                                <option value="usa">France</option>
-                                <option value="usa">Italy</option>
+                    <label htmlFor="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="australia">Bulgaria</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                        <option value="usa">France</option>
+                        <option value="usa">Italy</option>
 
-                            </select>
+                    </select>
 
-                            <label htmlFor="subject">Subject</label>
-                            <textarea id="subject" name="subject" placeholder="Write something.."/>
+                    <label htmlFor="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.."/>
 
-                            <input id="submit-contact" type="submit" value="Submit"/>
+                    <input id="submit-contact" type="submit" value="Submit"/>
                 </form>
             </div>
 
