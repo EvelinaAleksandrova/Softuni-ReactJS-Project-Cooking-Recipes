@@ -29,7 +29,8 @@ const HomePage = () => {
             <h2>Our Team</h2>
             <div className="team">
                 <div className="card-person">
-                    <img className="image-team" src="https://t4.ftcdn.net/jpg/03/30/25/97/360_F_330259751_tGPEAq5F5bjxkkliGrb97X2HhtXBDc9x.jpg"
+                    <img className="image-team"
+                         src="https://t4.ftcdn.net/jpg/03/30/25/97/360_F_330259751_tGPEAq5F5bjxkkliGrb97X2HhtXBDc9x.jpg"
                          alt=""/>
                     <h3>Olivia Williams</h3>
                     <p className="profession">CEO & Founder</p>
@@ -38,24 +39,76 @@ const HomePage = () => {
                     <br/>
                 </div>
                 <div className="card-person">
-                    <img className="image-team" src="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
+                    <img className="image-team"
+                         src="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
                          alt=""/>
                     <h3>James Johnson</h3>
-                    <p  className="profession">Moderator</p>
+                    <p className="profession">Moderator</p>
                     <p>Email: james.johnson@gmail.com</p>
                     <p>Phone: 0011 0034 863 </p>
                     <br/>
                 </div>
                 <div className="card-person">
-                    <img className="image-team" src="https://image.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg"
+                    <img className="image-team"
+                         src="https://image.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg"
                          alt=""/>
                     <h3>Emma Miller</h3>
-                    <p  className="profession">Designer</p>
+                    <p className="profession">Designer</p>
                     <p>Email: emma.miller@gmail.com</p>
                     <p>Phone: 0021 1234 567 </p>
                     <br/>
                 </div>
 
+            </div>
+
+            <div className="mapouter">
+                <div className="gmap_canvas">
+                    <iframe id="gmap_canvas"
+                            src="https://maps.google.com/maps?q=Atanas%20Ishirkov%20
+                            St%201000%20Sofia%20Center,%20Sofia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    />
+                    <a href="https://putlocker-is.org"/><br></br>
+                    <a href="https://www.embedgooglemap.net">embedded google search</a>
+                </div>
+            </div>
+
+            {/*<form*/}
+            {/*    // action="mailto:contact@yourdomain.com"*/}
+            {/*    //   method="POST"*/}
+            {/*    //   encType="multipart/form-data"*/}
+            {/*      name="EmailForm">*/}
+
+            {/*    Name:*/}
+            {/*    /!*<input type="text" size="19" name="ContactName">Message:*!/*/}
+            {/*    /!*    <textarea name="ContactCommentt" rows="6" cols="20"/>*!/*/}
+            {/*    /!*    <input type="submit" value="Submit"/>*!/*/}
+            {/*    /!*</input>*!/*/}
+            {/*</form>*/}
+
+
+            <div className="container-contact">
+                <form action="/action_page.php">
+                    <label htmlFor="fname">First Name</label>
+                    <input type="text" id="first-name" name="firstname" placeholder="Your name.."/>
+
+                        <label htmlFor="lname">Last Name</label>
+                        <input type="text" id="last-name" name="lastname" placeholder="Your last name.."/>
+
+                            <label htmlFor="country">Country</label>
+                            <select id="country" name="country">
+                                <option value="australia">Bulgaria</option>
+                                <option value="canada">Canada</option>
+                                <option value="usa">USA</option>
+                                <option value="usa">France</option>
+                                <option value="usa">Italy</option>
+
+                            </select>
+
+                            <label htmlFor="subject">Subject</label>
+                            <textarea id="subject" name="subject" placeholder="Write something.."/>
+
+                            <input id="submit-contact" type="submit" value="Submit"/>
+                </form>
             </div>
 
         </>
