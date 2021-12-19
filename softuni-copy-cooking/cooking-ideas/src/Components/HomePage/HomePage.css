@@ -72,6 +72,7 @@ body {
     letter-spacing: 3px;
     width: 50%;
     float: right;
+    padding-top: 100px;
 
 }
 
@@ -167,6 +168,19 @@ h2 {
 }
 
 @media screen and (max-width: 650px) {
+    /*.home-image{*/
+    /*    width: 650px;*/
+    /*}*/
+    .p-on-home-image{
+        font-size: 50px;
+        text-align: center;
+       margin-right: auto;
+    }
+    .p-on-home-image:hover{
+        font-size: 50px;
+        right: 80%;
+    }
+
     .column {
         width: 100%;
         display: block;
@@ -195,6 +209,16 @@ h2 {
 
 }
 @media screen and (max-width: 1000px) {
+
+    .p-on-home-image{
+        font-size: 50px;
+        text-align: center;
+    }
+    .p-on-home-image:hover{
+        font-size: 50px;
+        text-align: center;
+    }
+
     .column {
         width: 100%;
         display: block;
@@ -202,7 +226,7 @@ h2 {
     .about-us-image {
         background-image: url("photos/brooke-lark-08bOYnH_r_E-unsplash.jpg");
         background-repeat: no-repeat;
-        background-size: 90%;
+        background-size: 100%;
         display: block;
         height: 360px;
     }
@@ -217,10 +241,23 @@ h2 {
         letter-spacing: 3px;
         width: 50%;
         float: right;
+        padding-top: 1px;
 
     }
 
 
 }
 
+@media screen and (min-width: 1300px) {
+    .about-us-image {
+        background-image: url("photos/brooke-lark-08bOYnH_r_E-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        display: block;
+        height: 500px;
+    }
+
+
+
+}
 
