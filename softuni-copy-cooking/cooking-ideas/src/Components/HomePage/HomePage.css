@@ -137,13 +137,29 @@ body {
 }
 
 
+.contact-us-h3 {
+    text-align: center;
+    font-family: 'Londrina Outline', cursive;
+    font-weight: bold;
+    color: #99000d;
+    font-size: 45px;
+    letter-spacing: 3px;
+    margin-bottom: 1em;
+}
+.contact-us{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+}
+
 #gmap_canvas {
-    width: 600px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     frameBorder: 0;
     scrolling: no;
     marginHeight: 0;
     marginWidth: 0;
+    border: 2px solid black;
 }
 
 .mapouter {
@@ -159,6 +175,8 @@ body {
     height: 500px;
     width: 600px;
 }
+
+
 
 
 #first-name, #last-name, #country, #subject {

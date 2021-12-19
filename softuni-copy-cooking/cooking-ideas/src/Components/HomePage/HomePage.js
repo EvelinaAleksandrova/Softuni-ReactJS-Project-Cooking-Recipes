@@ -64,55 +64,49 @@ const HomePage = () => {
 
             </div>
 
-            <div className="mapouter">
-                <div className="gmap_canvas">
-                    <iframe id="gmap_canvas"
-                            src="https://maps.google.com/maps?q=Atanas%20Ishirkov%20
-                            St%201000%20Sofia%20Center,%20Sofia&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                    />
-                    <a href="https://putlocker-is.org"/><br></br>
-                    <a href="https://www.embedgooglemap.net">embedded google search</a>
+            <h3 className="contact-us-h3">Contact Us</h3>
+            <div className="contact-us">
+                <div className="mapouter">
+                    <div className="gmap_canvas">
+                        <iframe id="gmap_canvas"
+                            // src="https://maps.google.com/maps?q=Atanas%20Ishirkov%20
+                            // St%201000%20Sofia%20Center,%20Sofia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                src="https://maps.google.com/maps?q=Sofia,ul%20Solunska%2016&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        />
+                        <a href="https://putlocker-is.org"/><br></br>
+
+                    </div>
+                </div>
+
+
+
+                <div className="container-contact">
+                    <form action="/action_page.php">
+                        <label htmlFor="fname">First Name</label>
+                        <input type="text" id="first-name" name="firstname" placeholder="Your name.."/>
+
+                        <label htmlFor="lname">Last Name</label>
+                        <input type="text" id="last-name" name="lastname" placeholder="Your last name.."/>
+
+                        <label htmlFor="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="australia">Bulgaria</option>
+                            <option value="canada">Canada</option>
+                            <option value="usa">USA</option>
+                            <option value="usa">France</option>
+                            <option value="usa">Italy</option>
+
+                        </select>
+
+                        <label htmlFor="subject">Subject</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.."/>
+
+                        <input id="submit-contact" type="submit" value="Submit"/>
+                    </form>
                 </div>
             </div>
 
-            {/*<form*/}
-            {/*    // action="mailto:contact@yourdomain.com"*/}
-            {/*    //   method="POST"*/}
-            {/*    //   encType="multipart/form-data"*/}
-            {/*      name="EmailForm">*/}
 
-            {/*    Name:*/}
-            {/*    /!*<input type="text" size="19" name="ContactName">Message:*!/*/}
-            {/*    /!*    <textarea name="ContactCommentt" rows="6" cols="20"/>*!/*/}
-            {/*    /!*    <input type="submit" value="Submit"/>*!/*/}
-            {/*    /!*</input>*!/*/}
-            {/*</form>*/}
-
-
-            <div className="container-contact">
-                <form action="/action_page.php">
-                    <label htmlFor="fname">First Name</label>
-                    <input type="text" id="first-name" name="firstname" placeholder="Your name.."/>
-
-                    <label htmlFor="lname">Last Name</label>
-                    <input type="text" id="last-name" name="lastname" placeholder="Your last name.."/>
-
-                    <label htmlFor="country">Country</label>
-                    <select id="country" name="country">
-                        <option value="australia">Bulgaria</option>
-                        <option value="canada">Canada</option>
-                        <option value="usa">USA</option>
-                        <option value="usa">France</option>
-                        <option value="usa">Italy</option>
-
-                    </select>
-
-                    <label htmlFor="subject">Subject</label>
-                    <textarea id="subject" name="subject" placeholder="Write something.."/>
-
-                    <input id="submit-contact" type="submit" value="Submit"/>
-                </form>
-            </div>
 
         </>
     );
