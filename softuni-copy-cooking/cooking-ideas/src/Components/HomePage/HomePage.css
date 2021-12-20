@@ -167,6 +167,7 @@ body {
 .more-info-contact-us {
     text-align: center;
     font-size: 18px;
+    margin-top: 0;
 }
 
 #gmap_canvas {
@@ -179,6 +180,8 @@ body {
     border: 2px solid #b91717;
     margin-top: 2em;
     margin-left: 10%;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .mapouter {
@@ -199,7 +202,7 @@ body {
     margin-left: 7%;
 }
 
-#first-name, #last-name, #country, #subject {
+#first-name, #last-name, #country, #subject, #email{
     width: 100%;
     padding: 5px;
     border: 1px solid #d36161;

@@ -72,7 +72,7 @@ const HomePage = () => {
                     <div className="gmap_canvas">
                         <iframe id="gmap_canvas"
                                 src="https://maps.google.com/maps?q=Sofia,ul%20Solunska%2016&t=&z=13&ie=UTF8&iwloc=&output=embed"/>
-                        <a href="https://putlocker-is.org"/><br></br>
+                        <a href="https://putlocker-is.org"/>
                     </div>
                     <div className="more-info-contact-us">
                         <p><b>Address:</b>&nbsp;Bulgaria, Sofia, Center, ul."Solunska" 16, floor 2</p>
@@ -90,17 +90,19 @@ const HomePage = () => {
                         <label id="text-names" htmlFor="lname">Last Name</label>
                         <input type="text" id="last-name" name="lastname" placeholder="Your last name.."/>
 
-                        <label id="text-names" htmlFor="lname">Last Name</label>
-                        <input type="text" id="last-name" name="lastname" placeholder="Your last name.."/>
+                        <label id="text-names" htmlFor="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="Your email address.."/>
 
                         <label id="text-names" htmlFor="country">Country</label>
                         <select id="country" name="country">
                             <option value="australia">Bulgaria</option>
+                            <option value="europe">Europe</option>
                             <option value="canada">Canada</option>
                             <option value="usa">USA</option>
-                            <option value="usa">France</option>
-                            <option value="usa">Italy</option>
-
+                            <option value="azia">Azia</option>
+                            <option value="australia">Australia</option>
+                            <option value="south-america">South America</option>
+                            <option value="africa">Africa</option>
                         </select>
 
                         <label id="text-names" htmlFor="subject">Subject</label>
