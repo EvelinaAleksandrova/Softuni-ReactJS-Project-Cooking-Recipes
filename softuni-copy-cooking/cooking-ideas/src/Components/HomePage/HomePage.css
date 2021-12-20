@@ -150,6 +150,7 @@ body {
     display: flex;
     justify-content: space-between;
     border: 2px solid black;
+
 }
 
 #gmap_canvas {
@@ -160,6 +161,7 @@ body {
     marginHeight: 0;
     marginWidth: 0;
     border: 2px solid black;
+    margin-top: 3em;
 }
 
 .mapouter {

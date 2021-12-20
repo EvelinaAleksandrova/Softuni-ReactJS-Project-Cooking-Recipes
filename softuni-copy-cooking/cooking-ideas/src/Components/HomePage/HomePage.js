@@ -36,7 +36,7 @@ const HomePage = () => {
                     <p className="profession">CEO & Founder</p>
                     <p className="p-card-info">Contact Info</p>
                     <p><b>email:</b> olivia.williams@gmail.com</p>
-                    <p><b>phone:</b>  0031 5534 861 </p>
+                    <p><b>phone:</b> 0031 5534 861 </p>
                     <br/>
                 </div>
                 <div className="card-person">
@@ -46,7 +46,7 @@ const HomePage = () => {
                     <h5>James Johnson</h5>
                     <p className="profession">Moderator</p>
                     <p className="p-card-info">Contact Info</p>
-                    <p><b>email:</b>  james.johnson@gmail.com</p>
+                    <p><b>email:</b> james.johnson@gmail.com</p>
                     <p><b>phone:</b> 0011 0034 863 </p>
                     <br/>
                 </div>
@@ -64,6 +64,7 @@ const HomePage = () => {
 
             </div>
 
+
             <h3 className="contact-us-h3">Contact Us</h3>
             <div className="contact-us">
                 <div className="mapouter">
@@ -77,7 +78,6 @@ const HomePage = () => {
 
                     </div>
                 </div>
-
 
 
                 <div className="container-contact">
@@ -105,7 +105,6 @@ const HomePage = () => {
                     </form>
                 </div>
             </div>
-
 
 
         </>
