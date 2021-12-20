@@ -1,3 +1,6 @@
+import "./Footer.css";
+
+
 const Footer = () => {
     return (
         <footer id="site-footer">

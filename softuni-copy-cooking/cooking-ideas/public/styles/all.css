@@ -161,18 +161,6 @@ div.actions a {
     margin-bottom: 2rem;
 }
 
-footer {
-    margin-top: auto;
-    text-align: center;
-    background: #851f1f;
-}
-
-footer p {
-    padding: 1rem 0;
-    font-weight: bold;
-    margin: 0rem;
-    color: white;
-}
 
 .no-recipes {
     font-weight: bold;
