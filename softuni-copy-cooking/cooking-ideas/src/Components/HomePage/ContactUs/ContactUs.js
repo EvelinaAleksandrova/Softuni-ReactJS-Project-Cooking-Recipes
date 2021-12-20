@@ -53,26 +53,23 @@ const ContactUs = () => {
 
                 <div className="container-contact">
                     <p className="p-in-email-us">Email us</p>
-                    <form onSubmit={onSubmit}>
+                    <form className="form-contact-active" onSubmit={onSubmit}>
                         <label id="text-names" htmlFor="fname">Name</label>
                         <input type="text" id="name" name="from_name" placeholder="Your name.."
                                value={toSend.from_name}
                                onChange={handleChange}
                                required
                         />
-
                         <label id="text-names" htmlFor="email">Email</label>
                         <input type="text" id="email-form" name="reply_to" placeholder="Your email address.."
                                value={toSend.reply_to}
                                onChange={handleChange}
                                required
                         />
-
                         <label id="text-names" htmlFor="subject">Subject</label>
                         <textarea id="text" name="text" placeholder="Write something.."
                                   value={toSend.text}
                                   onChange={handleChange}
-
                                   required
                         />
                         <input id="submit-contact" type="submit" value="Send Email" onClick={resetInputFields}/>

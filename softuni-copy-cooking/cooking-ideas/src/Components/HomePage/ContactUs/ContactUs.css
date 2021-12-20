@@ -101,7 +101,6 @@
     height: auto;
 }
 
-
 @media screen and (max-width: 650px) {
     #gmap_canvas {
         width: 92%;
