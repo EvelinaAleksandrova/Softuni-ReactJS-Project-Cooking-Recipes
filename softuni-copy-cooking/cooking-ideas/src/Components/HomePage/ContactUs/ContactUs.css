@@ -24,13 +24,6 @@
     margin-bottom: 2em;
 }
 
-.more-info-contact-us {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 0;
-    margin-bottom: 5em;
-}
-
 #gmap_canvas {
     width: 90%;
     height: 390px;
@@ -99,6 +92,12 @@
     width: 33%;
     margin-right: 5%;
     height: auto;
+}
+.more-info-contact-us {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 3em;
+    margin-bottom: 5em;
 }
 
 @media screen and (max-width: 650px) {
