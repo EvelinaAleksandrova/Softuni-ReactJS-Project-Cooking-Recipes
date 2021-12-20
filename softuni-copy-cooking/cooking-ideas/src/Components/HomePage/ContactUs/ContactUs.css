@@ -99,3 +99,31 @@
     margin-right: 5%;
     height: auto;
 }
+
+@media screen and (max-width: 650px) {
+    #gmap_canvas {
+        width: 92%;
+        height: 330px;
+    }
+
+    .mapouter {
+        position: relative;
+        text-align: right;
+        height: 390px;
+        width: 99%;
+    }
+
+    .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        height: 400px;
+        width: 95%;
+    }
+
+    .container-contact {
+        width: 96%;
+        margin-right: 4%;
+        height: auto;
+        margin-left: 5%;
+    }
+}
