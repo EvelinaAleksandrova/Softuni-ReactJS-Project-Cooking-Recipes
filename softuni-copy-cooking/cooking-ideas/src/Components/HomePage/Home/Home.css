@@ -1,0 +1,22 @@
+.p-on-home-image {
+    color: #9f2828;
+    margin-top: 0;
+    padding: 200px;
+    font-size: 95px;
+    font-family: 'Londrina Outline', cursive;
+    font-weight: bold;
+    letter-spacing: 6px;
+    text-align: center;
+}
+
+
+.home-image {
+    background-image: url("photos/pexels-ella-olsson-1640774.jpg");
+    background-size: cover;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    padding-bottom: 7px;
+}

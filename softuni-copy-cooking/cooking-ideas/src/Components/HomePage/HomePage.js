@@ -1,6 +1,7 @@
 import './HomePage.css';
 import {useState} from 'react';
 import {send} from 'emailjs-com';
+import Home from "./Home/Home";
 
 const HomePage = () => {
 
@@ -46,12 +47,7 @@ const HomePage = () => {
 
     return (
         <>
-            <div className="home-image">
-                <p className="p-on-home-image">
-                    Cooking<br/>
-                    Ideas
-                </p>
-            </div>
+        <Home/>
             <div className="about-us-image">
                 <p className="p-on-about-us-image">
                     Enjoy delicious food with the tips of Cooking Ideas.<br/>
