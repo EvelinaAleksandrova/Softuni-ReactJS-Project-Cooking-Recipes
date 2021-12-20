@@ -154,17 +154,19 @@ body {
     color: #99000d;
     font-size: 45px;
     letter-spacing: 3px;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .contact-us {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     width: 99%;
-    margin-bottom: 7em;
+    margin-bottom: 10em;
 }
-.more-info-contact-us{
+
+.more-info-contact-us {
     text-align: center;
+    font-size: 18px;
 }
 
 #gmap_canvas {
@@ -193,24 +195,27 @@ body {
     width: 87%;
 }
 
-#text-names{
-    margin-left: 7%;
-}
-#first-name, #last-name, #country, #subject {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #d36161;
-    border-radius: 10px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
+#text-names {
     margin-left: 7%;
 }
 
+#first-name, #last-name, #country, #subject {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #d36161;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: 1px;
+    margin-bottom: 5px;
+    resize: vertical;
+    margin-left: 7%;
+}
+#subject{
+    padding-bottom: 20px;
+}
 #submit-contact {
     color: white;
-    padding: 12px 20px;
+    padding: 10px 10px;
     border: none;
     border-radius: 10px;
     cursor: pointer;

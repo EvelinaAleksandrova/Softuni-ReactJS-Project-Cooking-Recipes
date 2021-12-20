@@ -90,6 +90,9 @@ const HomePage = () => {
                         <label id="text-names" htmlFor="lname">Last Name</label>
                         <input type="text" id="last-name" name="lastname" placeholder="Your last name.."/>
 
+                        <label id="text-names" htmlFor="lname">Last Name</label>
+                        <input type="text" id="last-name" name="lastname" placeholder="Your last name.."/>
+
                         <label id="text-names" htmlFor="country">Country</label>
                         <select id="country" name="country">
                             <option value="australia">Bulgaria</option>
