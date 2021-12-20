@@ -12,9 +12,6 @@ const HomePage = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        this.name.value = "";
-        this.email.value = "";
-        this.text.value = "";
         send(
             'service_jjdxk6h',
             'template_ytdixfl',
