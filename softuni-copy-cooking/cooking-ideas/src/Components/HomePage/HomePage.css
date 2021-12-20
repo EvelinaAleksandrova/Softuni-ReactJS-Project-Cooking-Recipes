@@ -98,7 +98,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding-bottom: 5em;
+    padding-bottom: 10em;
 }
 
 .card-person {
@@ -136,6 +136,16 @@ body {
     letter-spacing: 2px;
 }
 
+.little-color-space {
+    background-image: url("photos/editdffffdavies-designs-studio-utGuen80JAg-unsplash.jpg");
+    background-color: rgba(168, 0, 0, 0.63);
+    padding-bottom: 40px;
+    max-width: 100%;
+    background-repeat: repeat;
+    background-size: contain;
+    border: 1px solid #A80000A0;
+    margin-bottom: 1em;
+}
 
 .contact-us-h3 {
     text-align: center;
@@ -146,39 +156,43 @@ body {
     letter-spacing: 3px;
     margin-bottom: 1em;
 }
-.contact-us{
+
+.contact-us {
     display: flex;
-    justify-content: space-between;
-    border: 2px solid black;
+    justify-content:space-between;
+    width: 99%;
+    margin-bottom: 5em;
+
+
 
 }
 
 #gmap_canvas {
-    width: 400px;
+    width: 90%;
     height: 400px;
     frameBorder: 0;
     scrolling: no;
     marginHeight: 0;
     marginWidth: 0;
     border: 2px solid black;
-    margin-top: 3em;
+    margin-top: 2em;
+    margin-left: 10%;
+
 }
 
 .mapouter {
     position: relative;
     text-align: right;
     height: 500px;
-    width: 600px;
+    width: 60%;
 }
 
 .gmap_canvas {
     overflow: hidden;
     background: none !important;
     height: 500px;
-    width: 600px;
+    width: 80%;
 }
-
-
 
 
 #first-name, #last-name, #country, #subject {
@@ -193,7 +207,6 @@ body {
 }
 
 #submit-contact {
-
     color: white;
     padding: 12px 20px;
     border: none;
@@ -201,20 +214,22 @@ body {
     cursor: pointer;
     font-weight: bold;
     letter-spacing: 2px;
-    font-size: 20px;
+    font-size: 15px;
     background-color: rgba(211, 97, 97, 0.69);
 }
 
-input #submit-contact:hover {
+#submit-contact:hover {
     background-color: #b91717;
 }
 
 .container-contact {
+    margin-top: 2em;
     border-radius: 5px;
     background-color: rgba(29, 68, 3, 0);
     padding: 20px;
     border: 3px solid black;
-    width: 30%;
+    width: 40%;
+    margin-right: 5%;
 }
 
 

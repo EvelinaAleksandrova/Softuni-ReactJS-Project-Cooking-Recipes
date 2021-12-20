@@ -64,6 +64,7 @@ const HomePage = () => {
 
             </div>
 
+            <div className="little-color-space"/>
 
             <h3 className="contact-us-h3">Contact Us</h3>
             <div className="contact-us">
