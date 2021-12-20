@@ -120,6 +120,7 @@ const HomePage = () => {
                 </div>
 
                 <div className="container-contact">
+                    <p className="p-in-email-us">Email us</p>
                     <form onSubmit={onSubmit}>
                         <label id="text-names" htmlFor="fname">Name</label>
                         <input type="text" id="name" name="from_name" placeholder="Your name.."
