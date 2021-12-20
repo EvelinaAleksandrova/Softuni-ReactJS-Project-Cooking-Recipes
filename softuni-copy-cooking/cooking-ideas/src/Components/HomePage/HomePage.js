@@ -12,6 +12,9 @@ const HomePage = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+        this.name.value = "";
+        this.email.value = "";
+        this.text.value = "";
         send(
             'service_jjdxk6h',
             'template_ytdixfl',
@@ -20,15 +23,16 @@ const HomePage = () => {
         )
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
+
             })
             .catch((err) => {
                 console.log('FAILED...', err);
-                alert("Invalid data.");
             });
     };
 
     const handleChange = (e) => {
         setToSend({ ...toSend, [e.target.name]: e.target.value });
+
     };
 
     return (
@@ -96,6 +100,7 @@ const HomePage = () => {
             <div className="little-color-space"/>
 
             <h3 className="contact-us-h3">Contact Us</h3>
+
             <div className="contact-us">
                 <div className="mapouter">
                     <div className="gmap_canvas">
@@ -103,19 +108,12 @@ const HomePage = () => {
                                 src="https://maps.google.com/maps?q=Sofia,ul%20Solunska%2016&t=&z=13&ie=UTF8&iwloc=&output=embed"/>
                         <a href="https://putlocker-is.org"/>
                     </div>
-                    <div className="more-info-contact-us">
-                        <p><b>Address:</b>&nbsp;Bulgaria, Sofia, Center, ul."Solunska" 16, floor 2</p>
-                        <p><b>Phone Office:</b>&nbsp;0032 1258 566</p>
-                        <p><b>Work time:</b>&nbsp;Monday to Friday 10:00-18:00</p>
-                    </div>
                 </div>
-
 
                 <div className="container-contact">
                     <form onSubmit={onSubmit}>
-
                         <label id="text-names" htmlFor="fname">Name</label>
-                        <input type="text" id="first-name" name="from_name" placeholder="Your name.."
+                        <input type="text" id="name" name="from_name" placeholder="Your name.."
                                value={toSend.from_name}
                                onChange={handleChange}
                                required
@@ -129,7 +127,7 @@ const HomePage = () => {
                         />
 
                         <label id="text-names" htmlFor="subject">Subject</label>
-                        <textarea id="subject" name="text" placeholder="Write something.."
+                        <textarea id="text" name="text" placeholder="Write something.."
                                   value={toSend.text}
                                   onChange={handleChange}
                                   required
@@ -137,10 +135,12 @@ const HomePage = () => {
                         <input id="submit-contact" type="submit" value="Send Email"/>
                     </form>
                 </div>
-
-
             </div>
-
+            <div className="more-info-contact-us">
+                <p><b>Address:</b>&nbsp;Bulgaria, Sofia, Center, ul."Solunska" 16, floor 2</p>
+                <p><b>Phone Office:</b>&nbsp;0032 1258 566</p>
+                <p><b>Work time:</b>&nbsp;Monday to Friday 10:00-18:00</p>
+            </div>
         </>
     );
 }
