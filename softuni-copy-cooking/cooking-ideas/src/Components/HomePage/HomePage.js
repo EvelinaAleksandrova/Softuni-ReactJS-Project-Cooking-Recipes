@@ -38,7 +38,7 @@ const HomePage = () => {
     const resetInputFields = () => {
         setTimeout(()=>{
             document.getElementById("name").value = "";
-            document.getElementById("email").value = "";
+            document.getElementById("email-form").value = "";
             document.getElementById("text").value = "";
         },300);
 
@@ -130,7 +130,7 @@ const HomePage = () => {
                         />
 
                         <label id="text-names" htmlFor="email">Email</label>
-                        <input type="text" id="email" name="reply_to" placeholder="Your email address.."
+                        <input type="text" id="email-form" name="reply_to" placeholder="Your email address.."
                                value={toSend.reply_to}
                                onChange={handleChange}
                                required
