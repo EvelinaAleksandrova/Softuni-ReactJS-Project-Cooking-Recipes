@@ -12,6 +12,8 @@ const HomePage = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+
+
         send(
             'service_jjdxk6h',
             'template_ytdixfl',
@@ -28,7 +30,17 @@ const HomePage = () => {
     };
 
     const handleChange = (e) => {
-        setToSend({ ...toSend, [e.target.name]: e.target.value });
+        setToSend({...toSend, [e.target.name]: e.target.value});
+
+
+    };
+
+    const resetInputFields = () => {
+        setTimeout(()=>{
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("text").value = "";
+        },300);
 
     };
 
@@ -127,12 +139,14 @@ const HomePage = () => {
                         <textarea id="text" name="text" placeholder="Write something.."
                                   value={toSend.text}
                                   onChange={handleChange}
+
                                   required
                         />
-                        <input id="submit-contact" type="submit" value="Send Email"/>
+                        <input id="submit-contact" type="submit" value="Send Email" onClick={resetInputFields}/>
                     </form>
                 </div>
             </div>
+
             <div className="more-info-contact-us">
                 <p><b>Address:</b>&nbsp;Bulgaria, Sofia, Center, ul."Solunska" 16, floor 2</p>
                 <p><b>Phone Office:</b>&nbsp;0032 1258 566</p>
