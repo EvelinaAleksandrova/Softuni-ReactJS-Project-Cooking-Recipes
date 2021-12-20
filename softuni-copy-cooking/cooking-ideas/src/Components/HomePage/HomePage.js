@@ -12,7 +12,6 @@ const HomePage = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        e.preventDefault();
         send(
             'service_jjdxk6h',
             'template_ytdixfl',
@@ -24,6 +23,7 @@ const HomePage = () => {
             })
             .catch((err) => {
                 console.log('FAILED...', err);
+                alert("Invalid data.");
             });
     };
 
@@ -118,18 +118,21 @@ const HomePage = () => {
                         <input type="text" id="first-name" name="from_name" placeholder="Your name.."
                                value={toSend.from_name}
                                onChange={handleChange}
+                               required
                         />
 
                         <label id="text-names" htmlFor="email">Email</label>
                         <input type="text" id="email" name="reply_to" placeholder="Your email address.."
                                value={toSend.reply_to}
                                onChange={handleChange}
+                               required
                         />
 
                         <label id="text-names" htmlFor="subject">Subject</label>
                         <textarea id="subject" name="text" placeholder="Write something.."
                                   value={toSend.text}
                                   onChange={handleChange}
+                                  required
                         />
                         <input id="submit-contact" type="submit" value="Send Email"/>
                     </form>
