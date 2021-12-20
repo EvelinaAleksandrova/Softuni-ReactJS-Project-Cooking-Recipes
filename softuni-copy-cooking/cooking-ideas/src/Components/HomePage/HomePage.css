@@ -218,7 +218,7 @@ body {
     border-radius: 10px;
     box-sizing: border-box;
     margin-top: 1px;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     resize: vertical;
     /*margin-left: 7%;*/
     margin-right: 10px;
@@ -226,7 +226,7 @@ body {
 
 #text {
     /*padding-bottom: 20px;*/
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 #submit-contact {
@@ -255,7 +255,7 @@ body {
     border: 4px double #b91717;
     width: 33%;
     margin-right: 5%;
-    height: 360px;
+    height: auto;
 }
 
 
@@ -324,7 +324,7 @@ body {
     .container-contact {
         width: 96%;
         margin-right: 4%;
-        height: 320px;
+        height: auto;
         margin-left: 5%;
     }
 
