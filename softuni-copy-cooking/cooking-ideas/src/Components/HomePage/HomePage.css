@@ -181,7 +181,7 @@ body {
 
 #gmap_canvas {
     width: 90%;
-    height: 350px;
+    height: 390px;
     frameBorder: 0;
     scrolling: no;
     marginHeight: 0;
@@ -196,14 +196,14 @@ body {
 .mapouter {
     position: relative;
     text-align: right;
-    height: 400px;
+    height: 430px;
     width: 60%;
 }
 
 .gmap_canvas {
     overflow: hidden;
     background: none !important;
-    height: 400px;
+    height: 430px;
     width: 87%;
 }
 
@@ -242,6 +242,7 @@ body {
     background-color: rgba(211, 97, 97, 0.69);
     margin-right: 10px;
     /*margin-left: 7%;*/
+    margin-bottom: 10px;
 }
 
 #submit-contact:hover {
@@ -302,15 +303,15 @@ body {
     }
 
     #gmap_canvas {
-        width: 95%;
-        height: 350px;
+        width: 92%;
+        height: 330px;
 
     }
 
     .mapouter {
         position: relative;
         text-align: right;
-        height: 400px;
+        height: 390px;
         width: 99%;
     }
 
