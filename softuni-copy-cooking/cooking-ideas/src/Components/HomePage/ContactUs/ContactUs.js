@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {send} from "emailjs-com";
 import "./ContactUs.css"
+
 const ContactUs = () => {
     const [toSend, setToSend] = useState({
         from_name: '',
@@ -10,8 +11,6 @@ const ContactUs = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-
-
         send(
             'service_jjdxk6h',
             'template_ytdixfl',
@@ -29,8 +28,6 @@ const ContactUs = () => {
 
     const handleChange = (e) => {
         setToSend({...toSend, [e.target.name]: e.target.value});
-
-
     };
 
     const resetInputFields = () => {
