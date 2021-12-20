@@ -161,7 +161,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 99%;
-    margin-bottom: 10em;
+    margin-bottom: 1em;
 }
 
 .more-info-contact-us {
@@ -173,7 +173,7 @@ body {
 
 #gmap_canvas {
     width: 90%;
-    height: 400px;
+    height: 350px;
     frameBorder: 0;
     scrolling: no;
     marginHeight: 0;
@@ -188,14 +188,14 @@ body {
 .mapouter {
     position: relative;
     text-align: right;
-    height: 500px;
+    height: 400px;
     width: 60%;
 }
 
 .gmap_canvas {
     overflow: hidden;
     background: none !important;
-    height: 500px;
+    height: 400px;
     width: 87%;
 }
 
@@ -203,7 +203,7 @@ body {
     margin-left: 7%;
 }
 
-#name, #country, #text, #email{
+#name, #country, #text, #email {
     width: 100%;
     padding: 5px;
     border: 1px solid #d36161;
@@ -214,9 +214,12 @@ body {
     resize: vertical;
     margin-left: 7%;
 }
-#text{
-    padding-bottom: 20px;
+
+#text {
+    /*padding-bottom: 20px;*/
+    margin-bottom: 30px;
 }
+
 #submit-contact {
     color: white;
     padding: 10px 20px;
@@ -241,6 +244,7 @@ body {
     border: 4px double #b91717;
     width: 43%;
     margin-right: 5%;
+    height: 350px;
 }
 
 
