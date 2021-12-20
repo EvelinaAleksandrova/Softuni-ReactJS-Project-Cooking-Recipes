@@ -71,25 +71,26 @@ const HomePage = () => {
                 <div className="mapouter">
                     <div className="gmap_canvas">
                         <iframe id="gmap_canvas"
-                            // src="https://maps.google.com/maps?q=Atanas%20Ishirkov%20
-                            // St%201000%20Sofia%20Center,%20Sofia&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                src="https://maps.google.com/maps?q=Sofia,ul%20Solunska%2016&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                        />
+                                src="https://maps.google.com/maps?q=Sofia,ul%20Solunska%2016&t=&z=13&ie=UTF8&iwloc=&output=embed"/>
                         <a href="https://putlocker-is.org"/><br></br>
-
+                    </div>
+                    <div className="more-info-contact-us">
+                        <p><b>Address:</b>&nbsp;Bulgaria, Sofia, Center, ul."Solunska" 16, floor 2</p>
+                        <p><b>Phone Office:</b>&nbsp;0032 1258 566</p>
+                        <p><b>Work time:</b>&nbsp;Monday to Friday 10:00-18:00</p>
                     </div>
                 </div>
 
 
                 <div className="container-contact">
                     <form action="/action_page.php">
-                        <label htmlFor="fname">First Name</label>
+                        <label id="text-names" htmlFor="fname">First Name</label>
                         <input type="text" id="first-name" name="firstname" placeholder="Your name.."/>
 
-                        <label htmlFor="lname">Last Name</label>
+                        <label id="text-names" htmlFor="lname">Last Name</label>
                         <input type="text" id="last-name" name="lastname" placeholder="Your last name.."/>
 
-                        <label htmlFor="country">Country</label>
+                        <label id="text-names" htmlFor="country">Country</label>
                         <select id="country" name="country">
                             <option value="australia">Bulgaria</option>
                             <option value="canada">Canada</option>
@@ -99,14 +100,15 @@ const HomePage = () => {
 
                         </select>
 
-                        <label htmlFor="subject">Subject</label>
+                        <label id="text-names" htmlFor="subject">Subject</label>
                         <textarea id="subject" name="subject" placeholder="Write something.."/>
 
                         <input id="submit-contact" type="submit" value="Send Email"/>
                     </form>
                 </div>
-            </div>
 
+
+            </div>
 
         </>
     );
