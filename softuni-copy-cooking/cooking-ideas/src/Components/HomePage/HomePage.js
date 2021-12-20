@@ -1,6 +1,35 @@
 import './HomePage.css';
+import {useState} from 'react';
+import {send} from 'emailjs-com';
 
 const HomePage = () => {
+
+    const [toSend, setToSend] = useState({
+        from_name: '',
+        text: '',
+        reply_to: '',
+    });
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        e.preventDefault();
+        send(
+            'service_jjdxk6h',
+            'template_ytdixfl',
+            toSend,
+            'user_OjWdAt65fgQMHPymyPbiK'
+        )
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            })
+            .catch((err) => {
+                console.log('FAILED...', err);
+            });
+    };
+
+    const handleChange = (e) => {
+        setToSend({ ...toSend, [e.target.name]: e.target.value });
+    };
 
     return (
         <>
@@ -83,31 +112,25 @@ const HomePage = () => {
 
 
                 <div className="container-contact">
-                    <form action="/action_page.php">
-                        <label id="text-names" htmlFor="fname">First Name</label>
-                        <input type="text" id="first-name" name="firstname" placeholder="Your name.."/>
+                    <form onSubmit={onSubmit}>
 
-                        <label id="text-names" htmlFor="lname">Last Name</label>
-                        <input type="text" id="last-name" name="lastname" placeholder="Your last name.."/>
+                        <label id="text-names" htmlFor="fname">Name</label>
+                        <input type="text" id="first-name" name="from_name" placeholder="Your name.."
+                               value={toSend.from_name}
+                               onChange={handleChange}
+                        />
 
                         <label id="text-names" htmlFor="email">Email</label>
-                        <input type="text" id="email" name="email" placeholder="Your email address.."/>
-
-                        <label id="text-names" htmlFor="country">Country</label>
-                        <select id="country" name="country">
-                            <option value="australia">Bulgaria</option>
-                            <option value="europe">Europe</option>
-                            <option value="canada">Canada</option>
-                            <option value="usa">USA</option>
-                            <option value="azia">Azia</option>
-                            <option value="australia">Australia</option>
-                            <option value="south-america">South America</option>
-                            <option value="africa">Africa</option>
-                        </select>
+                        <input type="text" id="email" name="reply_to" placeholder="Your email address.."
+                               value={toSend.reply_to}
+                               onChange={handleChange}
+                        />
 
                         <label id="text-names" htmlFor="subject">Subject</label>
-                        <textarea id="subject" name="subject" placeholder="Write something.."/>
-
+                        <textarea id="subject" name="text" placeholder="Write something.."
+                                  value={toSend.text}
+                                  onChange={handleChange}
+                        />
                         <input id="submit-contact" type="submit" value="Send Email"/>
                     </form>
                 </div>
