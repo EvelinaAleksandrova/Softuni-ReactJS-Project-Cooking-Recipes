@@ -1,6 +1,8 @@
 import {useParams} from "react-router-dom";
 import * as recipesService from '../../services/recipesService';
 import {useState, useEffect} from "react";
+import "Details.css";
+
 
 const DetailsRecipe = () => {
     const [recipe, setRecipe] = useState({});

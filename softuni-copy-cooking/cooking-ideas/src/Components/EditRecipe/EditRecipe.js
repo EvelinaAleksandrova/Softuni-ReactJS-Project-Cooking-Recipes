@@ -1,3 +1,5 @@
+import "./EditRecipe.css";
+
 const EditRecipe = () => {
     return (
         <section id="edit-page" className="edit">
