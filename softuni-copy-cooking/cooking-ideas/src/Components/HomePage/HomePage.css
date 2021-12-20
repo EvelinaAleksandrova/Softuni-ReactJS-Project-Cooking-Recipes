@@ -8,57 +8,7 @@ body {
 
 
 
-.our-team-h3 {
-    text-align: center;
-    font-family: 'Londrina Outline', cursive;
-    font-weight: bold;
-    color: #99000d;
-    font-size: 45px;
-    letter-spacing: 3px;
-    /*padding-bottom: 50px;*/
-}
 
-.team {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding-bottom: 10em;
-}
-
-.card-person {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.66);
-    max-width: 300px;
-    text-align: center;
-    font-family: arial, serif;
-    margin: 1em;
-    border: 6px double #b91717;
-
-}
-
-.p-card-info {
-    font-weight: bold;
-}
-
-.profession {
-    color: #9f2828;
-    font-size: 19px;
-    font-weight: bold;
-}
-
-.image-team {
-    width: 280px;
-    height: 200px;
-    position: relative;
-}
-
-.about-section h1 {
-    font-size: 40px;
-    letter-spacing: 1px;
-}
-
-.about-section h4 {
-    letter-spacing: 2px;
-}
 
 .little-color-space {
     background-image: url("photos/editdffffdavies-designs-studio-utGuen80JAg-unsplash.jpg");
