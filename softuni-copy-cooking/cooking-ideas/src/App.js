@@ -46,7 +46,6 @@ function App() {
     return (
         <div id="container">
             <Header {...userInfo} />
-
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
             </Routes>
@@ -64,8 +63,6 @@ function App() {
                     <Route path="/create" element={<CreateRecipe/>}/>
                     <Route path="/create-article" element={<CreateArticle/>}/>
                     <Route path="/details/:recipeId" element={<DetailsRecipe/>}/>
-
-
                 </Routes>
             </main>
             <Footer/>
