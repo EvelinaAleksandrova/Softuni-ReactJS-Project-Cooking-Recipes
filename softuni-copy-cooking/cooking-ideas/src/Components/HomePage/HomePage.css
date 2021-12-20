@@ -21,127 +21,12 @@ body {
     margin-bottom: 1em;
 }
 
-.contact-us-h3 {
-    text-align: center;
-    font-family: 'Londrina Outline', cursive;
-    font-weight: bold;
-    color: #99000d;
-    font-size: 45px;
-    letter-spacing: 3px;
-    margin-bottom: 0.5em;
-}
-.p-in-email-us{
-    text-align: center;
-    margin:0 ;
-    padding: 0;
-    font-weight: bold;
-    font-size: 22px;
-}
-
-.contact-us {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-bottom: 2em;
-}
-
-.more-info-contact-us {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 0;
-    margin-bottom: 5em;
-}
-
-#gmap_canvas {
-    width: 90%;
-    height: 390px;
-    frameBorder: 0;
-    scrolling: no;
-    marginHeight: 0;
-    marginWidth: 0;
-    border: 2px solid #b91717;
-    margin-top: 2em;
-    margin-left: 10%;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.mapouter {
-    position: relative;
-    text-align: right;
-    height: 430px;
-    width: 60%;
-}
-
-.gmap_canvas {
-    overflow: hidden;
-    background: none !important;
-    height: 430px;
-    width: 87%;
-}
-
-#text-names {
-    /*margin-left: 7%;*/
-}
-
-#name, #country, #text, #email-form {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #d36161;
-    border-radius: 10px;
-    box-sizing: border-box;
-    margin-top: 1px;
-    margin-bottom: 1px;
-    resize: vertical;
-    /*margin-left: 7%;*/
-    margin-right: 10px;
-}
-
-#text {
-    /*padding-bottom: 20px;*/
-    margin-bottom: 20px;
-}
-
-#submit-contact {
-    width: 100%;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 15px;
-    background-color: rgba(211, 97, 97, 0.69);
-    margin-right: 10px;
-    /*margin-left: 7%;*/
-    margin-bottom: 10px;
-}
-
-#submit-contact:hover {
-    background-color: #b91717;
-}
-
-.container-contact {
-    margin-top: 2em;
-    border-radius: 5px;
-    background-color: rgba(29, 68, 3, 0);
-    border: 4px double #b91717;
-    width: 33%;
-    margin-right: 5%;
-    height: auto;
-}
-
-
 @media screen and (max-width: 650px) {
     .p-on-home-image {
         font-size: 40px;
     }
 
-
     .home-image {
-        background-image: url("Home/photos/pexels-ella-olsson-1640774.jpg");
         background-size: 700px;
         display: block;
         width: auto;
@@ -156,7 +41,6 @@ body {
     }
 
     .about-us-image {
-        background-image: url("AboutUs/photos/brooke-lark-08bOYnH_r_E-unsplash.jpg");
         background-repeat: no-repeat;
         background-size: 100%;
         display: block;
@@ -179,7 +63,6 @@ body {
     #gmap_canvas {
         width: 92%;
         height: 330px;
-
     }
 
     .mapouter {
@@ -202,14 +85,6 @@ body {
         height: auto;
         margin-left: 5%;
     }
-
-    #name, #country, #text, #email {
-
-    }
-
-    #submit-contact {
-
-    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -217,10 +92,6 @@ body {
         width: 100%;
         display: block;
     }
-
 }
 
-@media screen and (min-width: 1300px) {
-
-}
 
