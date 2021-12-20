@@ -102,7 +102,7 @@ const HomePage = () => {
                         <label htmlFor="subject">Subject</label>
                         <textarea id="subject" name="subject" placeholder="Write something.."/>
 
-                        <input id="submit-contact" type="submit" value="Submit"/>
+                        <input id="submit-contact" type="submit" value="Send Email"/>
                     </form>
                 </div>
             </div>

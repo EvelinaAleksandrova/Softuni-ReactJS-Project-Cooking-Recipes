@@ -162,9 +162,6 @@ body {
     justify-content:space-between;
     width: 99%;
     margin-bottom: 5em;
-
-
-
 }
 
 #gmap_canvas {
@@ -174,10 +171,9 @@ body {
     scrolling: no;
     marginHeight: 0;
     marginWidth: 0;
-    border: 2px solid black;
+    border: 2px solid #b91717;
     margin-top: 2em;
     margin-left: 10%;
-
 }
 
 .mapouter {
@@ -198,7 +194,7 @@ body {
 #first-name, #last-name, #country, #subject {
     width: 100%;
     padding: 12px;
-    border: 1px solid #efef51;
+    border: 1px solid #d36161;
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 6px;
@@ -227,7 +223,7 @@ body {
     border-radius: 5px;
     background-color: rgba(29, 68, 3, 0);
     padding: 20px;
-    border: 3px solid black;
+    border: 4px double #b91717;
     width: 40%;
     margin-right: 5%;
 }
