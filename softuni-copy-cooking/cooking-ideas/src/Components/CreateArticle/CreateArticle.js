@@ -36,19 +36,19 @@ const CreateArticle = () => {
                     <p className="field">
                         <label htmlFor="name">Name</label>
                         <span className="input">
-                            <input type="text" name="name" id="name" placeholder="Name"/>
+                            <input type="text" name="name" id="name" placeholder="Name" required/>
                         </span>
                     </p>
                     <p className="field">
                         <label htmlFor="description">Description</label>
                         <span className="input">
-                            <textarea name="description" id="description" placeholder="Description"></textarea>
+                            <textarea name="description" id="description" placeholder="Description" required/>
                         </span>
                     </p>
                     <p className="field">
                         <label htmlFor="image">Image</label>
                         <span className="input">
-                            <input type="text" name="imageUrl" id="image" placeholder="Image"/>
+                            <input type="text" name="imageUrl" id="image" placeholder="Image" required/>
                         </span>
                     </p>
                     <p className="field">
