@@ -1,23 +1,31 @@
-import {useParams} from "react-router-dom";
+import {useParams,useNavigate} from "react-router-dom";
 import * as recipesService from '../../services/recipesService';
 import {useState, useEffect,useContext} from "react";
 import "./DetailsRecipe.css";
 import {AuthContext} from "../../contexts/AuthContext";
 
 const DetailsRecipe = () => {
+    const navigate = useNavigate();
     const {user} = useContext(AuthContext);
     const [recipe, setRecipe] = useState({});
     const {recipeId} = useParams();
 
     useEffect(async () => {
         let petResult = await recipesService.getOne(recipeId);
-        setRecipe(petResult);
+        setRecipe(petResult)
     }, []);
+
+    const deleteHandler = (e) => {
+        e.preventDefault();
+        recipesService.removeRecipe(recipeId).then(res=>{
+            navigate("/home");
+        })
+    }
 
     const ownerButtons = (
         <>
             <a className="button" href="#">Edit</a>
-            <a className="button" href="#">Delete</a>
+            <a className="button" href="#" onClick={deleteHandler}>Delete</a>
         </>
     );
 

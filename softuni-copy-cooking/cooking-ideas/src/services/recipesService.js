@@ -3,6 +3,7 @@
 //
 // const baseUrl = 'https://server-cooking.herokuapp.com/jsonstore/jsonstore';
 const baseUrl = 'http://localhost:3030/data';
+
 export const getAll = async () => {
     let response = await fetch(`${baseUrl}/recipes`);
     let recipes = await response.json();
@@ -12,18 +13,27 @@ export const getAll = async () => {
 
 }
 
-export const create = async (recipeData,token) => {
+export const create = async (recipeData, token) => {
     let response = await fetch(`${baseUrl}/recipes`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
-            'X-Authorization':token,
+            'X-Authorization': token,
         },
         body: JSON.stringify({recipeData, likes: 0})
     });
     let result = await response.json();
     return result;
 };
+
+export const removeRecipe = (recipeId,token) => {
+    return fetch(`${baseUrl}/recipes/${recipeId}`,{
+        method: "DELETE",
+        headers:{
+            'X-Authorization': token
+        }
+    })
+}
 
 export const getOne = (recipeId) => {
     return fetch(`${baseUrl}/recipes/${recipeId}`)

@@ -1,23 +1,30 @@
-import {useParams} from "react-router-dom";
-import * as recipesService from '../../services/articlesService';
+import {useParams,useNavigate} from "react-router-dom";
+import * as articlesService from '../../services/articlesService';
 import {useState, useEffect, useContext} from "react";
 import "./DetailsArticle.css";
 import {AuthContext} from "../../contexts/AuthContext";
 
 const DetailsArticle = () => {
+    const navigate = useNavigate();
     const {user} = useContext(AuthContext);
     const [article, setArticle] = useState({});
     const {articleId} = useParams();
 
     useEffect(async () => {
-        let articleResult = await recipesService.getOne(articleId);
-        setArticle(articleResult);
+        let articleResult = await articlesService.getOne(articleId);
+        setArticle(articleResult)
     }, []);
 
+    const deleteHandler = (e) => {
+        e.preventDefault();
+        articlesService.removeArticle(articleId,user.accessToken).then(res=>{
+            navigate("/home");
+        })
+    }
     const ownerButtons = (
         <>
             <a className="button" href="#">Edit</a>
-            <a className="button" href="#">Delete</a>
+            <a className="button" href="#" onClick={deleteHandler}>Delete</a>
         </>
     );
 
@@ -35,7 +42,7 @@ const DetailsArticle = () => {
                 <p className="img"><img src={article.imageUrl}/></p>
                 <div className="actions">
                     {user._id && (user._id === article._ownerId
-                            ?userButtons
+                            ? userButtons
                             : ownerButtons
                     )
                     }
