@@ -43,7 +43,7 @@ function App() {
                     <Routes>
                         <Route path="/home/*" element={<HomePage/>}/>
                         <Route path="/login" element={<LoginPage/>}/>
-                        <Route path="/logout" element={<LogoutPage onLogout={onLogout}/>}/>
+                        <Route path="/logout" element={<LogoutPage/>}/>
                         <Route path="/register" element={<RegisterPage/>}/>
                         <Route path="/all-recipes/*" element={<AllRecipesPage/>}/>
                         <Route path="/all-articles/*" element={<AllArticlesPage/>}/>
