@@ -1,10 +1,11 @@
 import {useParams} from "react-router-dom";
 import * as recipesService from '../../services/recipesService';
-import {useState, useEffect} from "react";
+import {useState, useEffect,useContext} from "react";
 import "./DetailsRecipe.css";
-
+import {AuthContext} from "../../contexts/AuthContext";
 
 const DetailsRecipe = () => {
+    const {user} = useContext(AuthContext);
     const [recipe, setRecipe] = useState({});
     const {recipeId} = useParams();
 
@@ -12,6 +13,19 @@ const DetailsRecipe = () => {
         let petResult = await recipesService.getOne(recipeId);
         setRecipe(petResult);
     }, []);
+
+    const ownerButtons = (
+        <>
+            <a className="button" href="#">Edit</a>
+            <a className="button" href="#">Delete</a>
+        </>
+    );
+
+    const userButtons = (
+        <>
+            <a className="button" href="#">Like</a>
+        </>
+    )
 
     return (
         <section id="details-page" className="details">
@@ -21,11 +35,10 @@ const DetailsRecipe = () => {
                 <p className="img"><img src={recipe.imageUrl}/></p>
                 <div className="actions">
 
-                    <a className="button" href="#">Edit</a>
-                    <a className="button" href="#">Delete</a>
-
-                    <a className="button" href="#">Like</a>
-
+                    {user._id && (user._id === recipeId._ownerId
+                        ? ownerButtons
+                        : userButtons)
+                    }
 
                     <div className="likes">
                         <img className="hearts" src="/images/heart.png"/>

@@ -1,10 +1,11 @@
 import {useParams} from "react-router-dom";
 import * as recipesService from '../../services/articlesService';
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
 import "./DetailsArticle.css";
-
+import {AuthContext} from "../../contexts/AuthContext";
 
 const DetailsArticle = () => {
+    const {user} = useContext(AuthContext);
     const [article, setArticle] = useState({});
     const {articleId} = useParams();
 
@@ -13,6 +14,19 @@ const DetailsArticle = () => {
         setArticle(articleResult);
     }, []);
 
+    const ownerButtons = (
+        <>
+            <a className="button" href="#">Edit</a>
+            <a className="button" href="#">Delete</a>
+        </>
+    );
+
+    const userButtons = (
+        <>
+            <a className="button" href="#">Like</a>
+        </>
+    )
+
     return (
         <section id="details-page" className="details">
             <div className="article-information">
@@ -20,12 +34,10 @@ const DetailsArticle = () => {
                 <p className="type">Type: {article.type}</p>
                 <p className="img"><img src={article.imageUrl}/></p>
                 <div className="actions">
-
-                    <a className="button" href="#">Edit</a>
-                    <a className="button" href="#">Delete</a>
-
-                    <a className="button" href="#">Like</a>
-
+                    {user._id && (user._id === articleId._ownerId
+                        ? ownerButtons
+                        : userButtons)
+                    }
 
                     <div className="likes">
                         <img className="hearts" src="/images/heart.png"/>
