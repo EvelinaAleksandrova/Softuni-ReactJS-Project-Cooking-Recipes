@@ -1,10 +1,10 @@
 import {Link} from 'react-router-dom';
+import {useContext} from "react";
 import "./Header.css";
+import {AuthContext} from "../../contexts/AuthContext";
 
-const Header = ({
-                    email
-                }) => {
-
+const Header = () => {
+    const {user} = useContext(AuthContext);
 
     let guestNavigation = (
         <>
@@ -28,7 +28,7 @@ const Header = ({
                 <Link className="button" to="/my-articles">My Articles</Link>
                 <Link className="button" to="/create-article">Add Article</Link>
                 <Link id="logout-button" className="button" to="/logout">Logout</Link>
-                <span className="welcome-user">Welcome, {email} </span>
+                <span className="welcome-user">Welcome, {user.email} </span>
             </div>
 
         </>
@@ -40,7 +40,7 @@ const Header = ({
                 <section className="navbar-dashboard">
                     <Link to="/home">Cooking Ideas</Link>
                     {
-                        email
+                        user.email
                             ? userNavigation
                             : guestNavigation
                     }
