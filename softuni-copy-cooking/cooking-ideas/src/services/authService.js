@@ -20,7 +20,7 @@ export const login = async (email, password) => {
 
 
 export const logout = () =>{
-    localStorage.removeItem('email');
+    fetch('http://localhost:3030/users/logout');
 }
 
 export const getUser = () => {

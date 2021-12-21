@@ -1,9 +1,11 @@
+import {useContext} from "react";
+import {AuthContext} from "../../contexts/AuthContext";
 import {useNavigate} from 'react-router-dom';
 import * as authService from '../../services/authService.js';
 
-const LoginPage = ({
-                       onLogin
-                   }) => {
+const LoginPage = ({}) => {
+
+    const{login} = useContext(AuthContext);
     const navigate = useNavigate();
 
     const onLoginHandler = (e) => {
@@ -14,17 +16,12 @@ const LoginPage = ({
 
         authService.login(email, password)
             .then(authData => {
-
-                onLogin(authData);
+                login(authData);
                 navigate('/my-recipes');
             }).catch(error=>{
             console.log(error);
         })
-        // authService.login(email);
-        //
-        // onLogin(email);
-        //
-        // navigate('/');
+
     }
 
     return (

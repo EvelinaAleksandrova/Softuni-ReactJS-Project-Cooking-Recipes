@@ -23,10 +23,8 @@ function App() {
         accessToken: ""
     });
 
-    const onLogin = (authData) => {
+    const login = (authData) => {
         setUser(authData);
-        console.log(authData);
-
     };
 
     const onLogout = () => {
@@ -34,7 +32,7 @@ function App() {
     };
 
     return (
-        <AuthContext.Provider value={true}>
+        <AuthContext.Provider value={{user,login}}>
             <div id="container">
                 <Header email={user.email} />
                 <Routes>
