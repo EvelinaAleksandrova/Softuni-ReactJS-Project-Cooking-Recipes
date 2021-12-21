@@ -1,7 +1,10 @@
 import * as recipesService from '../../services/recipesService';
 import {useNavigate} from "react-router-dom";
+import {AuthContext} from "../../contexts/AuthContext";
+import {useContext} from "react";
 
 const CreateRecipe = () => {
+    const {user} = useContext(AuthContext);
     const navigate = useNavigate();
 
     const onRecipeCreate = (e) => {
@@ -18,7 +21,8 @@ const CreateRecipe = () => {
             description,
             imageUrl,
             type
-        }).then(result => {
+        }, user.accessToken)
+            .then(result => {
             navigate('/all-recipes');
         });
     }

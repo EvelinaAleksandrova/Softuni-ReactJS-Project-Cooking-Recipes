@@ -1,7 +1,11 @@
 import * as articlesService from '../../services/articlesService';
 import {useNavigate} from "react-router-dom";
+import {useContext} from "react";
+import {AuthContext} from "../../contexts/AuthContext";
+
 
 const CreateArticle = () => {
+    const {user} = useContext(AuthContext);
     const navigate = useNavigate();
 
     const onArticleCreate = (e) => {
@@ -18,7 +22,8 @@ const CreateArticle = () => {
             description,
             imageUrl,
             type
-        }).then(result => {
+        }, user.accessToken)
+            .then(result => {
             navigate('/all-articles');
         });
     }
