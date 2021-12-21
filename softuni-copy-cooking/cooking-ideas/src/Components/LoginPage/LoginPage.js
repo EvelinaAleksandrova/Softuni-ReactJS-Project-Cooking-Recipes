@@ -8,15 +8,12 @@ const LoginPage = ({
 
     const onLoginHandler = (e) => {
         e.preventDefault();
-
         let formData = new FormData(e.currentTarget);
-
         let email = formData.get('email');
         let password = formData.get('password');
+
         authService.login(email, password)
             .then(authData => {
-                console.log('Logged');
-                console.log(authData);
 
                 onLogin(authData);
                 navigate('/');

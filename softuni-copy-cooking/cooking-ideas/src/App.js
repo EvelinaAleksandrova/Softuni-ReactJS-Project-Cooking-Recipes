@@ -17,14 +17,15 @@ import AllArticlesPage from "./Components/AllArticlesPage/AllArticlesPage";
 import AllRecipesPage from "./Components/AllRecipesPage/AllRecipesPage";
 
 function App() {
+    const [user, setUser] = useState({
+        _id: "",
+        email: "",
+        accessToken: ""
+    });
 
-
-    useEffect(() => {
-
-
-    }, []);
-
-    const onLogin = (email) => {
+    const onLogin = (authData) => {
+        setUser(authData);
+        console.log(authData);
 
     };
 
@@ -33,9 +34,9 @@ function App() {
     };
 
     return (
-        <AuthContext.Provider>
+        <AuthContext.Provider value={true}>
             <div id="container">
-                <Header {...userInfo} />
+                <Header email={user.email} />
                 <Routes>
                     <Route path="/" element={<HomePage/>}/>
                 </Routes>
