@@ -35,13 +35,14 @@ const DetailsArticle = () => {
                 <p className="img"><img src={article.imageUrl}/></p>
                 <div className="actions">
                     {user._id && (user._id === articleId._ownerId
-                        ? ownerButtons
-                        : userButtons)
+                            ?userButtons
+                            : ownerButtons
+                    )
                     }
 
                     <div className="likes">
                         <img className="hearts" src="/images/heart.png"/>
-                        <span id="total-likes">Likes: {article.likes}</span>
+                        <span id="total-likes">Likes: {article.likes?.length}</span>
                     </div>
 
                 </div>

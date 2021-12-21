@@ -1,7 +1,11 @@
 const RegisterPage = () => {
+    const registerSubmitHandler = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <section id="register-page" className="register">
-            <form id="register-form" action="" method="">
+            <form id="register-form" action="" method="" onSubmit={registerSubmitHandler}>
                 <fieldset>
                     <legend>Register Form</legend>
                     <p className="field">

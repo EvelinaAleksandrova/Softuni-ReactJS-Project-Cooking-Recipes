@@ -36,13 +36,14 @@ const DetailsRecipe = () => {
                 <div className="actions">
 
                     {user._id && (user._id === recipeId._ownerId
-                        ? ownerButtons
-                        : userButtons)
+                            ?userButtons
+                            : ownerButtons
+                    )
                     }
 
                     <div className="likes">
                         <img className="hearts" src="/images/heart.png"/>
-                        <span id="total-likes">Likes: {recipe.likes}</span>
+                        <span id="total-likes">Likes: {recipe.likes?.length}</span>
                     </div>
 
                 </div>
