@@ -15,7 +15,7 @@ const DetailsRecipe = () => {
 
     return (
         <section id="details-page" className="details">
-            <div className="pet-information">
+            <div className="recipe-information">
                 <h3>Name: {recipe.name}</h3>
                 <p className="type">Type: {recipe.type}</p>
                 <p className="img"><img src={recipe.imageUrl}/></p>
