@@ -42,7 +42,7 @@ function App() {
                 <main id="site-content">
                     <Routes>
                         <Route path="/home/*" element={<HomePage/>}/>
-                        <Route path="/login" element={<LoginPage onLogin={onLogin}/>}/>
+                        <Route path="/login" element={<LoginPage/>}/>
                         <Route path="/logout" element={<LogoutPage onLogout={onLogout}/>}/>
                         <Route path="/register" element={<RegisterPage/>}/>
                         <Route path="/all-recipes/*" element={<AllRecipesPage/>}/>
