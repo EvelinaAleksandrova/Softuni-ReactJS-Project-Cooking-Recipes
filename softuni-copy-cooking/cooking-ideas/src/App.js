@@ -17,7 +17,7 @@ import AllArticlesPage from "./Components/AllArticlesPage/AllArticlesPage";
 import AllRecipesPage from "./Components/AllRecipesPage/AllRecipesPage";
 
 function App() {
-    const [user, setUser] = useLocalStorage({
+    const [user, setUser] = useLocalStorage('user',{
         _id: "",
         email: "",
         accessToken: ""
