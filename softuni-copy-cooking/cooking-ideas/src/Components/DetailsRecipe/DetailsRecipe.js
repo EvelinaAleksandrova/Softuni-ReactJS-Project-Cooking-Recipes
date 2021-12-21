@@ -4,16 +4,20 @@ import {useState, useEffect,useContext} from "react";
 import "./DetailsRecipe.css";
 import {AuthContext} from "../../contexts/AuthContext";
 
+
 const DetailsRecipe = () => {
     const navigate = useNavigate();
     const {user} = useContext(AuthContext);
     const [recipe, setRecipe] = useState({});
     const {recipeId} = useParams();
 
-    useEffect(async () => {
-        let petResult = await recipesService.getOne(recipeId);
-        setRecipe(petResult)
-    }, []);
+    useEffect(() => {
+        recipesService.getOne(recipeId)
+            .then(recipeResult=>{
+                setRecipe(recipeResult);
+            })
+
+    }, [recipeId]);
 
     const deleteHandler = (e) => {
         e.preventDefault();

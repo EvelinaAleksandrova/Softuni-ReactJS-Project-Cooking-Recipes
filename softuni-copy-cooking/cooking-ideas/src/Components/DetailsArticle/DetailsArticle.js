@@ -10,10 +10,13 @@ const DetailsArticle = () => {
     const [article, setArticle] = useState({});
     const {articleId} = useParams();
 
-    useEffect(async () => {
-        let articleResult = await articlesService.getOne(articleId);
-        setArticle(articleResult)
-    }, []);
+    useEffect(() => {
+         articlesService.getOne(articleId)
+             .then(articleResult=>{
+                 setArticle(articleResult);
+             })
+
+    }, [articleId]);
 
     const deleteHandler = (e) => {
         e.preventDefault();
