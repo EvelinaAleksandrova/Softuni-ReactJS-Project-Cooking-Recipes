@@ -12,12 +12,22 @@ const LoginPage = ({
         let formData = new FormData(e.currentTarget);
 
         let email = formData.get('email');
+        let password = formData.get('password');
+        authService.login(email, password)
+            .then(authData => {
+                console.log('Logged');
+                console.log(authData);
 
-        authService.login(email);
-
-        onLogin(email);
-
-        navigate('/');
+                onLogin(authData);
+                navigate('/');
+            }).catch(error=>{
+            console.log(error);
+        })
+        // authService.login(email);
+        //
+        // onLogin(email);
+        //
+        // navigate('/');
     }
 
     return (

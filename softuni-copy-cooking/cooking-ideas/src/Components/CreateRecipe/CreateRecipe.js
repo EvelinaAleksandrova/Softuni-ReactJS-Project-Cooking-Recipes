@@ -19,7 +19,7 @@ const CreateRecipe = () => {
             imageUrl,
             type
         }).then(result => {
-            navigate('/dashboard');
+            navigate('/all-recipes');
         });
     }
 
