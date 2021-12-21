@@ -20,7 +20,7 @@ export const create = async (recipeData, token) => {
             'content-type': 'application/json',
             'X-Authorization': token,
         },
-        body: JSON.stringify({recipeData, likes: 0})
+        body: JSON.stringify({...recipeData, likes: []})
     });
     let result = await response.json();
     return result;

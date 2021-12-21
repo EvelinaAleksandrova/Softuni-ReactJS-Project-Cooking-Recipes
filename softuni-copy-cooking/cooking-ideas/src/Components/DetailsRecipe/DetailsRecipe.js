@@ -48,8 +48,8 @@ const DetailsRecipe = () => {
                 <div className="actions">
 
                     {user._id && (user._id === recipe._ownerId
-                            ?userButtons
-                            : ownerButtons
+                            ?ownerButtons
+                            :  userButtons
                     )
                     }
 

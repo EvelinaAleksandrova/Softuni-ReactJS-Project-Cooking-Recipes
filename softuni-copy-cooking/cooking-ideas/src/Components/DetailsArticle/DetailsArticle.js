@@ -45,8 +45,8 @@ const DetailsArticle = () => {
                 <p className="img"><img src={article.imageUrl}/></p>
                 <div className="actions">
                     {user._id && (user._id === article._ownerId
-                            ? userButtons
-                            : ownerButtons
+                            ? ownerButtons
+                            :  userButtons
                     )
                     }
 
