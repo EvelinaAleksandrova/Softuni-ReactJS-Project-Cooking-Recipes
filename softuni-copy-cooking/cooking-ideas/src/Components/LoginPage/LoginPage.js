@@ -5,7 +5,7 @@ import * as authService from '../../services/authService.js';
 
 const LoginPage = () => {
 
-    const{login} = useContext(AuthContext);
+    const {login} = useContext(AuthContext);
     const navigate = useNavigate();
 
     const onLoginHandler = (e) => {
@@ -18,7 +18,7 @@ const LoginPage = () => {
             .then(authData => {
                 login(authData);
                 navigate('/my-recipes');
-            }).catch(error=>{
+            }).catch(error => {
             console.log(error);
         })
 
@@ -32,13 +32,13 @@ const LoginPage = () => {
                     <p className="field">
                         <label htmlFor="email">Email</label>
                         <span className="input">
-                            <input type="text" name="email" id="email" placeholder="Email"/>
+                            <input type="text" name="email" id="email" placeholder="Email" required/>
                         </span>
                     </p>
                     <p className="field">
                         <label htmlFor="password">Password</label>
                         <span className="input">
-                            <input type="password" name="password" id="password" placeholder="Password"/>
+                            <input type="password" name="password" id="password" placeholder="Password" required/>
                         </span>
                     </p>
                     <input className="button submit" type="submit" value="Login"/>

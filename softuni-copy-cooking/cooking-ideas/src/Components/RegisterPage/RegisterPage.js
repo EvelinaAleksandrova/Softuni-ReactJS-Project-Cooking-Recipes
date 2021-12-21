@@ -28,19 +28,19 @@ const RegisterPage = () => {
                     <p className="field">
                         <label htmlFor="email">Email</label>
                         <span className="input">
-                            <input type="text" name="email" id="email" placeholder="Email"/>
+                            <input type="text" name="email" id="email" placeholder="Email" required/>
                         </span>
                     </p>
                     <p className="field">
                         <label htmlFor="password">Password</label>
                         <span className="input">
-                            <input type="password" name="password" id="password" placeholder="Password"/>
+                            <input type="password" name="password" id="password" placeholder="Password" required/>
                         </span>
                     </p>
                     <p className="field">
                         <label htmlFor="repeat-pass">Repeat Password</label>
                         <span className="input">
-                            <input type="password" name="confirm-pass" id="repeat-pass" placeholder="Repeat Password"/>
+                            <input type="password" name="confirm-pass" id="repeat-pass" placeholder="Repeat Password" required/>
                         </span>
                     </p>
                     <input className="button submit" type="submit" value="Register"/>
