@@ -1,4 +1,4 @@
-import {useParams,useNavigate} from "react-router-dom";
+import {useParams, useNavigate, Link} from "react-router-dom";
 import * as articlesService from '../../services/articlesService';
 import {useState, useEffect, useContext} from "react";
 import "./DetailsArticle.css";
@@ -21,12 +21,12 @@ const DetailsArticle = () => {
     const deleteHandler = (e) => {
         e.preventDefault();
         articlesService.removeArticle(articleId,user.accessToken).then(res=>{
-            navigate("/home");
+            navigate('/all-articles');
         })
     }
     const ownerButtons = (
         <>
-            <a className="button" href="#">Edit</a>
+            <Link className="button" to="/edit">Edit</Link>
             <a className="button" href="#" onClick={deleteHandler}>Delete</a>
         </>
     );

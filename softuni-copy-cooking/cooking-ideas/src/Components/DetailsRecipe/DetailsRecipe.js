@@ -1,4 +1,4 @@
-import {useParams,useNavigate} from "react-router-dom";
+import {useParams,useNavigate,Link} from "react-router-dom";
 import * as recipesService from '../../services/recipesService';
 import {useState, useEffect,useContext} from "react";
 import "./DetailsRecipe.css";
@@ -22,13 +22,13 @@ const DetailsRecipe = () => {
     const deleteHandler = (e) => {
         e.preventDefault();
         recipesService.removeRecipe(recipeId).then(res=>{
-            navigate("/home");
+            navigate('/all-recipes');
         })
     }
 
     const ownerButtons = (
         <>
-            <a className="button" href="#">Edit</a>
+            <Link className="button" to="/edit">Edit</Link>
             <a className="button" href="#" onClick={deleteHandler}>Delete</a>
         </>
     );
