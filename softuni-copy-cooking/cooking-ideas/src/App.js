@@ -20,27 +20,16 @@ function App() {
     const [userInfo, setUserInfo] = useState({isAuthenticated: false, username: ''});
 
     useEffect(() => {
-        let user = authService.getUser();
 
-        setUserInfo({
-            isAuthenticated: Boolean(user),
-            user,
-        })
 
     }, []);
 
     const onLogin = (email) => {
-        setUserInfo({
-            isAuthenticated: true,
-            user: email,
-        });
+
     };
 
     const onLogout = () => {
-        setUserInfo({
-            isAuthenticated: false,
-            user: null,
-        });
+
     };
 
     return (
