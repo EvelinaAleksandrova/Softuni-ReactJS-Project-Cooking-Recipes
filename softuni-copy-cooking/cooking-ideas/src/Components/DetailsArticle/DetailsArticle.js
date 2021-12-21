@@ -34,7 +34,7 @@ const DetailsArticle = () => {
                 <p className="type">Type: {article.type}</p>
                 <p className="img"><img src={article.imageUrl}/></p>
                 <div className="actions">
-                    {user._id && (user._id === articleId._ownerId
+                    {user._id && (user._id === article._ownerId
                             ?userButtons
                             : ownerButtons
                     )

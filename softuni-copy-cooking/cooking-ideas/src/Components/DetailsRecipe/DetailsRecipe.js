@@ -35,7 +35,7 @@ const DetailsRecipe = () => {
                 <p className="img"><img src={recipe.imageUrl}/></p>
                 <div className="actions">
 
-                    {user._id && (user._id === recipeId._ownerId
+                    {user._id && (user._id === recipe._ownerId
                             ?userButtons
                             : ownerButtons
                     )
