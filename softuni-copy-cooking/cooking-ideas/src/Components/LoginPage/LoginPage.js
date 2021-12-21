@@ -16,7 +16,7 @@ const LoginPage = ({
             .then(authData => {
 
                 onLogin(authData);
-                navigate('/');
+                navigate('/my-recipes');
             }).catch(error=>{
             console.log(error);
         })
