@@ -17,11 +17,20 @@ export const login = async (email, password) => {
     }
 
 };
+export const register = (email, password) => {
+    return fetch('http://localhost:3030/users/register', {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({email, password})
+    })
+        .then(res => res.json());
+};
 
 
-export const logout = () =>{
-    fetch('http://localhost:3030/users/logout');
-}
+export const logout = () => fetch('http://localhost:3030/users/logout');
+
 
 export const getUser = () => {
     let email = localStorage.getItem('email');
