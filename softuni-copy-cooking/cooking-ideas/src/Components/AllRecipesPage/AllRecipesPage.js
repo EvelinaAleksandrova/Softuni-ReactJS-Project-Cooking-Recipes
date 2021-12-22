@@ -6,7 +6,17 @@ import SoupList from "../RecipeList/SoupList";
 import MeatList from "../RecipeList/MeatList";
 import ChristmasList from "../RecipeList/ChristmasList";
 import AllRecipeCategory from "../RecipeList/AllRecipeCategory";
+import PizzaList from "../RecipeList/PizzaList";
+import SaladList from "../RecipeList/SaladList";
 
+
+function DesertList() {
+    return null;
+}
+
+function OtherList() {
+    return null;
+}
 
 const AllRecipesPage = () => {
 
@@ -19,8 +29,12 @@ const AllRecipesPage = () => {
                 <Link to="soup" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Soup</Link>
                 <Link to="meat" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Meat</Link>
                 <Link to="vegan" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Vegan</Link>
+                <Link to="salad" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Salads</Link>
+                <Link to="dessert" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Desserts</Link>
+                <Link to="pizza" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Pizza</Link>
                 <Link to="cocktails" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Drinks & Cocktails</Link>
                 <Link to="christmas" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Christmas</Link>
+                <Link to="other" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Other</Link>
             </nav>
 
             <section>
@@ -31,8 +45,12 @@ const AllRecipesPage = () => {
                     <Route path="/soup" element={<SoupList/>}/>
                     <Route path="/meat" element={<MeatList/>}/>
                     <Route path="/vegan" element={<VeganList/>}/>
+                    <Route path="/salad" element={<SaladList/>}/>
+                    <Route path="/dessert" element={<DesertList/>}/>
+                    <Route path="/pizza" element={<PizzaList/>}/>
                     <Route path="/cocktails" element={<CocktailsList/>}/>
                     <Route path="/christmas" element={<ChristmasList/>}/>
+                    <Route path="/other" element={<OtherList/>}/>
                 </Routes>
             </section>
 

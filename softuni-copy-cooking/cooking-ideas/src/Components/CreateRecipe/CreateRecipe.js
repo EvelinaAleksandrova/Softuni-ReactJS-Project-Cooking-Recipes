@@ -57,6 +57,9 @@ const CreateRecipe = () => {
                                 <option value="soup">Soup</option>
                                 <option value="meat">Meat</option>
                                 <option value="vegan">Vegan</option>
+                                <option value="salad">Salad</option>
+                                <option value="dessert">Dessert</option>
+                                <option value="pizza">Pizza</option>
                                 <option value="cocktails">Drinks & Cocktails</option>
                                 <option value="christmas">Christmas</option>
                                 <option value="other">Other</option>
