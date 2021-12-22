@@ -33,11 +33,13 @@ const CreateRecipe = () => {
         <section id="create-page" className="create">
             <form id="create-form" onSubmit={onRecipeCreate} method="POST">
                 <fieldset>
-                    <legend>Add new Recipe</legend>
+                    <legend style={{"text-align": "center","width":"94%"}}>Add new Recipe</legend>
+
                     <p className="field">
                         <label htmlFor="name">Name</label>
                         <span className="input">
-                            <input type="text" name="name" id="name" placeholder="Name" required/>
+                            <input type="text" name="name" id="name" placeholder="Name" required
+                                   />
                         </span>
                     </p>
                     <p className="field">
@@ -74,7 +76,8 @@ const CreateRecipe = () => {
                             </select>
                         </span>
                     </p>
-                    <input className="button submit" type="submit" value="Add Recipe"/>
+                    <input className="button submit" type="submit" value="Add Recipe"
+                           style={{ "background": "#d36161"}}/>
                 </fieldset>
             </form>
         </section>

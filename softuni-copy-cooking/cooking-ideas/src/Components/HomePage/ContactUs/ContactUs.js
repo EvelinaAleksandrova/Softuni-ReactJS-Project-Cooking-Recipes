@@ -55,7 +55,7 @@ const ContactUs = () => {
                     <p className="p-in-email-us">Email us</p>
                     <form className="form-contact-active" onSubmit={onSubmit}>
                         <label id="text-names" htmlFor="fname">Name</label>
-                        <input type="text" id="name" name="from_name" placeholder="Your name.."
+                        <input type="text" id="fname" name="from_name" placeholder="Your name.."
                                value={toSend.from_name}
                                onChange={handleChange}
                                required

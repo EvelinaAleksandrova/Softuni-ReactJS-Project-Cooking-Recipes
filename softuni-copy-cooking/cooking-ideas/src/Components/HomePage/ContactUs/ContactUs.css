@@ -49,7 +49,7 @@
     width: 87%;
 }
 
-#name, #country, #text, #email-form {
+#fname, #country, #text, #email-form {
     width: 100%;
     padding: 5px;
     border: 1px solid #d36161;
