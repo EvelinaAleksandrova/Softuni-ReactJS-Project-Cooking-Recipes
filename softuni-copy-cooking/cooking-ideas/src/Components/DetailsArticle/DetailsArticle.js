@@ -1,12 +1,12 @@
 import {useParams, useNavigate, Link} from "react-router-dom";
 import * as articlesService from '../../services/articlesService';
-import {useState, useEffect, useContext} from "react";
+import {useState, useEffect} from "react";
 import "./DetailsArticle.css";
-import {AuthContext} from "../../contexts/AuthContext";
+import { useAuthContext} from "../../contexts/AuthContext";
 
 const DetailsArticle = () => {
     const navigate = useNavigate();
-    const {user} = useContext(AuthContext);
+    const {user} = useAuthContext();
     const [article, setArticle] = useState({});
     const {articleId} = useParams();
 
@@ -40,7 +40,7 @@ const DetailsArticle = () => {
     return (
         <section id="details-page" className="details">
             <div className="article-information">
-                <h3>Name: {article.name}</h3>
+                <h3 style={{"margin-bottom":"12px"}}>Name: {article.name}</h3>
                 <p className="type">Type: {article.type}</p>
                 <p className="img-article-details"><img src={article.imageUrl}/></p>
                 <div className="actions">
@@ -51,7 +51,7 @@ const DetailsArticle = () => {
                     }
 
                     <div className="likes">
-                        <img className="hearts" src="/images/heart.png"/>
+                        <img style={{"margin-top":"8px"}} className="hearts" src="/images/heart.png"/>
                         <span id="total-likes">Likes: {article.likes?.length}</span>
                     </div>
 

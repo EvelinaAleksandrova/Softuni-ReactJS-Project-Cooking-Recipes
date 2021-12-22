@@ -1,10 +1,9 @@
 import * as recipesService from '../../services/recipesService';
 import {useNavigate} from "react-router-dom";
-import {AuthContext} from "../../contexts/AuthContext";
-import {useContext} from "react";
+import {useAuthContext} from "../../contexts/AuthContext";
 
 const CreateRecipe = () => {
-    const {user} = useContext(AuthContext);
+    const {user} = useAuthContext();
     const navigate = useNavigate();
 
     const onRecipeCreate = (e) => {

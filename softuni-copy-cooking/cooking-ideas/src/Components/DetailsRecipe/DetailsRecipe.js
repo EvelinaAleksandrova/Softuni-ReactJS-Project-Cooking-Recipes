@@ -1,13 +1,12 @@
 import {useParams, useNavigate, Link} from "react-router-dom";
 import * as recipesService from '../../services/recipesService';
-import {useState, useEffect, useContext} from "react";
+import {useState, useEffect} from "react";
 import "./DetailsRecipe.css";
-import {AuthContext} from "../../contexts/AuthContext";
-
+import {useAuthContext} from "../../contexts/AuthContext";
 
 const DetailsRecipe = () => {
     const navigate = useNavigate();
-    const {user} = useContext(AuthContext);
+    const {user} = useAuthContext();
     const [recipe, setRecipe] = useState({});
     const {recipeId} = useParams();
 
@@ -35,17 +34,18 @@ const DetailsRecipe = () => {
 
     const userButtons = (
         <>
-            <a className="button" href="#" style={{"background":"#d36161"}}>Like</a>
+            <a className="button" id="deleteRecipeNow" href="#" style={{"background":"#d36161"}}>Like</a>
         </>
     )
 
     return (
         <section id="details-page" className="details">
             <div className="recipe-information">
-                <h3>Name: {recipe.name}</h3>
+                <h3 style={{"padding-bottom":"15px"}}>Name: {recipe.name}</h3>
                 <p className="type">Type: {recipe.type}</p>
-                <p style={{"font-weight":"bold"}}>Difficulty: {recipe.difficulty}</p>
-                <p style={{"font-weight":"bold"}}>Preparation time (minutes): {recipe.timeCooking}</p>
+                <p className="type">Difficulty: {recipe.difficulty}</p>
+                <p className="type">Preparation time (minutes): {recipe.timeCooking}</p>
+
                 <p className="img-recipe-details"><img src={recipe.imageUrl}/></p>
                 <div className="actions">
 
@@ -55,7 +55,7 @@ const DetailsRecipe = () => {
                     )}
 
                     <div className="likes">
-                        <img className="hearts" src="/images/heart.png"/>
+                        <img style={{"margin-top":"6px"}} className="hearts" src="/images/heart.png"/>
                         <span id="total-likes">Likes: {recipe.likes?.length}</span>
                     </div>
 

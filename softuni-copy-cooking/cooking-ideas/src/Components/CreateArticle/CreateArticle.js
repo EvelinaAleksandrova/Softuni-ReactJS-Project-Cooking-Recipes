@@ -1,11 +1,9 @@
 import * as articlesService from '../../services/articlesService';
 import {useNavigate} from "react-router-dom";
-import {useContext} from "react";
-import {AuthContext} from "../../contexts/AuthContext";
-
+import {useAuthContext} from "../../contexts/AuthContext";
 
 const CreateArticle = () => {
-    const {user} = useContext(AuthContext);
+    const {user} = useAuthContext();
     const navigate = useNavigate();
 
     const onArticleCreate = (e) => {

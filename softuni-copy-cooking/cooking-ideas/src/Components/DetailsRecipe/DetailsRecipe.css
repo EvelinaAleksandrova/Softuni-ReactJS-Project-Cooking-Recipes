@@ -1,11 +1,15 @@
-.recipe-information{
+.recipe-information {
     margin-bottom: 100px;
 }
-.recipe-information h3{
+
+.recipe-information h3 {
     font-size: 25px;
 }
-.type{
-   font-weight: bold;
+
+.type {
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-decoration: underline #e8e71e;
 }
 
 .img-recipe-details {
@@ -14,13 +18,13 @@
     overflow: hidden;
     border-bottom: 1px solid darkred;
 }
+
 .img-recipe-details::after {
     display: block;
     content: "";
     padding-top: 100%;
 
 }
-
 
 
 /*!*body {*!*/

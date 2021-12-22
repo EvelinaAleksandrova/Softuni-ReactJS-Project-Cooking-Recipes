@@ -10,7 +10,10 @@ const RecipeList = () => {
         recipesService.getAll()
             .then(result => {
                 setRecipe(result);
-            });
+            })
+            .catch(error=>{
+                console.log(error);
+            })
     }, []);
 
     return (

@@ -2,15 +2,21 @@
 // https://softuni-custom-server-routepet.herokuapp.com/jsonstore/
 //
 // const baseUrl = 'https://server-cooking.herokuapp.com/jsonstore/jsonstore';
+import {request} from "./request";
+
 const baseUrl = 'http://localhost:3030/data';
 
-export const getAll = async () => {
-    let response = await fetch(`${baseUrl}/recipes`);
-    let recipes = await response.json();
-    let result = Object.values(recipes);
+export const getAll = () => {
+    let result  =  request(`${baseUrl}/recipes`);
 
     return result;
 
+}
+
+export const getMyRecipes = (ownerId) =>{
+    let query = encodeURIComponent(`_ownerId="${ownerId}"`);
+
+    return request.get(`${baseUrl}/recipes?where=${query}`);
 }
 
 export const create = async (recipeData, token) => {
