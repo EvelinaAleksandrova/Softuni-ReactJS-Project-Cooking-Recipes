@@ -16,12 +16,12 @@ const Other= () => {
     return (
         <>
             {
-                recipe.filter(recipe => recipe.type === 'other').length > 0
+                recipe.filter(recipe => recipe.type === 'other-recipe').length > 0
                     // recipe.length > 0
                     ? (
                         <ul className="other-recipes-list">
                             {
-                                recipe.filter(recipe => recipe.type === 'other').map(recipe => <RecipeCard key={recipe._id}
+                                recipe.filter(recipe => recipe.type === 'other-recipe').map(recipe => <RecipeCard key={recipe._id}
                                                                                                            recipe={recipe}/>)
                             }
                         </ul>

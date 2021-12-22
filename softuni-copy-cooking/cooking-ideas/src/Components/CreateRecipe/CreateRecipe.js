@@ -62,7 +62,7 @@ const CreateRecipe = () => {
                                 <option value="pizza">Pizza</option>
                                 <option value="cocktails">Drinks & Cocktails</option>
                                 <option value="christmas">Christmas</option>
-                                <option value="other">Other</option>
+                                <option value="other-recipe">Other</option>
                             </select>
                         </span>
                     </p>

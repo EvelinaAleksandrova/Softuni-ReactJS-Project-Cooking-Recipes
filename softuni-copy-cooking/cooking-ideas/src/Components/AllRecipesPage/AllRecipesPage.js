@@ -8,6 +8,8 @@ import ChristmasList from "../RecipeList/ChristmasList";
 import AllRecipeCategory from "../RecipeList/AllRecipeCategory";
 import PizzaList from "../RecipeList/PizzaList";
 import SaladList from "../RecipeList/SaladList";
+import DessertList from "../RecipeList/DessertList";
+import Other from "../RecipeList/Other";
 
 
 function DesertList() {
@@ -34,7 +36,7 @@ const AllRecipesPage = () => {
                 <Link to="pizza" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Pizza</Link>
                 <Link to="cocktails" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Drinks & Cocktails</Link>
                 <Link to="christmas" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Christmas</Link>
-                <Link to="other" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Other</Link>
+                <Link to="other-recipe" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Other</Link>
             </nav>
 
             <section>
@@ -46,11 +48,11 @@ const AllRecipesPage = () => {
                     <Route path="/meat" element={<MeatList/>}/>
                     <Route path="/vegan" element={<VeganList/>}/>
                     <Route path="/salad" element={<SaladList/>}/>
-                    <Route path="/dessert" element={<DesertList/>}/>
+                    <Route path="/dessert" element={<DessertList/>}/>
                     <Route path="/pizza" element={<PizzaList/>}/>
                     <Route path="/cocktails" element={<CocktailsList/>}/>
                     <Route path="/christmas" element={<ChristmasList/>}/>
-                    <Route path="/other" element={<OtherList/>}/>
+                    <Route path="/other-recipe" element={<Other/>}/>
                 </Routes>
             </section>
 
