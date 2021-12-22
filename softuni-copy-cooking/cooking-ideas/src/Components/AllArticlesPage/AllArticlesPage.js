@@ -12,7 +12,7 @@ const AllArticlesPage = () => {
         <section id="dashboard-page" className="dashboard">
             <h1>All Articles</h1>
 
-            <nav>
+            <nav style={{"text-align": "center"}}>
                 <Link to="all-articles-category" style={{"margin": "50px","font-size": "30px"}}>All</Link>
                 <Link to="fruit" style={{"margin": "50px","font-size": "30px"}}>Fruit</Link>
                 <Link to="vegetable" style={{"margin": "50px","font-size": "30px"}}>Vegetable</Link>

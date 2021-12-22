@@ -14,7 +14,7 @@ const AllRecipesPage = () => {
         <section id="dashboard-page" className="dashboard">
             <h1>All Recipes</h1>
 
-            <nav>
+            <nav style={{"text-align": "center"}}>
 
                 <Link to="all-recipes-category" style={{"margin": "50px","font-size": "30px"}}>All</Link>
                 <Link to="soup" style={{"margin": "50px","font-size": "30px"}}>Soup</Link>
