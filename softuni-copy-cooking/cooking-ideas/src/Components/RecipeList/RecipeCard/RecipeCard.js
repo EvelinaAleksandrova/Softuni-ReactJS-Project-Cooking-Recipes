@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import "../RecipeList.css";
 
 const RecipeCard = ({
      recipe
@@ -6,10 +7,10 @@ const RecipeCard = ({
     return (
         <li className="otherRecipe">
 
-            <h3>{recipe.name}</h3>
-            <p>{recipe.type}</p>
+            <h3 className="name-recipe">{recipe.name}</h3>
+            <p className="type-recipe">{recipe.type}</p>
             <p className="img"><img src={recipe.imageUrl}/></p>
-            <Link className="button" to={`/details-recipe/${recipe._id}`}>Details</Link>
+            <Link className="button-recipe" to={`/details-recipe/${recipe._id}`}>Details</Link>
         </li>
     )
 

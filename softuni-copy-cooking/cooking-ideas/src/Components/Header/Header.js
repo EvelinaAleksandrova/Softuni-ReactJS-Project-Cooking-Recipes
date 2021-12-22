@@ -38,7 +38,7 @@ const Header = () => {
         <header id="site-header">
             <nav className="navbar">
                 <section className="navbar-dashboard">
-                    <Link to="/home">Cooking Ideas</Link>
+                    <Link to="/home" style={{"font-size":"25px"}}>Cooking Ideas</Link>
                     {
                         user.email
                             ? userNavigation

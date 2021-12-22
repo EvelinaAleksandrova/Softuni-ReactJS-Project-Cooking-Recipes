@@ -6,10 +6,10 @@ const ArticleCard = ({
     return (
         <li className="otherRecipe">
 
-            <h3>{article.name}</h3>
-            <p>{article.type}</p>
+            <h3 className="name-article">{article.name}</h3>
+            <p className="type-article">{article.type}</p>
             <p className="img"><img src={article.imageUrl}/></p>
-            <Link className="button" to={`/details-article/${article._id}`}>Details</Link>
+            <Link className="button-article" to={`/details-article/${article._id}`}>Details</Link>
         </li>
     )
 

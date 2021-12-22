@@ -39,7 +39,7 @@ body {
     text-decoration: none;
     font-weight: bold;
     background: #9f2828;
-    color: rgb(255, 255, 255);
+    color: white;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -61,10 +61,11 @@ li {
 }
 
 .img {
-    width: 15rem;
+    width: 100%;
     position: relative;
     overflow: hidden;
     padding: 0rem;
+    border: 1px solid darkred;
 }
 
 img {
@@ -161,24 +162,24 @@ div.actions a {
     margin-bottom: 2rem;
 }
 
-footer {
-    margin-top: auto;
-    text-align: center;
-    background: #851f1f;
-}
+/*footer {*/
+/*    margin-top: auto;*/
+/*    text-align: center;*/
+/*    background: #851f1f;*/
+/*}*/
 
-footer p {
-    padding: 1rem 0;
-    font-weight: bold;
-    margin: 0rem;
-    color: white;
-}
+/*footer p {*/
+/*    padding: 1rem 0;*/
+/*    font-weight: bold;*/
+/*    margin: 0rem;*/
+/*    color: white;*/
+/*}*/
 
-.no-recipes {
-    font-weight: bold;
-    font-size: large;
-    text-align: center;
-}
+/*.no-recipes {*/
+/*    font-weight: bold;*/
+/*    font-size: large;*/
+/*    text-align: center;*/
+/*}*/
 
 textarea#description {
     height: 100px;
@@ -186,8 +187,9 @@ textarea#description {
 }
 .otherRecipe {
     align-items: inherit;
-    width: 24%;
+    width: 20%;
     margin-bottom: 15px;
     padding: 10px;
-    box-shadow: -8px -2px 28px -8px #000000;
+    box-shadow: -8px -2px 28px -8px #9f2828;
+    height: 50%;
 }

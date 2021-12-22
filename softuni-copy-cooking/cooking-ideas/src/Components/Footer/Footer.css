@@ -2,12 +2,19 @@
 footer {
     margin-top: auto;
     text-align: center;
-    background: #851f1f;
+    background: #d36161;
 }
 
 footer p {
     padding: 1rem 0;
     font-weight: bold;
     margin: 0rem;
-    color: white;
+    color: black;
+    font-size: 18px;
+}
+.more-info-contact-us {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 2em;
+    margin-bottom: 1em;
 }
