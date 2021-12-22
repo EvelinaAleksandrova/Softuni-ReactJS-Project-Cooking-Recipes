@@ -44,14 +44,13 @@ const DetailsRecipe = () => {
             <div className="recipe-information">
                 <h3>Name: {recipe.name}</h3>
                 <p className="type">Type: {recipe.type}</p>
-                <p className="img"><img src={recipe.imageUrl}/></p>
+                <p className="img-recipe-details"><img src={recipe.imageUrl}/></p>
                 <div className="actions">
 
                     {user._id && (user._id === recipe._ownerId
                             ? ownerButtons
                             : userButtons
-                    )
-                    }
+                    )}
 
                     <div className="likes">
                         <img className="hearts" src="/images/heart.png"/>
@@ -61,8 +60,12 @@ const DetailsRecipe = () => {
                 </div>
             </div>
             <div className="recipe-description">
-                <h3>Description:</h3>
-                <p>{recipe.description}</p>
+                <h3 style={{"font-size" : "25px"}}>Products</h3>
+                <p style={{"font-size":"18px"}}>{recipe.ingredients}</p>
+            </div>
+            <div className="recipe-description">
+                <h3 style={{"font-size" : "25px"}}>Description</h3>
+                <p style={{"font-size":"18px"}}>{recipe.description}</p>
             </div>
         </section>
     );
