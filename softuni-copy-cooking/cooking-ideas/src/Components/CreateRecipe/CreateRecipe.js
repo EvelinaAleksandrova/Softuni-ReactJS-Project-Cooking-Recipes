@@ -17,11 +17,13 @@ const CreateRecipe = () => {
         let imageUrl = formData.get('imageUrl');
         let type = formData.get('type');
         let difficulty = formData.get('difficulty');
+        let timeCooking = formData.get('timeCooking');
 
         recipesService.create({
             name,
             ingredients,
             description,
+            timeCooking,
             imageUrl,
             type,
             difficulty
@@ -40,8 +42,7 @@ const CreateRecipe = () => {
                     <p className="field">
                         <label htmlFor="name">Name</label>
                         <span className="input">
-                            <input type="text" name="name" id="name" placeholder="Name" required
-                                   />
+                            <input type="text" name="name" id="name" placeholder="Name" required/>
                         </span>
                     </p>
                     <p className="field">
@@ -54,6 +55,12 @@ const CreateRecipe = () => {
                         <label htmlFor="description">Description</label>
                         <span className="input">
                             <textarea name="description" id="description" placeholder="Description" required/>
+                        </span>
+                    </p>
+                    <p className="field">
+                        <label htmlFor="timeCooking">Preparation time (minutes)</label>
+                        <span className="input">
+                            <input type="text" name="timeCooking" id="timeCooking" placeholder="Preparation Time" required/>
                         </span>
                     </p>
                     <p className="field">

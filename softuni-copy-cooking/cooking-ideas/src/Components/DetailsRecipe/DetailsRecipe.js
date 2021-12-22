@@ -45,6 +45,7 @@ const DetailsRecipe = () => {
                 <h3>Name: {recipe.name}</h3>
                 <p className="type">Type: {recipe.type}</p>
                 <p style={{"font-weight":"bold"}}>Difficulty: {recipe.difficulty}</p>
+                <p style={{"font-weight":"bold"}}>Preparation time (minutes): {recipe.timeCooking}</p>
                 <p className="img-recipe-details"><img src={recipe.imageUrl}/></p>
                 <div className="actions">
 
