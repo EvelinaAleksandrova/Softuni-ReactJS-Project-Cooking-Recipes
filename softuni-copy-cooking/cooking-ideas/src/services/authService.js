@@ -29,7 +29,13 @@ export const register = (email, password) => {
 };
 
 
-export const logout = () => fetch('http://localhost:3030/users/logout');
+export const logout = (token) =>{
+    return fetch('http://localhost:3030/users/logout',{
+        headers:{
+            'X-Authorization' :token,
+        }
+    })
+}
 
 
 export const getUser = () => {

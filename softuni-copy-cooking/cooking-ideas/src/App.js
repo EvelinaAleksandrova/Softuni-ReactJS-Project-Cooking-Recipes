@@ -17,25 +17,29 @@ import AllArticlesPage from "./Components/AllArticlesPage/AllArticlesPage";
 import AllRecipesPage from "./Components/AllRecipesPage/AllRecipesPage";
 import DetailsArticle from "./Components/DetailsArticle/DetailsArticle";
 
+
+const initialAuthState = {
+    _id: "",
+    email: "",
+    accessToken: ""
+}
+
+
 function App() {
-    const [user, setUser] = useLocalStorage('user',{
-        _id: "",
-        email: "",
-        accessToken: ""
-    });
+    const [user, setUser] = useLocalStorage('user', initialAuthState);
 
     const login = (authData) => {
         setUser(authData);
     };
 
-    const onLogout = () => {
-
+    const logout = () => {
+        setUser(initialAuthState);
     };
 
     return (
-        <AuthContext.Provider value={{user,login}}>
+        <AuthContext.Provider value={{user, login, logout}}>
             <div id="container">
-                <Header />
+                <Header/>
                 <Routes>
                     <Route path="/" element={<HomePage/>}/>
                 </Routes>
