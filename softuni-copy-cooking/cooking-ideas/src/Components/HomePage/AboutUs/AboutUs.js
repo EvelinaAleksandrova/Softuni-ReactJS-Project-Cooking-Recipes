@@ -12,9 +12,9 @@ const AboutUs = () => {
 
             <div className="about-section">
                 <p className="p-about-us">About Us Page</p>
-                <h5>We love cooking, eating, and connecting with people from around the world.</h5>
-                <h5>Take a look through thousands of recipes on our website,
-                    where you’ll also find all the information you need about your favourite food.</h5>
+                <h3>We love cooking, eating, and connecting with people from around the world.</h3>
+                <h3>Take a look through thousands of recipes on our website,
+                    where you’ll also find all the information you need about your favourite food.</h3>
             </div>
         </>
     );

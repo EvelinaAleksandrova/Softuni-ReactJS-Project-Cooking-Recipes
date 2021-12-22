@@ -8,7 +8,7 @@ const Team = () => {
                     <img className="image-team"
                          src="https://t4.ftcdn.net/jpg/03/30/25/97/360_F_330259751_tGPEAq5F5bjxkkliGrb97X2HhtXBDc9x.jpg"
                          alt=""/>
-                    <h5>Olivia Williams</h5>
+                    <h3>Olivia Williams</h3>
                     <p className="profession">CEO & Founder</p>
                     <p className="p-card-info">Contact Info</p>
                     <p><b>email:</b> olivia.williams@gmail.com</p>
@@ -19,7 +19,7 @@ const Team = () => {
                     <img className="image-team"
                          src="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
                          alt=""/>
-                    <h5>James Johnson</h5>
+                    <h3>James Johnson</h3>
                     <p className="profession">Moderator</p>
                     <p className="p-card-info">Contact Info</p>
                     <p><b>email:</b> james.johnson@gmail.com</p>
@@ -30,7 +30,7 @@ const Team = () => {
                     <img className="image-team"
                          src="https://image.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg"
                          alt=""/>
-                    <h5>Emma Miller</h5>
+                    <h3>Emma Miller</h3>
                     <p className="profession">Designer</p>
                     <p className="p-card-info">Contact Info</p>
                     <p><b>email:</b> emma.miller@gmail.com</p>
