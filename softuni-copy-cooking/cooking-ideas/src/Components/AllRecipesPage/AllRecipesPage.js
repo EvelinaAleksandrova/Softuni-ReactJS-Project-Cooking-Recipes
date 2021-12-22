@@ -10,15 +10,7 @@ import PizzaList from "../RecipeList/PizzaList";
 import SaladList from "../RecipeList/SaladList";
 import DessertList from "../RecipeList/DessertList";
 import Other from "../RecipeList/Other";
-
-
-function DesertList() {
-    return null;
-}
-
-function OtherList() {
-    return null;
-}
+import "./AllRecipes.css";
 
 const AllRecipesPage = () => {
 
@@ -27,20 +19,19 @@ const AllRecipesPage = () => {
             <h1>All Recipes</h1>
 
             <nav className="nav-all-recipes" style={{"text-align": "center"}}>
-                <Link to="all-recipes-category" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>All</Link>
-                <Link to="soup" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Soup</Link>
-                <Link to="meat" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Meat</Link>
-                <Link to="vegan" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Vegan</Link>
-                <Link to="salad" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Salads</Link>
-                <Link to="dessert" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Desserts</Link>
-                <Link to="pizza" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Pizza</Link>
-                <Link to="cocktails" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Drinks & Cocktails</Link>
-                <Link to="christmas" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Christmas</Link>
-                <Link to="other-recipe" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Other</Link>
+                <Link to="all-recipes-category" className="link-style-recipe">All</Link>
+                <Link to="soup" className="link-style-recipe">Soup</Link>
+                <Link to="meat" className="link-style-recipe">Meat</Link>
+                <Link to="vegan" className="link-style-recipe">Vegan</Link>
+                <Link to="salad" className="link-style-recipe">Salads</Link>
+                <Link to="dessert" className="link-style-recipe">Desserts</Link>
+                <Link to="pizza" className="link-style-recipe">Pizza</Link>
+                <Link to="cocktails" className="link-style-recipe">Drinks & Cocktails</Link>
+                <Link to="christmas" className="link-style-recipe">Christmas</Link>
+                <Link to="other-recipe" className="link-style-recipe">Other</Link>
             </nav>
 
             <section>
-
                 <Routes>
                     <Route path="/" element={<RecipeList/>}/>
                     <Route path="/all-recipes-category" element={<AllRecipeCategory/>}/>

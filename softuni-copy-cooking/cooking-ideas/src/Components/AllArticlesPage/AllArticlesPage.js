@@ -5,7 +5,7 @@ import Vegetable from "../ArticlesList/Vegetable";
 import Herbs from "../ArticlesList/Herbs";
 import AllArticlesCategory from "../ArticlesList/AllArticlesCategory";
 import OtherArticle from "../ArticlesList/OtherArticle";
-
+import "./AllArticles.css";
 
 const AllArticlesPage = () => {
 
@@ -14,11 +14,11 @@ const AllArticlesPage = () => {
             <h1>All Articles</h1>
 
             <nav style={{"text-align": "center"}}>
-                <Link to="all-articles-category" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>All</Link>
-                <Link to="fruit" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>Fruit</Link>
-                <Link to="vegetable" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>Vegetable</Link>
-                <Link to="herbs" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>Herbs</Link>
-                <Link to="other-article" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>Other</Link>
+                <Link to="all-articles-category" className="link-style-article">All</Link>
+                <Link to="fruit" className="link-style-article">Fruit</Link>
+                <Link to="vegetable" className="link-style-article">Vegetable</Link>
+                <Link to="herbs" className="link-style-article">Herbs</Link>
+                <Link to="other-article" className="link-style-article">Other</Link>
             </nav>
 
             <section>

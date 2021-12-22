@@ -33,7 +33,7 @@ const CreateRecipe = () => {
         <section id="create-page" className="create">
             <form id="create-form" onSubmit={onRecipeCreate} method="POST">
                 <fieldset>
-                    <legend style={{"text-align": "center","width":"94%"}}>Add new Recipe</legend>
+                    <legend style={{"text-align": "center","width":"94%", "font-size":"20px"}}>Add new Recipe</legend>
 
                     <p className="field">
                         <label htmlFor="name">Name</label>
