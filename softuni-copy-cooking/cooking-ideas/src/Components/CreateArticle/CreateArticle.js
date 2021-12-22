@@ -32,7 +32,7 @@ const CreateArticle = () => {
         <section id="create-page" className="create">
             <form id="create-form" onSubmit={onArticleCreate} method="POST">
                 <fieldset>
-                    <legend>Add new Article</legend>
+                    <legend style={{"text-align": "center","width":"94%"}}>Add new Article</legend>
                     <p className="field">
                         <label htmlFor="name">Name</label>
                         <span className="input">
@@ -62,7 +62,7 @@ const CreateArticle = () => {
                             </select>
                         </span>
                     </p>
-                    <input className="button submit" type="submit" value="Add Article"/>
+                    <input className="button submit" type="submit" value="Add Article" style={{"background":"#d36161"}}/>
                 </fieldset>
             </form>
         </section>

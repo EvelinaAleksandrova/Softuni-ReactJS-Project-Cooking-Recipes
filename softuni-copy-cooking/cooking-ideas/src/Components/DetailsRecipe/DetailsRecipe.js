@@ -28,14 +28,14 @@ const DetailsRecipe = () => {
 
     const ownerButtons = (
         <>
-            <Link className="button" to="/edit">Edit</Link>
-            <a className="button" href="#" onClick={deleteHandler}>Delete</a>
+            <Link className="button" to="/edit" style={{"background":"#d36161"}}>Edit</Link>
+            <a className="button" href="#" onClick={deleteHandler} style={{"background":"#d36161"}}>Delete</a>
         </>
     );
 
     const userButtons = (
         <>
-            <a className="button" href="#">Like</a>
+            <a className="button" href="#" style={{"background":"#d36161"}}>Like</a>
         </>
     )
 

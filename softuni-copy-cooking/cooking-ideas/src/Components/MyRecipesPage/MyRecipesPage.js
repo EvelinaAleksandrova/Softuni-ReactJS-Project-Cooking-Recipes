@@ -8,7 +8,7 @@ const MyRecipesPage = () => {
                     <h3>Name: Beans</h3>
                     <p>Type: soup</p>
                     <p className="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSKwII1nYEGyx7gw0scSD0xmPYBXs-xW2ltw&usqp=CAU"/></p>
-                    <a className="button" href="#">Details</a>
+                    <a className="button" href="#" style={{"background":"#d36161"}}>Details</a>
                 </li>
             </ul>
 

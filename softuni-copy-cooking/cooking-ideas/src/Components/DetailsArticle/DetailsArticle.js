@@ -26,8 +26,8 @@ const DetailsArticle = () => {
     }
     const ownerButtons = (
         <>
-            <Link className="button" to="/edit">Edit</Link>
-            <a className="button" href="#" onClick={deleteHandler}>Delete</a>
+            <Link className="button" to="/edit" style={{"background":"#d36161"}}>Edit</Link>
+            <a className="button" href="#" onClick={deleteHandler} style={{"background":"#d36161"}}>Delete</a>
         </>
     );
 
@@ -42,7 +42,7 @@ const DetailsArticle = () => {
             <div className="article-information">
                 <h3>Name: {article.name}</h3>
                 <p className="type">Type: {article.type}</p>
-                <p className="img"><img src={article.imageUrl}/></p>
+                <p className="img-article-details"><img src={article.imageUrl}/></p>
                 <div className="actions">
                     {user._id && (user._id === article._ownerId
                             ? ownerButtons
