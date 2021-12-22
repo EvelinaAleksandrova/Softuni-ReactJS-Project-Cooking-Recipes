@@ -48,7 +48,7 @@ const DetailsArticle = () => {
 
     return (
         <>
-            <ConfirmDialog show={showDeleteDialog} onClose={()=>setShowDeleteDialog(false)}/>
+            <ConfirmDialog show={showDeleteDialog} onClose={()=>setShowDeleteDialog(false)} onSave={deleteHandler}/>
             <section id="details-page" className="details">
                 <div className="article-information">
                     <h3 style={{"margin-bottom": "12px"}}>Name: {article.name}</h3>
