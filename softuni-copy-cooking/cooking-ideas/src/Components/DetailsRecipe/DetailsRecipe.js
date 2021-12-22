@@ -3,7 +3,7 @@ import * as recipesService from '../../services/recipesService';
 import {useState, useEffect} from "react";
 import "./DetailsRecipe.css";
 import {useAuthContext} from "../../contexts/AuthContext";
-import ConfirmDialog from '../Common/ConfirmDialog';
+import ConfirmDialog from '../../Common/ConfirmDialog';
 
 const DetailsRecipe = () => {
     const navigate = useNavigate();

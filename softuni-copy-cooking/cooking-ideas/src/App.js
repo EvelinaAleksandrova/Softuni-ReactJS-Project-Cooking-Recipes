@@ -21,7 +21,7 @@ import AllRecipesPage from "./Components/AllRecipesPage/AllRecipesPage";
 import DetailsArticle from "./Components/DetailsArticle/DetailsArticle";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import ErrorBoundary from "./Components/Common/ErrorBoundary";
+import ErrorBoundary from "./Common/ErrorBoundary";
 
 function App() {
     return (
