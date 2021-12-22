@@ -15,6 +15,7 @@ import MyArticlesPage from "./Components/MyArticlesPage/MyArticlesPage";
 import CreateArticle from "./Components/CreateArticle/CreateArticle";
 import AllArticlesPage from "./Components/AllArticlesPage/AllArticlesPage";
 import AllRecipesPage from "./Components/AllRecipesPage/AllRecipesPage";
+import DetailsArticle from "./Components/DetailsArticle/DetailsArticle";
 
 function App() {
     const [user, setUser] = useLocalStorage('user',{
@@ -51,7 +52,8 @@ function App() {
                         <Route path="/my-articles" element={<MyArticlesPage/>}/>
                         <Route path="/create" element={<CreateRecipe/>}/>
                         <Route path="/create-article" element={<CreateArticle/>}/>
-                        <Route path="/details/:recipeId" element={<DetailsRecipe/>}/>
+                        <Route path="/details-recipe/:recipeId" element={<DetailsRecipe/>}/>
+                        <Route path="/details-article/:articleId" element={<DetailsArticle/>}/>
                     </Routes>
                 </main>
                 <Footer/>

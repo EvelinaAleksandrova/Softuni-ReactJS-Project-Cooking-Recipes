@@ -11,16 +11,16 @@ const DetailsArticle = () => {
     const {articleId} = useParams();
 
     useEffect(() => {
-         articlesService.getOne(articleId)
-             .then(articleResult=>{
-                 setArticle(articleResult);
-             })
+        articlesService.getOne(articleId)
+            .then(articleResult => {
+                setArticle(articleResult);
+            })
 
     }, [articleId]);
 
     const deleteHandler = (e) => {
         e.preventDefault();
-        articlesService.removeArticle(articleId,user.accessToken).then(res=>{
+        articlesService.removeArticle(articleId, user.accessToken).then(res => {
             navigate('/all-articles');
         })
     }
@@ -46,7 +46,7 @@ const DetailsArticle = () => {
                 <div className="actions">
                     {user._id && (user._id === article._ownerId
                             ? ownerButtons
-                            :  userButtons
+                            : userButtons
                     )
                     }
 

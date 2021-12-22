@@ -1,6 +1,6 @@
-import {useParams,useNavigate,Link} from "react-router-dom";
+import {useParams, useNavigate, Link} from "react-router-dom";
 import * as recipesService from '../../services/recipesService';
-import {useState, useEffect,useContext} from "react";
+import {useState, useEffect, useContext} from "react";
 import "./DetailsRecipe.css";
 import {AuthContext} from "../../contexts/AuthContext";
 
@@ -13,7 +13,7 @@ const DetailsRecipe = () => {
 
     useEffect(() => {
         recipesService.getOne(recipeId)
-            .then(recipeResult=>{
+            .then(recipeResult => {
                 setRecipe(recipeResult);
             })
 
@@ -21,7 +21,7 @@ const DetailsRecipe = () => {
 
     const deleteHandler = (e) => {
         e.preventDefault();
-        recipesService.removeRecipe(recipeId).then(res=>{
+        recipesService.removeRecipe(recipeId, user.accessToken).then(res => {
             navigate('/all-recipes');
         })
     }
@@ -48,8 +48,8 @@ const DetailsRecipe = () => {
                 <div className="actions">
 
                     {user._id && (user._id === recipe._ownerId
-                            ?ownerButtons
-                            :  userButtons
+                            ? ownerButtons
+                            : userButtons
                     )
                     }
 

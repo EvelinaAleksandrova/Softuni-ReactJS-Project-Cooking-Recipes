@@ -9,7 +9,7 @@ const RecipeCard = ({
             <h3>{recipe.name}</h3>
             <p>{recipe.type}</p>
             <p className="img"><img src={recipe.imageUrl}/></p>
-            <Link className="button" to={`/details/${recipe._id}`}>Details</Link>
+            <Link className="button" to={`/details-recipe/${recipe._id}`}>Details</Link>
         </li>
     )
 

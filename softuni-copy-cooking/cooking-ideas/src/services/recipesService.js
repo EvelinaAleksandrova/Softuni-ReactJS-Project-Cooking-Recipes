@@ -26,10 +26,10 @@ export const create = async (recipeData, token) => {
     return result;
 };
 
-export const removeRecipe = (recipeId,token) => {
-    return fetch(`${baseUrl}/recipes/${recipeId}`,{
+export const removeRecipe = (recipeId, token) => {
+    return fetch(`${baseUrl}/recipes/${recipeId}`, {
         method: "DELETE",
-        headers:{
+        headers: {
             'X-Authorization': token
         }
     })

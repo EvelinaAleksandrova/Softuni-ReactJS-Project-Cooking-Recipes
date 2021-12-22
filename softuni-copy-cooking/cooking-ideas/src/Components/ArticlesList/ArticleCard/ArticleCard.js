@@ -9,7 +9,7 @@ const ArticleCard = ({
             <h3>{article.name}</h3>
             <p>{article.type}</p>
             <p className="img"><img src={article.imageUrl}/></p>
-            <Link className="button" to={`/details/${article._id}`}>Details</Link>
+            <Link className="button" to={`/details-article/${article._id}`}>Details</Link>
         </li>
     )
 
