@@ -20,12 +20,11 @@ import AllArticlesPage from "./Components/AllArticlesPage/AllArticlesPage";
 import AllRecipesPage from "./Components/AllRecipesPage/AllRecipesPage";
 import DetailsArticle from "./Components/DetailsArticle/DetailsArticle";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import ErrorBoundary from "./Common/ErrorBoundary";
+import ErrorBoundaries from "./Components/CommonDirectory/ErrorBoundaries";
 
 function App() {
     return (
-        <ErrorBoundary>
+        <ErrorBoundaries>
             <AuthProvider>
                 <div id="container">
                     <Header/>
@@ -51,7 +50,7 @@ function App() {
                     <Footer/>
                 </div>
             </AuthProvider>
-        </ErrorBoundary>
+        </ErrorBoundaries>
     );
 }
 

@@ -3,7 +3,7 @@ import * as articlesService from '../../services/articlesService';
 import {useState, useEffect} from "react";
 import "./DetailsArticle.css";
 import {useAuthContext} from "../../contexts/AuthContext";
-import ConfirmDialog from '../../Common/ConfirmDialog';
+import ConfirmDialog from '../../Components/CommonDirectory/ConfirmDialog';
 
 const DetailsArticle = () => {
     const navigate = useNavigate();
