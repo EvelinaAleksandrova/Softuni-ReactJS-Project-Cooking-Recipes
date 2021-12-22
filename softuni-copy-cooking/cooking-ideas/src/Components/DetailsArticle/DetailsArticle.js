@@ -23,9 +23,13 @@ const DetailsArticle = () => {
 
     const deleteHandler = (e) => {
         e.preventDefault();
-        articlesService.removeArticle(articleId, user.accessToken).then(res => {
-            navigate('/all-articles');
-        })
+        articlesService.removeArticle(articleId, user.accessToken)
+            .then(() => {
+                navigate('/all-articles');
+            })
+            .finally(() => {
+                setShowDeleteDialog(false);
+            });
     }
 
     const deleteClickHandler = (e) => {
@@ -48,7 +52,7 @@ const DetailsArticle = () => {
 
     return (
         <>
-            <ConfirmDialog show={showDeleteDialog} onClose={()=>setShowDeleteDialog(false)} onSave={deleteHandler}/>
+            <ConfirmDialog show={showDeleteDialog} onClose={() => setShowDeleteDialog(false)} onSave={deleteHandler}/>
             <section id="details-page" className="details">
                 <div className="article-information">
                     <h3 style={{"margin-bottom": "12px"}}>Name: {article.name}</h3>

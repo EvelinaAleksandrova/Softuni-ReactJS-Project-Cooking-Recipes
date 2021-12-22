@@ -22,9 +22,15 @@ const DetailsRecipe = () => {
 
     const deleteHandler = (e) => {
         e.preventDefault();
-        recipesService.removeRecipe(recipeId, user.accessToken).then(res => {
-            navigate('/all-recipes');
-        })
+        recipesService.removeRecipe(recipeId, user.accessToken)
+            .then(()=> {
+                navigate('/all-recipes');
+            })
+            .finally(()=>{
+                setShowDeleteDialog(false);
+            });
+
+
     }
     const deleteClickHandler = (e) => {
         e.preventDefault();
@@ -46,7 +52,7 @@ const DetailsRecipe = () => {
 
     return (
         <>
-            <ConfirmDialog show={showDeleteDialog} onClose={()=>setShowDeleteDialog(false)} onSave={deleteHandler}/>
+            <ConfirmDialog show={showDeleteDialog} onClose={() => setShowDeleteDialog(false)} onSave={deleteHandler}/>
             <section id="details-page" className="details">
                 <div className="recipe-information">
                     <h3 style={{"padding-bottom": "15px"}}>Name: {recipe.name}</h3>
