@@ -46,7 +46,7 @@ const DetailsRecipe = () => {
 
     return (
         <>
-            <ConfirmDialog show={showDeleteDialog} onClose={()=>setShowDeleteDialog(false)}/>
+            <ConfirmDialog show={showDeleteDialog} onClose={()=>setShowDeleteDialog(false)} onSave={deleteHandler}/>
             <section id="details-page" className="details">
                 <div className="recipe-information">
                     <h3 style={{"padding-bottom": "15px"}}>Name: {recipe.name}</h3>
