@@ -13,10 +13,10 @@ const AllArticlesPage = () => {
             <h1>All Articles</h1>
 
             <nav style={{"text-align": "center"}}>
-                <Link to="all-articles-category" style={{"margin": "50px","font-size": "30px"}}>All</Link>
-                <Link to="fruit" style={{"margin": "50px","font-size": "30px"}}>Fruit</Link>
-                <Link to="vegetable" style={{"margin": "50px","font-size": "30px"}}>Vegetable</Link>
-                <Link to="herbs" style={{"margin": "50px","font-size": "30px"}}>Herbs</Link>
+                <Link to="all-articles-category" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>All</Link>
+                <Link to="fruit" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>Fruit</Link>
+                <Link to="vegetable" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>Vegetable</Link>
+                <Link to="herbs" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>Herbs</Link>
             </nav>
 
             <section>

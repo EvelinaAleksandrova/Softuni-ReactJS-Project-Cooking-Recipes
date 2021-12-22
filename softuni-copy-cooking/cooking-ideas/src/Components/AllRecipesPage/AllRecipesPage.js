@@ -14,13 +14,13 @@ const AllRecipesPage = () => {
         <section id="dashboard-page" className="dashboard">
             <h1>All Recipes</h1>
 
-            <nav style={{"text-align": "center"}}>
-                <Link to="all-recipes-category" style={{"margin": "50px","font-size": "30px"}}>All</Link>
-                <Link to="soup" style={{"margin": "50px","font-size": "30px"}}>Soup</Link>
-                <Link to="meat" style={{"margin": "50px","font-size": "30px"}}>Meat</Link>
-                <Link to="vegan" style={{"margin": "50px","font-size": "30px"}}>Vegan</Link>
-                <Link to="cocktails" style={{"margin": "50px","font-size": "30px"}}>Drinks & Cocktails</Link>
-                <Link to="christmas" style={{"margin": "50px","font-size": "30px"}}>Christmas</Link>
+            <nav className="nav-all-recipes" style={{"text-align": "center"}}>
+                <Link to="all-recipes-category" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>All</Link>
+                <Link to="soup" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Soup</Link>
+                <Link to="meat" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Meat</Link>
+                <Link to="vegan" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Vegan</Link>
+                <Link to="cocktails" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Drinks & Cocktails</Link>
+                <Link to="christmas" style={{"margin": "30px","font-size": "25px","color":"darkred"}}>Christmas</Link>
             </nav>
 
             <section>
