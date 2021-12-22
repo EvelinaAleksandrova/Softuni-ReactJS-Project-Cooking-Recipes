@@ -1,6 +1,7 @@
 import RecipeCard from "./RecipeCard/RecipeCard";
 import {useEffect, useState} from "react";
 import * as recipesService from "../../services/recipesService";
+import "./RecipeList.css";
 
 const AllRecipeCategory = () => {
 
@@ -23,7 +24,7 @@ const AllRecipeCategory = () => {
                             }
                         </ul>
                     )
-                    : <p className="no-recipes">No recipes in database!</p>
+                    : <p className="no-recipes">No recipes yet!</p>
             }
         </>
     )

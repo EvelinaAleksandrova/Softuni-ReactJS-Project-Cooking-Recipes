@@ -1,6 +1,7 @@
 import RecipeCard from "./RecipeCard/RecipeCard";
 import {useEffect, useState} from "react";
 import * as recipesService from "../../services/recipesService";
+import "./RecipeList.css";
 
 const VeganList = () => {
 
@@ -15,7 +16,7 @@ const VeganList = () => {
     return (
         <>
             {
-                recipe.length > 0
+                 recipe.filter(recipe => recipe.type === 'vegan') > 0
                     ? (
                         <ul className="other-recipes-list">
                             {
@@ -23,7 +24,7 @@ const VeganList = () => {
                             }
                         </ul>
                     )
-                    : <p className="no-recipes">No vegan recipes in database!</p>
+                    : <p className="no-recipes">No vegan recipes yet!</p>
             }
         </>
     )

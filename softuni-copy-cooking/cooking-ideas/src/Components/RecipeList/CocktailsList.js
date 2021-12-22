@@ -1,6 +1,7 @@
 import RecipeCard from "./RecipeCard/RecipeCard";
 import {useEffect, useState} from "react";
 import * as recipesService from "../../services/recipesService";
+import "./RecipeList.css";
 
 const CocktailsList = () => {
 
@@ -15,7 +16,8 @@ const CocktailsList = () => {
     return (
         <>
             {
-                recipe.length > 0
+                recipe.filter(recipe => recipe.type === 'drinks/cocktails') > 0
+                // recipe.length > 0
                     ? (
                         <ul className="other-recipes-list">
                             {
@@ -23,7 +25,7 @@ const CocktailsList = () => {
                             }
                         </ul>
                     )
-                    : <p className="no-recipes">No recipes for drinks and cocktails in database!</p>
+                    : <p className="no-recipes" >No recipes for drinks and cocktails yet!</p>
             }
         </>
     )

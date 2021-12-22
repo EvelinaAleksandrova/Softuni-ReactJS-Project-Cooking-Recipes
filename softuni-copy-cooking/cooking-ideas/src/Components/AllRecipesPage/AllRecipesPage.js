@@ -15,7 +15,6 @@ const AllRecipesPage = () => {
             <h1>All Recipes</h1>
 
             <nav style={{"text-align": "center"}}>
-
                 <Link to="all-recipes-category" style={{"margin": "50px","font-size": "30px"}}>All</Link>
                 <Link to="soup" style={{"margin": "50px","font-size": "30px"}}>Soup</Link>
                 <Link to="meat" style={{"margin": "50px","font-size": "30px"}}>Meat</Link>
