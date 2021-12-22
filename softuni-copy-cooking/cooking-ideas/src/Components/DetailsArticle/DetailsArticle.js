@@ -4,6 +4,8 @@ import {useState, useEffect} from "react";
 import "./DetailsArticle.css";
 import {useAuthContext} from "../../contexts/AuthContext";
 import ConfirmDialog from '../../Components/CommonDirectory/ConfirmDialog';
+import {Button} from "react-bootstrap";
+
 
 const DetailsArticle = () => {
     const navigate = useNavigate();
@@ -36,6 +38,23 @@ const DetailsArticle = () => {
         setShowDeleteDialog(true);
     }
 
+    const likeButtonClick = () => {
+        if(article.likes.includes(user._id)){
+            console.log("User already liked article!");
+            return;
+        }
+
+        let likes = [...article.likes,user._id]
+
+        articlesService.likeArticle(article._id, user._id)
+            .then(()=> {
+                setArticle(state => ({
+                    ...state,
+                    // likes: likeCountArticle,
+                }))
+            })
+    }
+
     const ownerButtons = (
         <>
             <Link className="button" to="/edit" style={{"background": "#d36161"}}>Edit</Link>
@@ -45,7 +64,7 @@ const DetailsArticle = () => {
 
     const userButtons = (
         <>
-            <a className="button" href="#">Like</a>
+            <Button className="button" onClick={likeButtonClick}>Like</Button>
         </>
     )
 

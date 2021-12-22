@@ -45,6 +45,7 @@ body {
     cursor: pointer;
     text-align: center;
     margin-right: 10px;
+    /*padding-bottom: 30px;*/
 }
 /*.button:hover {*/
 
@@ -147,7 +148,7 @@ div.actions {
 }
 div.actions a {
     margin-right: 10px;
-    height: 25px;
+    /*height: 25px;*/
 }
 
 .deleteRecipe>form,

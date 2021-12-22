@@ -3,7 +3,9 @@ import * as recipesService from '../../services/recipesService';
 import {useState, useEffect} from "react";
 import "./DetailsRecipe.css";
 import {useAuthContext} from "../../contexts/AuthContext";
+
 import ConfirmDialog from '../../Components/CommonDirectory/ConfirmDialog';
+import {Button} from "react-bootstrap";
 
 const DetailsRecipe = () => {
     const navigate = useNavigate();
@@ -23,10 +25,10 @@ const DetailsRecipe = () => {
     const deleteHandler = (e) => {
         e.preventDefault();
         recipesService.removeRecipe(recipeId, user.accessToken)
-            .then(()=> {
+            .then(() => {
                 navigate('/all-recipes');
             })
-            .finally(()=>{
+            .finally(() => {
                 setShowDeleteDialog(false);
             });
 
@@ -35,6 +37,22 @@ const DetailsRecipe = () => {
     const deleteClickHandler = (e) => {
         e.preventDefault();
         setShowDeleteDialog(true);
+    }
+
+    const likeButtonClick = () => {
+        if(recipe.likes.includes(user._id)){
+            console.log("User already liked recipe!");
+            return;
+        }
+
+        let likes = [...recipe.likes, user._id]
+        recipesService.likeRecipe(recipe._id, user._id)
+            .then(() => {
+                setRecipe(state => ({
+                    ...state,
+                    // likes: likeCountRecipe,
+                }))
+            })
     }
 
     const ownerButtons = (
@@ -46,7 +64,7 @@ const DetailsRecipe = () => {
 
     const userButtons = (
         <>
-            <a className="button" id="deleteRecipeNow" href="#" style={{"background": "#d36161"}}>Like</a>
+            <Button className="button" onClick={likeButtonClick}>Like</Button>
         </>
     )
 

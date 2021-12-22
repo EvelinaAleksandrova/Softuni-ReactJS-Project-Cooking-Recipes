@@ -37,3 +37,15 @@ export const getOne = (articleId) => {
     return fetch(`${baseUrl}/articles/${articleId}`)
         .then(result => result.json())
 };
+export const likeArticle = (articleId, userId,token) => {
+    return fetch(`${baseUrl}/articles/${articleId}`, {
+        method: 'PATCH',
+        headers: {
+            'content-type': 'application/json',
+            'X-Authorization': token
+        },
+        body: JSON.stringify({
+
+        })
+    })
+}

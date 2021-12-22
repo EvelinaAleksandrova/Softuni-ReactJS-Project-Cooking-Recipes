@@ -7,13 +7,13 @@ import {request} from "./request";
 const baseUrl = 'http://localhost:3030/data';
 
 export const getAll = () => {
-    let result  =  request(`${baseUrl}/recipes`);
+    let result = request(`${baseUrl}/recipes`);
 
     return result;
 
 }
 
-export const getMyRecipes = (ownerId) =>{
+export const getMyRecipes = (ownerId) => {
     let query = encodeURIComponent(`_ownerId="${ownerId}"`);
 
     return request.get(`${baseUrl}/recipes?where=${query}`);
@@ -45,3 +45,16 @@ export const getOne = (recipeId) => {
     return fetch(`${baseUrl}/recipes/${recipeId}`)
         .then(result => result.json())
 };
+
+export const likeRecipe = (recipeId, userId, token) => {
+    return fetch(`${baseUrl}/recipes/${recipeId}`, {
+        method: 'PATCH',
+        headers: {
+            'content-type': 'application/json',
+            'X-Authorization': token
+        },
+        body: JSON.stringify({
+
+        })
+    })
+}
