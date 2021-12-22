@@ -19,6 +19,7 @@ import CreateArticle from "./Components/CreateArticle/CreateArticle";
 import AllArticlesPage from "./Components/AllArticlesPage/AllArticlesPage";
 import AllRecipesPage from "./Components/AllRecipesPage/AllRecipesPage";
 import DetailsArticle from "./Components/DetailsArticle/DetailsArticle";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     return (
