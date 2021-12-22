@@ -64,7 +64,6 @@ const DetailsArticle = () => {
                                 : userButtons
                         )
                         }
-
                         <div className="likes">
                             <img style={{"margin-top": "8px"}} className="hearts" src="/images/heart.png"/>
                             <span id="total-likes">Likes: {article.likes?.length}</span>
