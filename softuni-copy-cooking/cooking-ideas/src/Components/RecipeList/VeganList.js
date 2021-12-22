@@ -16,7 +16,7 @@ const VeganList = () => {
     return (
         <>
             {
-                 recipe.filter(recipe => recipe.type === 'vegan') > 0
+                 recipe.filter(recipe => recipe.type === 'vegan').length > 0
                     ? (
                         <ul className="other-recipes-list">
                             {

@@ -1,6 +1,7 @@
 import ArticleCard from "./ArticleCard/ArticleCard";
 import {useEffect, useState} from "react";
 import * as articlesService from '../../services/articlesService';
+import "./ArticleList.css";
 
 const AllArticlesCategory = () => {
 
@@ -23,7 +24,7 @@ const AllArticlesCategory = () => {
                             }
                         </ul>
                     )
-                    : <p className="no-recipes">No articles in database!</p>
+                    : <p className="no-articles">No articles yet!</p>
             }
         </>
     )

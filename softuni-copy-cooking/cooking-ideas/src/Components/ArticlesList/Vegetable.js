@@ -1,6 +1,7 @@
 import ArticleCard from "./ArticleCard/ArticleCard";
 import {useEffect, useState} from "react";
 import * as articlesService from '../../services/articlesService';
+import "./ArticleList.css";
 
 const Vegetable = () => {
 
@@ -15,7 +16,7 @@ const Vegetable = () => {
     return (
         <>
             {
-                article.length > 0
+                article.filter(article => article.type === 'vegetable').length > 0
                     ? (
                         <ul className="other-recipes-list">
                             {
@@ -23,7 +24,7 @@ const Vegetable = () => {
                             }
                         </ul>
                     )
-                    : <p className="no-recipes">No vegetable articles in database!</p>
+                    : <p className="no-articles">No vegetable articles yet!</p>
             }
         </>
     )

@@ -1,6 +1,7 @@
 import ArticleCard from "./ArticleCard/ArticleCard";
 import {useEffect, useState} from "react";
 import * as articlesService from '../../services/articlesService';
+import "./ArticleList.css";
 
 const Fruit = () => {
 
@@ -14,16 +15,19 @@ const Fruit = () => {
 
     return (
         <>
+
             {
-                article.length > 0
+                article.filter(article => article.type === 'fruit').length > 0
+                    // article.length > 0
                     ? (
                         <ul className="other-recipes-list">
                             {
-                                article.filter(article => article.type === 'fruit').map(article =><ArticleCard key={article._id} article={article}/>)
+                                article.filter(article => article.type === 'fruit').map(article => <ArticleCard
+                                    key={article._id} article={article}/>)
                             }
                         </ul>
                     )
-                    : <p className="no-recipes">No fruits articles in database!</p>
+                    : <p className="no-articles">No fruits articles yet!</p>
             }
         </>
     )

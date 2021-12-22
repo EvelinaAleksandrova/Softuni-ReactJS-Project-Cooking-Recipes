@@ -16,7 +16,7 @@ const SoupList = () => {
     return (
         <>
             {
-                recipe.filter(recipe => recipe.type === 'soup') > 0
+                recipe.filter(recipe => recipe.type === 'soup').length > 0
                 // recipe.length > 0
                     ? (
                         <ul className="other-recipes-list">

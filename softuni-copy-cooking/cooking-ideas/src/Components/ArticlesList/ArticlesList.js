@@ -23,7 +23,7 @@ const ArticlesList = () => {
                             }
                         </ul>
                     )
-                    : <p className="no-recipes">No articles in database!</p>
+                    : <p className="no-articles">No articles yet!</p>
             }
         </>
     )

@@ -16,7 +16,7 @@ const ChristmasList = () => {
     return (
         <>
             {
-                recipe.filter(recipe => recipe.type === 'christmas') > 0
+                recipe.filter(recipe => recipe.type === 'christmas').length > 0
                 // recipe.length > 0
                     ? (
                         <ul className="other-recipes-list">
