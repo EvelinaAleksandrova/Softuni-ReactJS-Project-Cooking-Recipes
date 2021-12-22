@@ -3,8 +3,7 @@ import * as articlesService from '../../services/articlesService';
 import {useState, useEffect} from "react";
 import "./DetailsArticle.css";
 import {useAuthContext} from "../../contexts/AuthContext";
-import ConfirmDialog, {confirmDialog} from '../../Common/ConfirmDialog';
-
+import ConfirmDialog from '../../Common/ConfirmDialog';
 
 const DetailsArticle = () => {
     const navigate = useNavigate();
@@ -68,7 +67,6 @@ const DetailsArticle = () => {
                             <img style={{"margin-top": "8px"}} className="hearts" src="/images/heart.png"/>
                             <span id="total-likes">Likes: {article.likes?.length}</span>
                         </div>
-
                     </div>
                 </div>
                 <div className="article-description">
