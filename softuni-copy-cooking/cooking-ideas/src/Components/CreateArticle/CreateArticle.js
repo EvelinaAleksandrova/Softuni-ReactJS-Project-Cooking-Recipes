@@ -58,6 +58,7 @@ const CreateArticle = () => {
                                 <option value="fruit">Fruit</option>
                                 <option value="vegetable">Vegetable</option>
                                 <option value="herbs">Herbs</option>
+                                 <option value="other-article">Other</option>
                             </select>
                         </span>
                     </p>

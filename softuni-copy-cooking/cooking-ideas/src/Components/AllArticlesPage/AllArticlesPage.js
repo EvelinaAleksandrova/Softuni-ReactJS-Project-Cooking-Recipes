@@ -4,6 +4,7 @@ import Fruit from "../ArticlesList/Fruit";
 import Vegetable from "../ArticlesList/Vegetable";
 import Herbs from "../ArticlesList/Herbs";
 import AllArticlesCategory from "../ArticlesList/AllArticlesCategory";
+import OtherArticle from "../ArticlesList/OtherArticle";
 
 
 const AllArticlesPage = () => {
@@ -17,6 +18,7 @@ const AllArticlesPage = () => {
                 <Link to="fruit" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>Fruit</Link>
                 <Link to="vegetable" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>Vegetable</Link>
                 <Link to="herbs" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>Herbs</Link>
+                <Link to="other-article" style={{"margin": "20px","font-size": "25px","color":"darkred"}}>Other</Link>
             </nav>
 
             <section>
@@ -27,6 +29,7 @@ const AllArticlesPage = () => {
                     <Route path="/fruit" element={<Fruit/>}/>
                     <Route path="/vegetable" element={<Vegetable/>}/>
                     <Route path="/herbs" element={<Herbs/>}/>
+                    <Route path="/other-article" element={<OtherArticle/>}/>
 
                 </Routes>
             </section>
