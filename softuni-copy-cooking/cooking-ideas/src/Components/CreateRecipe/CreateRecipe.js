@@ -16,13 +16,15 @@ const CreateRecipe = () => {
         let ingredients = formData.get('ingredients');
         let imageUrl = formData.get('imageUrl');
         let type = formData.get('type');
+        let difficulty = formData.get('difficulty');
 
         recipesService.create({
             name,
             ingredients,
             description,
             imageUrl,
-            type
+            type,
+            difficulty
         }, user.accessToken)
             .then(result => {
             navigate('/all-recipes');
@@ -73,6 +75,16 @@ const CreateRecipe = () => {
                                 <option value="cocktails">Drinks & Cocktails</option>
                                 <option value="christmas">Christmas</option>
                                 <option value="other-recipe">Other</option>
+                            </select>
+                        </span>
+                    </p>
+                    <p className="field">
+                        <label htmlFor="difficulty">Difficulty level of preparation</label>
+                        <span className="input">
+                            <select id="difficulty" name="difficulty" >
+                                <option value="beginner">Beginner</option>
+                                <option value="medium">Medium</option>
+                                <option value="advanced">Advanced</option>
                             </select>
                         </span>
                     </p>
