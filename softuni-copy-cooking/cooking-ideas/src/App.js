@@ -43,7 +43,6 @@ function App() {
                 <Routes>
                     <Route path="/" element={<HomePage/>}/>
                 </Routes>
-
                 <main id="site-content">
                     <Routes>
                         <Route path="/home/*" element={<HomePage/>}/>

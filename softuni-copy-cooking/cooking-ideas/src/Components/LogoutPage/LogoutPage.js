@@ -3,7 +3,6 @@ import * as authService from '../../services/authService';
 import {useContext, useEffect} from "react";
 import {AuthContext} from "../../contexts/AuthContext";
 
-
 const LogoutPage = () => {
 
     const navigate = useNavigate();

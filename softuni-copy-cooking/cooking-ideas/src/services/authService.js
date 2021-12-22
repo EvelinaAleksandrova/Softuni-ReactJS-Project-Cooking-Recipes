@@ -28,7 +28,6 @@ export const register = (email, password) => {
         .then(res => res.json());
 };
 
-
 export const logout = (token) =>{
     return fetch('http://localhost:3030/users/logout',{
         headers:{
@@ -36,7 +35,6 @@ export const logout = (token) =>{
         }
     })
 }
-
 
 export const getUser = () => {
     let email = localStorage.getItem('email');
