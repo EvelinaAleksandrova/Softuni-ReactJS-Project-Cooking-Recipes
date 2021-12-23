@@ -2,6 +2,18 @@ import useRecipeState from "../../Hooks/useRecipeState";
 import {useParams} from "react-router-dom";
 import "./EditRecipe.css";
 
+const types = [
+    {value: 'soup', text: 'Soup'},
+    {value: 'meat', text: 'Meat'},
+    {value: 'vegan', text: 'Vegan'},
+    {value: 'salad', text: 'Salad'},
+    {value: 'dessert', text: 'Dessert'},
+    {value: 'pizza', text: 'Pizza'},
+    {value: 'cocktails', text: 'Drinks & Cocktails'},
+    {value: 'christmas', text: 'Christmas'},
+    {value: 'other-recipe', text: 'Other'},
+]
+
 
 const EditRecipe = () => {
     const {recipeId} = useParams();
@@ -38,16 +50,8 @@ const EditRecipe = () => {
                     <p className="field">
                         <label htmlFor="type">Type</label>
                         <span className="input">
-                            <select id="type" name="type">
-                                <option value="soup">Soup</option>
-                                <option value="meat">Meat</option>
-                                <option value="vegan">Vegan</option>
-                                <option value="salad">Salad</option>
-                                <option value="dessert">Dessert</option>
-                                <option value="pizza">Pizza</option>
-                                <option value="cocktails">Drinks & Cocktails</option>
-                                <option value="christmas">Christmas</option>
-                                <option value="other-recipe">Other</option>
+                            <select id="type" name="type" value={recipe.type}>
+                                {types.map(x => <option key={x.value} value={x.value}>{x.text}</option>)}
                             </select>
                         </span>
                     </p>
