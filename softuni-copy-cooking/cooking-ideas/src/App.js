@@ -21,6 +21,8 @@ import AllRecipesPage from "./Components/AllRecipesPage/AllRecipesPage";
 import DetailsArticle from "./Components/DetailsArticle/DetailsArticle";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ErrorBoundaries from "./Components/CommonDirectory/ErrorBoundaries";
+import EditRecipe from "./Components/EditRecipe/EditRecipe";
+import EditArticle from "./Components/EditArticle/EditArticle";
 
 function App() {
     return (
@@ -45,6 +47,9 @@ function App() {
                             <Route path="/create-article" element={<CreateArticle/>}/>
                             <Route path="/details-recipe/:recipeId" element={<DetailsRecipe/>}/>
                             <Route path="/details-article/:articleId" element={<DetailsArticle/>}/>
+                            <Route path="/edit-recipe" element={<EditRecipe/>}/>
+                            <Route path="/edit-article" element={<EditArticle/>}/>
+
                         </Routes>
                     </main>
                     <Footer/>
