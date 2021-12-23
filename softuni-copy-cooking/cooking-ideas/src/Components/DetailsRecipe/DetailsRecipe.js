@@ -40,17 +40,19 @@ const DetailsRecipe = () => {
     }
 
     const likeButtonClick = () => {
-        if(recipe.likes.includes(user._id)){
+        if (recipe.likes.includes(user._id)) {
             console.log("User already liked recipe!");
             return;
         }
 
-        let likes = [...recipe.likes, user._id]
-        recipesService.likeRecipe(recipe._id, user._id)
+        let likes = [...recipe.likes, user._id];
+        let likedRecipe = {...recipe, likes};
+
+        recipesService.likeRecipe(recipe._id, likedRecipe, user.accessToken)
             .then(() => {
                 setRecipe(state => ({
                     ...state,
-                    // likes: likeCountRecipe,
+                    likes
                 }))
             })
     }

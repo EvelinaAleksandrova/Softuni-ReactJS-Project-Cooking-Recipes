@@ -46,15 +46,13 @@ export const getOne = (recipeId) => {
         .then(result => result.json())
 };
 
-export const likeRecipe = (recipeId, userId, token) => {
+export const likeRecipe = (recipeId, recipe, token) => {
     return fetch(`${baseUrl}/recipes/${recipeId}`, {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
             'content-type': 'application/json',
             'X-Authorization': token
         },
-        body: JSON.stringify({
-
-        })
-    })
+        body: JSON.stringify(recipe)
+    }).then(res => res.json());
 }

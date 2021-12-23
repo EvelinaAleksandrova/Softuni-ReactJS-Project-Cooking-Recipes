@@ -39,18 +39,19 @@ const DetailsArticle = () => {
     }
 
     const likeButtonClick = () => {
-        if(article.likes.includes(user._id)){
+        if (article.likes.includes(user._id)) {
             console.log("User already liked article!");
             return;
         }
 
-        let likes = [...article.likes,user._id]
+        let likes = [...article.likes, user._id];
+        let likedArticle = {...article, likes}
 
-        articlesService.likeArticle(article._id, user._id)
-            .then(()=> {
+        articlesService.likeArticle(article._id, likedArticle, user.accessToken)
+            .then(() => {
                 setArticle(state => ({
                     ...state,
-                    // likes: likeCountArticle,
+                    likes,
                 }))
             })
     }

@@ -26,26 +26,24 @@ export const create = async (articleData, token) => {
     return result;
 };
 export const removeArticle = (articleId, token) => {
-   return fetch(`${baseUrl}/articles/${articleId}`,{
-       method: "DELETE",
-       headers:{
-           'X-Authorization': token
-       }
-   })
+    return fetch(`${baseUrl}/articles/${articleId}`, {
+        method: "DELETE",
+        headers: {
+            'X-Authorization': token
+        }
+    })
 }
 export const getOne = (articleId) => {
     return fetch(`${baseUrl}/articles/${articleId}`)
         .then(result => result.json())
 };
-export const likeArticle = (articleId, userId,token) => {
+export const likeArticle = (articleId, article, token) => {
     return fetch(`${baseUrl}/articles/${articleId}`, {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
             'content-type': 'application/json',
             'X-Authorization': token
         },
-        body: JSON.stringify({
-
-        })
-    })
+        body: JSON.stringify(article)
+    }).then(res => res.json());
 }
