@@ -47,8 +47,8 @@ function App() {
                             <Route path="/create-article" element={<CreateArticle/>}/>
                             <Route path="/details-recipe/:recipeId" element={<DetailsRecipe/>}/>
                             <Route path="/details-article/:articleId" element={<DetailsArticle/>}/>
-                            <Route path="/edit-recipe" element={<EditRecipe/>}/>
-                            <Route path="/edit-article" element={<EditArticle/>}/>
+                            <Route path="/edit-recipe/:recipeId" element={<EditRecipe/>}/>
+                            <Route path="/edit-article/:articleId" element={<EditArticle/>}/>
 
                         </Routes>
                     </main>

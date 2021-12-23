@@ -1,26 +1,20 @@
 import {useParams, useNavigate, Link} from "react-router-dom";
 import * as articlesService from '../../services/articlesService';
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import "./DetailsArticle.css";
 import {useAuthContext} from "../../contexts/AuthContext";
 import ConfirmDialog from '../../Components/CommonDirectory/ConfirmDialog';
 import {Button} from "react-bootstrap";
+import useArticleState from "../../Hooks/useArticleState";
 
 
 const DetailsArticle = () => {
     const navigate = useNavigate();
     const {user} = useAuthContext();
-    const [article, setArticle] = useState({});
-    const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const {articleId} = useParams();
+    const [article, setArticle] = useArticleState(articleId);
+    const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
-    useEffect(() => {
-        articlesService.getOne(articleId)
-            .then(articleResult => {
-                setArticle(articleResult);
-            })
-
-    }, [articleId]);
 
     const deleteHandler = (e) => {
         e.preventDefault();
@@ -58,7 +52,7 @@ const DetailsArticle = () => {
 
     const ownerButtons = (
         <>
-            <Link className="button" to="/edit" style={{"background": "#d36161"}}>Edit</Link>
+            <Link className="button" to={`/edit-article/${article._id}`} style={{"background": "#d36161"}}>Edit</Link>
             <a className="button" href="#" onClick={deleteClickHandler} style={{"background": "#d36161"}}>Delete</a>
         </>
     );

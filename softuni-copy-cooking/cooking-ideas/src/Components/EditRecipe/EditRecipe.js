@@ -1,15 +1,25 @@
+import useRecipeState from "../../Hooks/useRecipeState";
+import {useParams} from "react-router-dom";
 import "./EditRecipe.css";
 
+
 const EditRecipe = () => {
+    const {recipeId} = useParams();
+    const [recipe, setRecipe] = useRecipeState(recipeId);
+
+    const recipeEditSubmitHandler = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <section id="edit-page" className="edit">
-            <form id="edit-form" action="#" method="">
+            <form id="edit-form" method="POST" onSubmit={recipeEditSubmitHandler}>
                 <fieldset>
                     <legend>Edit my Recipe</legend>
                     <p className="field">
                         <label htmlFor="name">Name</label>
                         <span className="input">
-                            <input type="text" name="name" id="name" value="Milo"/>
+                            <input type="text" name="name" id="name" defaultValue={recipe.name}/>
                         </span>
                     </p>
                     <p className="field">

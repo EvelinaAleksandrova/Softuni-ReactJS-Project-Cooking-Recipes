@@ -1,9 +1,18 @@
+import useArticleState from '../../Hooks/useArticleState';
+import {useParams} from "react-router-dom";
 import "./EditArticle.css";
 
 const EditArticle = () => {
+    const {articleId} = useParams();
+    const [article, setArticle] = useArticleState(articleId);
+
+    const articleEditSubmitHandler = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <section id="edit-page" className="edit">
-            <form id="edit-form" action="#" method="">
+            <form id="edit-form" method="POST" onSubmit={articleEditSubmitHandler}>
                 <fieldset>
                     <legend>Edit my Article</legend>
                     <p className="field">

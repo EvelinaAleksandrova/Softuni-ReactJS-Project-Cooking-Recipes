@@ -1,26 +1,21 @@
 import {useParams, useNavigate, Link} from "react-router-dom";
 import * as recipesService from '../../services/recipesService';
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import "./DetailsRecipe.css";
 import {useAuthContext} from "../../contexts/AuthContext";
 
 import ConfirmDialog from '../../Components/CommonDirectory/ConfirmDialog';
 import {Button} from "react-bootstrap";
+import useRecipeState from "../../Hooks/useRecipeState";
 
 const DetailsRecipe = () => {
     const navigate = useNavigate();
     const {user} = useAuthContext();
-    const [recipe, setRecipe] = useState({});
-    const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const {recipeId} = useParams();
+    const [recipe, setRecipe] = useRecipeState(recipeId);
+    const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
-    useEffect(() => {
-        recipesService.getOne(recipeId)
-            .then(recipeResult => {
-                setRecipe(recipeResult);
-            })
 
-    }, [recipeId]);
 
     const deleteHandler = (e) => {
         e.preventDefault();
@@ -59,7 +54,7 @@ const DetailsRecipe = () => {
 
     const ownerButtons = (
         <>
-            <Link className="button" to="/edit" style={{"background": "#d36161"}}>Edit</Link>
+            <Link className="button" to={`/edit-recipe/${recipe._id}`} style={{"background": "#d36161"}}>Edit</Link>
             <a className="button" href="#" onClick={deleteClickHandler} style={{"background": "#d36161"}}>Delete</a>
         </>
     );
