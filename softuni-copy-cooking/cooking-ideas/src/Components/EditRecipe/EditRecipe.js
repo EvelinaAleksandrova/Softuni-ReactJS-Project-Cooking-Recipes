@@ -19,8 +19,9 @@ const types = [
 
 const EditRecipe = () => {
     const {recipeId} = useParams();
-    const [recipe] = useRecipeState(recipeId);
+    const [recipe,setRecipe] = useRecipeState(recipeId);
     const [errors, setErrors] = useState({name: false});
+    const [type, setType] = useState(recipe.type);
 
     const recipeEditSubmitHandler = (e) => {
         e.preventDefault();
@@ -63,7 +64,9 @@ const EditRecipe = () => {
                     <p className="field">
                         <label htmlFor="type">Type</label>
                         <span className="input">
-                            <select id="type" name="type" value={recipe.type}>
+                            <select id="type" name="type" value={recipe.type}
+                                    onChange={(e) => setRecipe(s =>
+                                        ({...s, type: e.target.value}))}>>
                                 {types.map(x => <option key={x.value} value={x.value}>{x.text}</option>)}
                             </select>
                         </span>

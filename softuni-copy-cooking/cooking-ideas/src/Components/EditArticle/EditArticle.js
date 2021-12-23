@@ -14,8 +14,9 @@ const types = [
 
 const EditArticle = () => {
     const {articleId} = useParams();
-    const [article] = useArticleState(articleId);
+    const [article, setArticle] = useArticleState(articleId);
     const [errors, setErrors] = useState({name: false});
+    const [type, setType] = useState(article.type);
 
     const articleEditSubmitHandler = (e) => {
         e.preventDefault();
@@ -40,7 +41,7 @@ const EditArticle = () => {
                             <input type="text" name="name" id="name" defaultValue={article.name}
                                    onBlur={nameChangeHandler}/>
                         </span>
-                        <Alert variant="warning" show={errors.name}  >{errors.name}</Alert>
+                        <Alert variant="warning" show={errors.name}>{errors.name}</Alert>
                     </p>
                     <p className="field">
                         <label htmlFor="description">Description</label>
@@ -57,7 +58,9 @@ const EditArticle = () => {
                     <p className="field">
                         <label htmlFor="type">Type</label>
                         <span className="input">
-                            <select id="type" name="type" value={article.type}>
+                            <select id="type" name="type" value={article.type}
+                                    onChange={(e) => setArticle(s =>
+                                        ({...s, type: e.target.value}))}>
                                 {types.map(x => <option key={x.value} value={x.value}>{x.text}</option>)}
 
                             </select>
