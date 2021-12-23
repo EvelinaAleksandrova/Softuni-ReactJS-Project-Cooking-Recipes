@@ -28,15 +28,18 @@ const CreateRecipe = () => {
             difficulty
         }, user.accessToken)
             .then(result => {
-            navigate('/all-recipes');
-        });
+                navigate('/all-recipes');
+            });
     }
-
+    const fileSelectedHandler = event => {
+        console.log(event.target.files[0]);
+    }
     return (
         <section id="create-page" className="create">
             <form id="create-form" onSubmit={onRecipeCreate} method="POST">
                 <fieldset>
-                    <legend style={{"text-align": "center","width":"94%", "font-size":"20px"}}>Add new Recipe</legend>
+                    <legend style={{"text-align": "center", "width": "94%", "font-size": "20px"}}>Add new Recipe
+                    </legend>
 
                     <p className="field">
                         <label htmlFor="name">Name</label>
@@ -59,19 +62,21 @@ const CreateRecipe = () => {
                     <p className="field">
                         <label htmlFor="timeCooking">Preparation time (minutes)</label>
                         <span className="input">
-                            <input type="text" name="timeCooking" id="timeCooking" placeholder="Preparation Time" required/>
+                            <input type="text" name="timeCooking" id="timeCooking" placeholder="Preparation Time"
+                                   required/>
                         </span>
                     </p>
                     <p className="field">
                         <label htmlFor="image">Image</label>
                         <span className="input">
-                            <input type="text" name="imageUrl" id="image" placeholder="Image" required/>
+                            <input type="file" onChange={fileSelectedHandler} name="imageUrl" id="image"
+                                   placeholder="Image" required/>
                         </span>
                     </p>
                     <p className="field">
                         <label htmlFor="type">Type</label>
                         <span className="input">
-                            <select id="type" name="type" >
+                            <select id="type" name="type">
                                 <option value="soup">Soup</option>
                                 <option value="meat">Meat</option>
                                 <option value="vegan">Vegan</option>
@@ -87,7 +92,7 @@ const CreateRecipe = () => {
                     <p className="field">
                         <label htmlFor="difficulty">Difficulty level of preparation</label>
                         <span className="input">
-                            <select id="difficulty" name="difficulty" >
+                            <select id="difficulty" name="difficulty">
                                 <option value="beginner">Beginner</option>
                                 <option value="medium">Medium</option>
                                 <option value="advanced">Advanced</option>
@@ -95,7 +100,7 @@ const CreateRecipe = () => {
                         </span>
                     </p>
                     <input className="button submit" type="submit" value="Add Recipe"
-                           style={{ "background": "#d36161"}}/>
+                           style={{"background": "#d36161"}}/>
                 </fieldset>
             </form>
         </section>
