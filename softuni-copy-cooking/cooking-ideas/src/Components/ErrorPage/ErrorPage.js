@@ -2,19 +2,30 @@ const ErrorPage = () =>{
     return(
         <>
 
-            <div id="error-page">
-                <div className="content">
-                    <h2 className="header" data-text="404">
-                        404
-                    </h2>
-                    <h4 data-text="Opps! Page not found">
-                        Opps! Page not found
-                    </h4>
-                    <p>
-                        Sorry, the page you're looking for doesn't exist. If you think something is broken,
-                        report a problem.
-                    </p>
+            <div id="background"></div>
+            <div className="top">
+                <h1>404</h1>
+                <h3>page not found</h3>
+            </div>
+            <div className="container">
+                <div className="ghost-copy">
+                    <div className="one"></div>
+                    <div className="two"></div>
+                    <div className="three"></div>
+                    <div className="four"></div>
                 </div>
+                <div className="ghost">
+                    <div className="face">
+                        <div className="eye"></div>
+                        <div className="eye-right"></div>
+                        <div className="mouth"></div>
+                    </div>
+                </div>
+                <div className="shadow"></div>
+            </div>
+            <div className="bottom">
+                <h4>Boo, looks like a ghost stole this page!</h4>
+
             </div>
         </>
     );
