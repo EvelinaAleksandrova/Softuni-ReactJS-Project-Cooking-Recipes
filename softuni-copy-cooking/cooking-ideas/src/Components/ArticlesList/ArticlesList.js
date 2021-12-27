@@ -1,6 +1,7 @@
 import ArticleCard from "./ArticleCard/ArticleCard";
 import {useEffect, useState} from "react";
 import * as articlesService from '../../services/articlesService';
+import "./ArticleList.css";
 
 const ArticlesList = () => {
 
@@ -9,7 +10,10 @@ const ArticlesList = () => {
         articlesService.getAll()
             .then(result => {
                 setArticle(result);
-            });
+            })
+            .catch(error=>{
+                console.log(error);
+            })
     }, []);
 
     return (

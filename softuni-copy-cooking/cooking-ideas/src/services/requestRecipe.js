@@ -1,4 +1,4 @@
-export const request = async ( url) => {
+export const requestRecipe = async (url) => {
     // let result = null;
     //
     // if (method === 'GET') {
@@ -43,6 +43,6 @@ function getToken() {
     }
 }
 
-export const get = request.bind(null, 'GET');
-export const put = request.bind(null, 'PUT');
-export const post = request.bind(null, 'POST');
+export const get = requestRecipe.bind(null, 'GET');
+export const put = requestRecipe.bind(null, 'PUT');
+export const post = requestRecipe.bind(null, 'POST');

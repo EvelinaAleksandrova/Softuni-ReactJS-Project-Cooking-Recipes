@@ -31,14 +31,14 @@ const CreateRecipe = () => {
                 navigate('/all-recipes');
             });
     }
-    const fileSelectedHandler = event => {
-        console.log(event.target.files[0]);
-    }
+    // const fileSelectedHandler = event => {
+    //     console.log(event.target.files[0]);
+    // }
     return (
         <section id="create-page" className="create">
             <form id="create-form" onSubmit={onRecipeCreate} method="POST">
                 <fieldset>
-                    <legend style={{"text-align": "center", "width": "94%", "font-size": "20px"}}>Add new Recipe
+                    <legend style={{"text-align": "center", "width": "101%", "font-size": "15px", "font-weight":"bold"}}>Add new Recipe
                     </legend>
 
                     <p className="field">
@@ -69,7 +69,9 @@ const CreateRecipe = () => {
                     <p className="field">
                         <label htmlFor="image">Image</label>
                         <span className="input">
-                            <input type="file" onChange={fileSelectedHandler} name="imageUrl" id="image"
+                            <input type="text"
+                                   // onChange={fileSelectedHandler}
+                                   name="imageUrl" id="image"
                                    placeholder="Image" required/>
                         </span>
                     </p>

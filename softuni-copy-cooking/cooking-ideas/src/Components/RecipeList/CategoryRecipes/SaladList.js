@@ -1,7 +1,7 @@
-import RecipeCard from "./RecipeCard/RecipeCard";
+import RecipeCard from "../RecipeCard/RecipeCard";
 import {useEffect, useState} from "react";
-import * as recipesService from "../../services/recipesService";
-import "./RecipeList.css";
+import * as recipesService from "../../../services/recipesService";
+import "../RecipeList.css";
 
 const SaladList = () => {
 

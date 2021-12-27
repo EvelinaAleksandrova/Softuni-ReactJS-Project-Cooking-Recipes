@@ -1,7 +1,7 @@
-import ArticleCard from "./ArticleCard/ArticleCard";
+import ArticleCard from "../ArticleCard/ArticleCard";
 import {useEffect, useState} from "react";
-import * as articlesService from '../../services/articlesService';
-import "./ArticleList.css";
+import * as articlesService from '../../../services/articlesService';
+import "../ArticleList.css";
 
 const Fruit = () => {
 

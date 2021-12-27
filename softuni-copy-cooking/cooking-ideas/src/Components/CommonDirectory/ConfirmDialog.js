@@ -8,16 +8,16 @@ const ConfirmDialog = ({
     return (
         <Modal show={show} onHide={onClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Modal title</Modal.Title>
+                <Modal.Title>Delete Recipe</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-                <p>Modal body text goes here.</p>
+                <p>Do you want to Delete this recipe?</p>
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" onClick={onClose}>Close</Button>
-                <Button variant="primary" onClick={onSave}>Save changes</Button>
+                <Button variant="secondary" onClick={onClose}>No</Button>
+                <Button variant="primary" onClick={onSave}>Yes</Button>
             </Modal.Footer>
         </Modal>
     );

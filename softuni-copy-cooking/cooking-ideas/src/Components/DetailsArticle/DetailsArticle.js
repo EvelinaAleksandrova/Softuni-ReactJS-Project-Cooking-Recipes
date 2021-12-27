@@ -3,7 +3,7 @@ import * as articlesService from '../../services/articlesService';
 import {useState} from "react";
 import "./DetailsArticle.css";
 import {useAuthContext} from "../../contexts/AuthContext";
-import ConfirmDialog from '../../Components/CommonDirectory/ConfirmDialog';
+import ConfirmDialogArticle from '../../Components/CommonDirectory/ConfirmDialogArticle';
 import {Button} from "react-bootstrap";
 import useArticleState from "../../Hooks/useArticleState";
 
@@ -65,7 +65,7 @@ const DetailsArticle = () => {
 
     return (
         <>
-            <ConfirmDialog show={showDeleteDialog} onClose={() => setShowDeleteDialog(false)} onSave={deleteHandler}/>
+            <ConfirmDialogArticle show={showDeleteDialog} onClose={() => setShowDeleteDialog(false)} onSave={deleteHandler}/>
             <section id="details-page" className="details">
                 <div className="article-information">
                     <h3 style={{"margin-bottom": "12px"}}>Name: {article.name}</h3>

@@ -39,7 +39,7 @@ const EditRecipe = () => {
         <section id="edit-page" className="edit">
             <form id="edit-form" method="POST" onSubmit={recipeEditSubmitHandler}>
                 <fieldset>
-                    <legend>Edit my Recipe</legend>
+                    <legend style={{"text-align": "center", "width": "101%", "font-size": "15px", "font-weight":"bold"}}>Edit my Recipe</legend>
                     <p className="field">
                         <label htmlFor="name">Name</label>
                         <span className="input" style={{borderColor: errors.name ? 'red' : 'inherit'}}>

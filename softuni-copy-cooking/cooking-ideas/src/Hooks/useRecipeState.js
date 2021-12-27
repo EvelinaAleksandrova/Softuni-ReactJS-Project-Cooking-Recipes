@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 
 import * as recipesService from '../services/recipesService';
 
- const useRecipeState = (recipeId) => {
+const useRecipeState = (recipeId) => {
     const [recipe, setRecipe] = useState({});
 
     useEffect(() => {

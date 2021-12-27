@@ -1,10 +1,10 @@
 import {Routes, Route, Link} from "react-router-dom";
 import ArticlesList from "../ArticlesList/ArticlesList";
-import Fruit from "../ArticlesList/Fruit";
-import Vegetable from "../ArticlesList/Vegetable";
-import Herbs from "../ArticlesList/Herbs";
+import Fruit from "../ArticlesList/CategoryArticle/Fruit";
+import Vegetable from "../ArticlesList/CategoryArticle/Vegetable";
+import Herbs from "../ArticlesList/CategoryArticle/Herbs";
 import AllArticlesCategory from "../ArticlesList/AllArticlesCategory";
-import OtherArticle from "../ArticlesList/OtherArticle";
+import OtherArticle from "../ArticlesList/CategoryArticle/OtherArticle";
 import "./AllArticles.css";
 
 const AllArticlesPage = () => {

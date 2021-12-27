@@ -1,9 +1,9 @@
-import RecipeCard from "./RecipeCard/RecipeCard";
+import RecipeCard from "../RecipeCard/RecipeCard";
 import {useEffect, useState} from "react";
-import * as recipesService from "../../services/recipesService";
-import "./RecipeList.css";
+import * as recipesService from "../../../services/recipesService";
+import "../RecipeList.css";
 
-const MeatList = () => {
+const DessertList = () => {
 
     const [recipe, setRecipe] = useState([]);
     useEffect(() => {
@@ -16,21 +16,21 @@ const MeatList = () => {
     return (
         <>
             {
-                recipe.filter(recipe => recipe.type === 'meat').length > 0
+                recipe.filter(recipe => recipe.type === 'dessert').length > 0
                     // recipe.length > 0
                     ? (
                         <ul className="other-recipes-list">
                             {
-                                recipe.filter(recipe => recipe.type === 'meat').map(recipe => <RecipeCard key={recipe._id}
+                                recipe.filter(recipe => recipe.type === 'dessert').map(recipe => <RecipeCard key={recipe._id}
                                                                                                           recipe={recipe}/>)
                             }
                         </ul>
                     )
-                    : <p className="no-recipes">No recipes with meat yet!</p>
+                    : <p className="no-recipes">No recipes with desserts yet!</p>
             }
         </>
     )
 
 }
 
-export default MeatList;
+export default DessertList;

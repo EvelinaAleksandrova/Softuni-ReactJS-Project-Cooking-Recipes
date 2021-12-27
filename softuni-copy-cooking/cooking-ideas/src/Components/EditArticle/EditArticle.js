@@ -34,7 +34,7 @@ const EditArticle = () => {
         <section id="edit-page" className="edit">
             <form id="edit-form" method="POST" onSubmit={articleEditSubmitHandler}>
                 <fieldset>
-                    <legend>Edit my Article</legend>
+                    <legend style={{"text-align": "center", "width": "101%", "font-size": "15px", "font-weight":"bold"}}>Edit my Article</legend>
                     <p className="field">
                         <label htmlFor="name">Name</label>
                         <span className="input" style={{borderColor: errors.name ? 'red' : 'inherit'}}>

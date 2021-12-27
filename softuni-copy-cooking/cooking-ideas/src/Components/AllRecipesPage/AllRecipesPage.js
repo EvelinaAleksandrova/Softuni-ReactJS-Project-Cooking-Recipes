@@ -1,15 +1,15 @@
 import {Routes, Route, Link} from "react-router-dom";
 import RecipeList from "../RecipeList/RecipeList";
-import CocktailsList from "../RecipeList/CocktailsList";
-import VeganList from "../RecipeList/VeganList";
-import SoupList from "../RecipeList/SoupList";
-import MeatList from "../RecipeList/MeatList";
-import ChristmasList from "../RecipeList/ChristmasList";
+import CocktailsList from "../RecipeList/CategoryRecipes/CocktailsList";
+import VeganList from "../RecipeList/CategoryRecipes/VeganList";
+import SoupList from "../RecipeList/CategoryRecipes/SoupList";
+import MeatList from "../RecipeList/CategoryRecipes/MeatList";
+import ChristmasList from "../RecipeList/CategoryRecipes/ChristmasList";
 import AllRecipeCategory from "../RecipeList/AllRecipeCategory";
-import PizzaList from "../RecipeList/PizzaList";
-import SaladList from "../RecipeList/SaladList";
-import DessertList from "../RecipeList/DessertList";
-import Other from "../RecipeList/Other";
+import PizzaList from "../RecipeList/CategoryRecipes/PizzaList";
+import SaladList from "../RecipeList/CategoryRecipes/SaladList";
+import DessertList from "../RecipeList/CategoryRecipes/DessertList";
+import Other from "../RecipeList/CategoryRecipes/Other";
 import "./AllRecipes.css";
 
 const AllRecipesPage = () => {
