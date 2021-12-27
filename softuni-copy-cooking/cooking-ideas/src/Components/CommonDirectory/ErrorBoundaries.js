@@ -1,4 +1,6 @@
-import { Component } from 'react';
+import {Component} from 'react';
+import "../ErrorPage/ErrorBoundaries.css";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 class ErrorBoundary extends Component {
     constructor(props) {
@@ -14,13 +16,13 @@ class ErrorBoundary extends Component {
     }
 
     componentDidCatch(error) {
-        console.log(error);
+        // console.log(error);
     }
 
     render() {
         if (this.state.error) {
             return (
-                <h1 style={{"text-align":"center"}}>404 Not found</h1>
+                <ErrorPage/>
 
             );
         }
