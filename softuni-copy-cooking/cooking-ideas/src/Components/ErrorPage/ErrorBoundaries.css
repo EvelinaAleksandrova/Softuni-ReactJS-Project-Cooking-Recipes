@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Lato');
 body {
-    background: #d3deea;
+    background: rgb(245, 224, 224);
 }
 .top {
     margin-top: 30px;
@@ -20,7 +20,7 @@ body {
     position: absolute;
     border-radius: 50% 50% 0 0;
     background: #ededed;
-    border: 1px solid #bfc0c0;
+    border: 1px solid #b2b2b2;
     border-bottom: none;
     animation: float 2s ease-out infinite;
 }
