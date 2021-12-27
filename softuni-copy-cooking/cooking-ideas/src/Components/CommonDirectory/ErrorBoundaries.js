@@ -20,7 +20,8 @@ class ErrorBoundary extends Component {
     render() {
         if (this.state.error) {
             return (
-                <h1>404 Not found</h1>
+                <h1 style={{"text-align":"center"}}>404 Not found</h1>
+
             );
         }
 
