@@ -15,7 +15,6 @@ const DetailsArticle = () => {
     const [article, setArticle] = useArticleState(articleId);
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
-
     const deleteHandler = (e) => {
         e.preventDefault();
         articlesService.removeArticle(articleId, user.accessToken)
@@ -49,6 +48,7 @@ const DetailsArticle = () => {
                 }))
             })
     }
+
 
     const ownerButtons = (
         <>

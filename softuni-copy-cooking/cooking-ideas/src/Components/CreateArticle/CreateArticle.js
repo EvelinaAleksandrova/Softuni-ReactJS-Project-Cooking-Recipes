@@ -1,10 +1,15 @@
 import * as articlesService from '../../services/articlesService';
 import {useNavigate} from "react-router-dom";
 import {useAuthContext} from "../../contexts/AuthContext";
+import {useState} from "react";
+import {Alert} from "react-bootstrap";
 
 const CreateArticle = () => {
     const {user} = useAuthContext();
     const navigate = useNavigate();
+
+    const [errors, setErrors] = useState({name: false});
+    const [errorsDescription, setErrorsDescription] = useState({name: false});
 
     const onArticleCreate = (e) => {
         e.preventDefault();
@@ -25,7 +30,23 @@ const CreateArticle = () => {
             navigate('/all-articles');
         });
     }
+    const nameChangeHandler = (e) => {
+        let currentName = e.target.value;
+        if (currentName.length < 2) {
+            setErrors(state => ({...state, name: "Name of article should be at least 2 characters!"}))
+        } else {
+            setErrors(state => ({...state, name: false}));
+        }
+    }
+    const descriptionChangeHandler = (e) => {
+        let currentDescription = e.target.value;
 
+        if (currentDescription.length < 10) {
+            setErrorsDescription(state => ({...state, name: "Description of article should be at least 10 characters!"}))
+        } else {
+            setErrorsDescription(state => ({...state, name: false}));
+        }
+    }
     return (
         <section id="create-page" className="create">
             <form id="create-form" onSubmit={onArticleCreate} method="POST">
@@ -33,15 +54,21 @@ const CreateArticle = () => {
                     <legend style={{"text-align": "center", "width": "101%", "font-size": "15px", "font-weight":"bold"}}>Add new Article</legend>
                     <p className="field">
                         <label htmlFor="name">Name</label>
-                        <span className="input">
-                            <input type="text" name="name" id="name" placeholder="Name" required/>
+                        <span className="input"  style={{borderColor: errors.name ? 'red' : 'inherit'}}>
+                            <input type="text" name="name" id="name" placeholder="Name"
+                                   required onBlur={nameChangeHandler}
+                            />
                         </span>
+                        <Alert variant="warning" show={errors.name}>{errors.name}</Alert>
                     </p>
                     <p className="field">
                         <label htmlFor="description">Description</label>
-                        <span className="input">
-                            <textarea name="description" id="description" placeholder="Description" required/>
+                        <span className="input"  style={{borderColor: errors.name ? 'red' : 'inherit'}}>
+                            <textarea name="description" id="description" placeholder="Description"
+                                      required onBlur={descriptionChangeHandler}
+                            />
                         </span>
+                        <Alert variant="warning" show={errorsDescription.name}>{errorsDescription.name}</Alert>
                     </p>
                     <p className="field">
                         <label htmlFor="image">Image</label>

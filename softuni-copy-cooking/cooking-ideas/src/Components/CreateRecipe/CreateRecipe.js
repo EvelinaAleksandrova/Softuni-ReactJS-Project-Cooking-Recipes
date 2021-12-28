@@ -2,14 +2,15 @@ import * as recipesService from '../../services/recipesService';
 import {useNavigate} from "react-router-dom";
 import {useAuthContext} from "../../contexts/AuthContext";
 import {useState} from "react";
+import {Alert} from "react-bootstrap";
 
 const CreateRecipe = () => {
     const {user} = useAuthContext();
     const navigate = useNavigate();
 
     const [errors, setErrors] = useState({name: false});
-    const [errorsIngredients, setErrorsIngredients] = useState({name: false});
     const [errorsDescription, setErrorsDescription] = useState({name: false});
+    const [errorsIngredients, setErrorsIngredients] = useState({name: false});
     const [errorsTime, setErrorsTime] = useState({name: false});
 
     const onRecipeCreate = (e) => {
@@ -61,7 +62,7 @@ const CreateRecipe = () => {
         let currentDescription = e.target.value;
 
         if (currentDescription.length < 10) {
-            setErrorsDescription(state => ({...state, name: "Description should be at least 10 characters!"}))
+            setErrorsDescription(state => ({...state, name: "Description of recipe should be at least 10 characters!"}))
         } else {
             setErrorsDescription(state => ({...state, name: false}));
         }
@@ -89,34 +90,44 @@ const CreateRecipe = () => {
 
                     <p className="field">
                         <label htmlFor="name">Name</label>
-                        <span className="input">
-                            <input type="text" name="name" id="name" placeholder="Name" required/>
+                        <span className="input" style={{borderColor: errors.name ? 'red' : 'inherit'}}>
+                            <input type="text" name="name" id="name" placeholder="Name"
+                                   required
+                                   onBlur={nameChangeHandler}
+                            />
                         </span>
+                        <Alert variant="warning" show={errors.name}>{errors.name}</Alert>
                     </p>
 
 
                     <p className="field">
                         <label htmlFor="ingredients">Ingredients</label>
-                        <span className="input">
-                            <textarea name="ingredients" id="ingredients" placeholder="Ingredients" required/>
+                        <span className="input" style={{borderColor: errorsIngredients.name ? 'red' : 'inherit'}}>
+                            <textarea name="ingredients" id="ingredients" placeholder="Ingredients"
+                                      required onBlur={ingredientsChangeHandler}/>
                         </span>
+                        <Alert variant="warning" show={errorsIngredients.name}>{errorsIngredients.name}</Alert>
                     </p>
 
 
                     <p className="field">
                         <label htmlFor="description">Description</label>
-                        <span className="input">
-                            <textarea name="description" id="description" placeholder="Description" required/>
+                        <span className="input" style={{borderColor: errorsDescription.name ? 'red' : 'inherit'}}>
+                            <textarea name="description" id="description" placeholder="Description"
+                                      required onBlur={descriptionChangeHandler}/>
                         </span>
+                        <Alert variant="warning" show={errorsDescription.name}>{errorsDescription.name}</Alert>
                     </p>
 
 
                     <p className="field">
                         <label htmlFor="timeCooking">Preparation time (minutes)</label>
-                        <span className="input">
+                        <span className="input" style={{borderColor: errorsTime.name ? 'red' : 'inherit'}}>
                             <input type="text" name="timeCooking" id="timeCooking" placeholder="Preparation Time"
-                                   required/>
+                                   required onBlur={timeChangeHandler}
+                            />
                         </span>
+                        <Alert variant="warning" show={errorsTime.name}>{errorsTime.name}</Alert>
                     </p>
 
 
