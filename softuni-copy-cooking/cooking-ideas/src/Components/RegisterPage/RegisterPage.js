@@ -1,10 +1,13 @@
 import * as authService from '../../services/authService';
 import {useAuthContext} from "../../contexts/AuthContext";
 import {useNavigate} from "react-router-dom";
+import {useState} from "react";
+import {Alert} from "react-bootstrap";
 
 const RegisterPage = () => {
     const navigate = useNavigate();
     const {login} = useAuthContext();
+    const [errorsPassword, setErrorsPassword] = useState({name: false});
 
     const registerSubmitHandler = (e) => {
         e.preventDefault();
@@ -17,6 +20,16 @@ const RegisterPage = () => {
                 login(res);
                 navigate('/my-recipes');
             })
+    }
+
+    const passwordChangeHandler = (e) => {
+        let currentPassword = e.target.value;
+
+        if (currentPassword.length < 6) {
+            setErrorsPassword(state => ({...state, name: "Password should be at least 6 characters!"}))
+        } else {
+            setErrorsPassword(state => ({...state, name: false}));
+        }
     }
 
     return (
@@ -32,15 +45,19 @@ const RegisterPage = () => {
                     </p>
                     <p className="field">
                         <label htmlFor="password">Password</label>
-                        <span className="input">
-                            <input type="password" name="password" id="password" placeholder="Password" required/>
+                        <span className="input" style={{borderColor: errorsPassword.name ? 'blue' : 'inherit'}}>
+                            <input type="password" name="password" id="password" placeholder="Password"
+                                   required onBlur={passwordChangeHandler}/>
                         </span>
+                        <Alert variant="primary" show={errorsPassword.name}>{errorsPassword.name}</Alert>
                     </p>
                     <p className="field">
                         <label htmlFor="repeat-pass">Repeat Password</label>
-                        <span className="input">
-                            <input type="password" name="confirm-pass" id="repeat-pass" placeholder="Repeat Password" required/>
+                        <span className="input" style={{borderColor: errorsPassword.name ? 'blue' : 'inherit'}}>
+                            <input type="password" name="confirm-pass" id="repeat-pass" placeholder="Repeat Password"
+                                   required onBlur={passwordChangeHandler}/>
                         </span>
+                        <Alert variant="primary" show={errorsPassword.name}>{errorsPassword.name}</Alert>
                     </p>
                     <input className="button submit" type="submit" value="Register" style={{"background":"#d36161"}}/>
                 </fieldset>

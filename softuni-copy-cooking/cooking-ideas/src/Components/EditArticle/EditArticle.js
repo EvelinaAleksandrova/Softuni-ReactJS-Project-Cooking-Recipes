@@ -58,22 +58,22 @@ const EditArticle = () => {
 
                     <p className="field">
                         <label htmlFor="name">Name</label>
-                        <span className="input" style={{borderColor: errors.name ? 'red' : 'inherit'}}>
+                        <span className="input" style={{borderColor: errors.name ? 'blue' : 'inherit'}}>
                             <input type="text" name="name" id="name" defaultValue={article.name}
                                    onBlur={nameChangeHandler}/>
                         </span>
-                        <Alert variant="warning" show={errors.name}>{errors.name}</Alert>
+                        <Alert variant="primary" show={errors.name}>{errors.name}</Alert>
                     </p>
 
                     <p className="field">
                         <label htmlFor="description">Description</label>
-                        <span className="input" style={{borderColor: errorsDescription.name ? 'red' : 'inherit'}}>
+                        <span className="input" style={{borderColor: errorsDescription.name ? 'blue' : 'inherit'}}>
                             <textarea name="description"
                                       id="description" defaultValue={article.description}
                                       onBlur={descriptionChangeHandler}
                             />
                         </span>
-                        <Alert variant="warning" show={errorsDescription.name}>{errorsDescription.name}</Alert>
+                        <Alert variant="primary" show={errorsDescription.name}>{errorsDescription.name}</Alert>
                     </p>
 
                     <p className="field">

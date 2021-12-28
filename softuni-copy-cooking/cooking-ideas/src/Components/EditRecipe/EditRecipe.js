@@ -25,11 +25,13 @@ const difficultyLevel = [
 const EditRecipe = () => {
     const {recipeId} = useParams();
     const [recipe, setRecipe] = useRecipeState(recipeId);
+    const [type, setType] = useState(recipe.type);
+
     const [errors, setErrors] = useState({name: false});
     const [errorsIngredients, setErrorsIngredients] = useState({name: false});
     const [errorsDescription, setErrorsDescription] = useState({name: false});
     const [errorsTime, setErrorsTime] = useState({name: false});
-    const [type, setType] = useState(recipe.type);
+
 
     const recipeEditSubmitHandler = (e) => {
         e.preventDefault();
@@ -84,47 +86,47 @@ const EditRecipe = () => {
 
                     <p className="field">
                         <label htmlFor="name">Name</label>
-                        <span className="input" style={{borderColor: errors.name ? 'red' : 'inherit'}}>
+                        <span className="input" style={{borderColor: errors.name ? 'blue' : 'inherit'}}>
                             <input type="text" name="name" id="name" defaultValue={recipe.name}
                                    onBlur={nameChangeHandler}/>
                         </span>
-                        <Alert variant="warning" show={errors.name}>{errors.name}</Alert>
+                        <Alert variant="primary" show={errors.name}>{errors.name}</Alert>
                     </p>
 
                     <p className="field">
                         <label htmlFor="ingredients">Ingredients</label>
-                        <span className="input" style={{borderColor: errorsIngredients.name ? 'red' : 'inherit'}}>
+                        <span className="input" style={{borderColor: errorsIngredients.name ? 'blue' : 'inherit'}}>
                             <textarea name="ingredients"
                                       id="ingredients" defaultValue={recipe.ingredients}
                                       onBlur={ingredientsChangeHandler}
                             />
                         </span>
-                        <Alert variant="warning" show={errorsIngredients.name}>{errorsIngredients.name}</Alert>
+                        <Alert variant="primary" show={errorsIngredients.name}>{errorsIngredients.name}</Alert>
                     </p>
 
 
                     <p className="field">
                         <label htmlFor="description">Description</label>
-                        <span className="input" style={{borderColor: errorsDescription.name ? 'red' : 'inherit'}}>
+                        <span className="input" style={{borderColor: errorsDescription.name ? 'blue' : 'inherit'}}>
                             <textarea name="description"
                                       id="description" defaultValue={recipe.description}
                              onBlur={descriptionChangeHandler}
                             />
                         </span>
-                        <Alert variant="warning" show={errorsDescription.name}>{errorsDescription.name}</Alert>
+                        <Alert variant="primary" show={errorsDescription.name}>{errorsDescription.name}</Alert>
 
                     </p>
 
 
                     <p className="field">
                         <label htmlFor="timeCooking">Preparation time (minutes)</label>
-                        <span className="input" style={{borderColor: errorsTime.name ? 'red' : 'inherit'}}>
+                        <span className="input" style={{borderColor: errorsTime.name ? 'blue' : 'inherit'}}>
                             <input type="text" name="timeCooking"
                                    id="timeCooking" defaultValue={recipe.timeCooking}
                                     onBlur={timeChangeHandler}
                             />
                         </span>
-                        <Alert variant="warning" show={errorsTime.name}>{errorsTime.name}</Alert>
+                        <Alert variant="primary" show={errorsTime.name}>{errorsTime.name}</Alert>
                     </p>
 
 

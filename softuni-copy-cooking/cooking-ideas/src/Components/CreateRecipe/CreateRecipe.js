@@ -91,44 +91,44 @@ const CreateRecipe = () => {
 
                     <p className="field">
                         <label htmlFor="name">Name</label>
-                        <span className="input" style={{borderColor: errors.name ? 'red' : 'inherit'}}>
+                        <span className="input" style={{borderColor: errors.name ? 'blue' : 'inherit'}}>
                             <input type="text" name="name" id="name" placeholder="Name"
                                    required
                                    onBlur={nameChangeHandler}
                             />
                         </span>
-                        <Alert variant="warning" show={errors.name}>{errors.name}</Alert>
+                        <Alert variant="primary" show={errors.name}>{errors.name}</Alert>
                     </p>
 
 
                     <p className="field">
                         <label htmlFor="ingredients">Ingredients</label>
-                        <span className="input" style={{borderColor: errorsIngredients.name ? 'red' : 'inherit'}}>
+                        <span className="input" style={{borderColor: errorsIngredients.name ? 'blue' : 'inherit'}}>
                             <textarea name="ingredients" id="ingredients" placeholder="Ingredients"
                                       required onBlur={ingredientsChangeHandler}/>
                         </span>
-                        <Alert variant="warning" show={errorsIngredients.name}>{errorsIngredients.name}</Alert>
+                        <Alert variant="primary" show={errorsIngredients.name}>{errorsIngredients.name}</Alert>
                     </p>
 
 
                     <p className="field">
                         <label htmlFor="description">Description</label>
-                        <span className="input" style={{borderColor: errorsDescription.name ? 'red' : 'inherit'}}>
+                        <span className="input" style={{borderColor: errorsDescription.name ? 'blue' : 'inherit'}}>
                             <textarea name="description" id="description" placeholder="Description"
                                       required onBlur={descriptionChangeHandler}/>
                         </span>
-                        <Alert variant="warning" show={errorsDescription.name}>{errorsDescription.name}</Alert>
+                        <Alert variant="primary" show={errorsDescription.name}>{errorsDescription.name}</Alert>
                     </p>
 
 
                     <p className="field">
                         <label htmlFor="timeCooking">Preparation time (minutes)</label>
-                        <span className="input" style={{borderColor: errorsTime.name ? 'red' : 'inherit'}}>
+                        <span className="input" style={{borderColor: errorsTime.name ? 'blue' : 'inherit'}}>
                             <input type="text" name="timeCooking" id="timeCooking" placeholder="Preparation Time"
                                    required onBlur={timeChangeHandler}
                             />
                         </span>
-                        <Alert variant="warning" show={errorsTime.name}>{errorsTime.name}</Alert>
+                        <Alert variant="primary" show={errorsTime.name}>{errorsTime.name}</Alert>
                     </p>
 
 

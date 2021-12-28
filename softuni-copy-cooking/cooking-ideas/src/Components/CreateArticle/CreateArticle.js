@@ -54,21 +54,21 @@ const CreateArticle = () => {
                     <legend style={{"text-align": "center", "width": "101%", "font-size": "15px", "font-weight":"bold"}}>Add new Article</legend>
                     <p className="field">
                         <label htmlFor="name">Name</label>
-                        <span className="input"  style={{borderColor: errors.name ? 'red' : 'inherit'}}>
+                        <span className="input"  style={{borderColor: errors.name ? 'blue' : 'inherit'}}>
                             <input type="text" name="name" id="name" placeholder="Name"
                                    required onBlur={nameChangeHandler}
                             />
                         </span>
-                        <Alert variant="warning" show={errors.name}>{errors.name}</Alert>
+                        <Alert variant="primary" show={errors.name}>{errors.name}</Alert>
                     </p>
                     <p className="field">
                         <label htmlFor="description">Description</label>
-                        <span className="input"  style={{borderColor: errors.name ? 'red' : 'inherit'}}>
+                        <span className="input"  style={{borderColor: errors.name ? 'blue' : 'inherit'}}>
                             <textarea name="description" id="description" placeholder="Description"
                                       required onBlur={descriptionChangeHandler}
                             />
                         </span>
-                        <Alert variant="warning" show={errorsDescription.name}>{errorsDescription.name}</Alert>
+                        <Alert variant="primary" show={errorsDescription.name}>{errorsDescription.name}</Alert>
                     </p>
                     <p className="field">
                         <label htmlFor="image">Image</label>

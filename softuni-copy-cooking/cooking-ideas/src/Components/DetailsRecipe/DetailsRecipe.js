@@ -54,8 +54,8 @@ const DetailsRecipe = () => {
 
     const ownerButtons = (
         <>
-            <Link className="button" to={`/edit-recipe/${recipe._id}`} style={{"background": "#b91717"}}>Edit</Link>
-            <a className="button" href="#" onClick={deleteClickHandler} style={{"background": "#b91717"}}>Delete</a>
+            <Link className="button" to={`/edit-recipe/${recipe._id}`} style={{"background": "#d36161"}}>Edit</Link>
+            <a className="button" href="#" onClick={deleteClickHandler} style={{"background": "#d36161"}}>Delete</a>
         </>
     );
 
