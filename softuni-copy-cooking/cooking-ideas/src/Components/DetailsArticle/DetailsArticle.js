@@ -38,6 +38,7 @@ const DetailsArticle = () => {
     const likeButtonClick = () => {
         if (article.likes.includes(user._id)) {
             console.log("User already liked article!");
+            addNotification('You already liked this article.', types.warn);
             return;
         }
 

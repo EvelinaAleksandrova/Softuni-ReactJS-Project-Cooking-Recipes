@@ -40,6 +40,7 @@ const DetailsRecipe = () => {
     const likeButtonClick = () => {
         if (recipe.likes.includes(user._id)) {
             console.log("User already liked recipe!");
+            addNotification('You already liked this recipe.', types.warn);
             return;
         }
 
