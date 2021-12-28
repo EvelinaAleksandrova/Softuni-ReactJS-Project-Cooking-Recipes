@@ -3,12 +3,13 @@ import {useAuthContext} from "../../contexts/AuthContext";
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 import {Alert} from "react-bootstrap";
+import {types, useNotificationContext} from "../../contexts/NotificationContext";
 
 const RegisterPage = () => {
     const navigate = useNavigate();
     const {login} = useAuthContext();
     const [errorsPassword, setErrorsPassword] = useState({name: false});
-
+    const {addNotification} = useNotificationContext();
     const registerSubmitHandler = (e) => {
         e.preventDefault();
 
@@ -18,6 +19,7 @@ const RegisterPage = () => {
         authService.register(email, password)
             .then(res => {
                 login(res);
+                addNotification('You successfully register in Cooking Ideas Page', types.info)
                 navigate('/my-recipes');
             })
     }

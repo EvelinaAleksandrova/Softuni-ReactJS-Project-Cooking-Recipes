@@ -23,37 +23,44 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ErrorBoundaries from "./Components/CommonDirectory/ErrorBoundaries";
 import EditRecipe from "./Components/EditRecipe/EditRecipe";
 import EditArticle from "./Components/EditArticle/EditArticle";
+import {NotificationProvider} from "./contexts/NotificationContext";
+import NotificationsDialog from "./Components/CommonDirectory/Notifications/NotificationsDialog";
 
 function App() {
     return (
         <ErrorBoundaries>
             <AuthProvider>
-                <div id="container">
-                    <Header/>
-                    <Routes>
-                        <Route path="/" element={<HomePage/>}/>
-                    </Routes>
-                    <main id="site-content">
-                        <Routes>
-                            <Route path="/home/*" element={<HomePage/>}/>
-                            <Route path="/login" element={<LoginPage/>}/>
-                            <Route path="/logout" element={<LogoutPage/>}/>
-                            <Route path="/register" element={<RegisterPage/>}/>
-                            <Route path="/all-recipes/*" element={<AllRecipesPage/>}/>
-                            <Route path="/all-articles/*" element={<AllArticlesPage/>}/>
-                            <Route path="/my-recipes" element={<MyRecipesPage/>}/>
-                            <Route path="/my-articles" element={<MyArticlesPage/>}/>
-                            <Route path="/create" element={<CreateRecipe/>}/>
-                            <Route path="/create-article" element={<CreateArticle/>}/>
-                            <Route path="/details-recipe/:recipeId" element={<DetailsRecipe/>}/>
-                            <Route path="/details-article/:articleId" element={<DetailsArticle/>}/>
-                            <Route path="/edit-recipe/:recipeId" element={<EditRecipe/>}/>
-                            <Route path="/edit-article/:articleId" element={<EditArticle/>}/>
+                <NotificationProvider>
 
+
+                    <div id="container">
+                        <Header/>
+                        <NotificationsDialog/>
+                        <Routes>
+                            <Route path="/" element={<HomePage/>}/>
                         </Routes>
-                    </main>
-                    <Footer/>
-                </div>
+                        <main id="site-content">
+                            <Routes>
+                                <Route path="/home/*" element={<HomePage/>}/>
+                                <Route path="/login" element={<LoginPage/>}/>
+                                <Route path="/logout" element={<LogoutPage/>}/>
+                                <Route path="/register" element={<RegisterPage/>}/>
+                                <Route path="/all-recipes/*" element={<AllRecipesPage/>}/>
+                                <Route path="/all-articles/*" element={<AllArticlesPage/>}/>
+                                <Route path="/my-recipes" element={<MyRecipesPage/>}/>
+                                <Route path="/my-articles" element={<MyArticlesPage/>}/>
+                                <Route path="/create" element={<CreateRecipe/>}/>
+                                <Route path="/create-article" element={<CreateArticle/>}/>
+                                <Route path="/details-recipe/:recipeId" element={<DetailsRecipe/>}/>
+                                <Route path="/details-article/:articleId" element={<DetailsArticle/>}/>
+                                <Route path="/edit-recipe/:recipeId" element={<EditRecipe/>}/>
+                                <Route path="/edit-article/:articleId" element={<EditArticle/>}/>
+
+                            </Routes>
+                        </main>
+                        <Footer/>
+                    </div>
+                </NotificationProvider>
             </AuthProvider>
         </ErrorBoundaries>
     );

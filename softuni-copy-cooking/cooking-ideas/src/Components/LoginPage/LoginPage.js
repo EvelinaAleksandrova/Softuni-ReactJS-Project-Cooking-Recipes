@@ -2,11 +2,13 @@
 import {useAuthContext} from "../../contexts/AuthContext";
 import {useNavigate} from 'react-router-dom';
 import * as authService from '../../services/authService.js';
+import {useNotificationContext, types} from "../../contexts/NotificationContext";
 
 const LoginPage = () => {
 
     const {login} = useAuthContext();
     const navigate = useNavigate();
+    const {addNotification} = useNotificationContext();
 
     const onLoginHandler = (e) => {
         e.preventDefault();
@@ -17,6 +19,7 @@ const LoginPage = () => {
         authService.login(email, password)
             .then(authData => {
                 login(authData);
+                addNotification('You logged in successfully', types.info)
                 navigate('/my-recipes');
             }).catch(error => {
             console.log(error);
