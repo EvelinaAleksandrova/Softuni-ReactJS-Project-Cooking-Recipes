@@ -1,10 +1,16 @@
 import * as recipesService from '../../services/recipesService';
 import {useNavigate} from "react-router-dom";
 import {useAuthContext} from "../../contexts/AuthContext";
+import {useState} from "react";
 
 const CreateRecipe = () => {
     const {user} = useAuthContext();
     const navigate = useNavigate();
+
+    const [errors, setErrors] = useState({name: false});
+    const [errorsIngredients, setErrorsIngredients] = useState({name: false});
+    const [errorsDescription, setErrorsDescription] = useState({name: false});
+    const [errorsTime, setErrorsTime] = useState({name: false});
 
     const onRecipeCreate = (e) => {
         e.preventDefault();
@@ -34,11 +40,51 @@ const CreateRecipe = () => {
     // const fileSelectedHandler = event => {
     //     console.log(event.target.files[0]);
     // }
+    const nameChangeHandler = (e) => {
+        let currentName = e.target.value;
+        if (currentName.length < 2) {
+            setErrors(state => ({...state, name: "Name of recipe should be at least 2 characters!"}))
+        } else {
+            setErrors(state => ({...state, name: false}));
+        }
+    }
+    const ingredientsChangeHandler = (e) => {
+        let currentIngredients = e.target.value;
+
+        if (currentIngredients.length < 10) {
+            setErrorsIngredients(state => ({...state, name: "Ingredients should be at least 10 characters!"}))
+        } else {
+            setErrorsIngredients(state => ({...state, name: false}));
+        }
+    }
+    const descriptionChangeHandler = (e) => {
+        let currentDescription = e.target.value;
+
+        if (currentDescription.length < 10) {
+            setErrorsDescription(state => ({...state, name: "Description should be at least 10 characters!"}))
+        } else {
+            setErrorsDescription(state => ({...state, name: false}));
+        }
+    }
+    const timeChangeHandler = (e) => {
+        let currentTime = e.target.value;
+
+        if (currentTime < 4) {
+            setErrorsTime(state => ({...state, name: "Time should be at least 4 minutes!"}))
+        } else {
+            setErrorsTime(state => ({...state, name: false}));
+        }
+    }
     return (
         <section id="create-page" className="create">
             <form id="create-form" onSubmit={onRecipeCreate} method="POST">
                 <fieldset>
-                    <legend style={{"text-align": "center", "width": "101%", "font-size": "15px", "font-weight":"bold"}}>Add new Recipe
+                    <legend style={{
+                        "text-align": "center",
+                        "width": "101%",
+                        "font-size": "15px",
+                        "font-weight": "bold"
+                    }}>Add new Recipe
                     </legend>
 
                     <p className="field">
@@ -47,18 +93,24 @@ const CreateRecipe = () => {
                             <input type="text" name="name" id="name" placeholder="Name" required/>
                         </span>
                     </p>
+
+
                     <p className="field">
                         <label htmlFor="ingredients">Ingredients</label>
                         <span className="input">
                             <textarea name="ingredients" id="ingredients" placeholder="Ingredients" required/>
                         </span>
                     </p>
+
+
                     <p className="field">
                         <label htmlFor="description">Description</label>
                         <span className="input">
                             <textarea name="description" id="description" placeholder="Description" required/>
                         </span>
                     </p>
+
+
                     <p className="field">
                         <label htmlFor="timeCooking">Preparation time (minutes)</label>
                         <span className="input">
@@ -66,15 +118,19 @@ const CreateRecipe = () => {
                                    required/>
                         </span>
                     </p>
+
+
                     <p className="field">
                         <label htmlFor="image">Image</label>
                         <span className="input">
                             <input type="text"
-                                   // onChange={fileSelectedHandler}
+                                // onChange={fileSelectedHandler}
                                    name="imageUrl" id="image"
                                    placeholder="Image" required/>
                         </span>
                     </p>
+
+
                     <p className="field">
                         <label htmlFor="type">Type</label>
                         <span className="input">
@@ -91,6 +147,8 @@ const CreateRecipe = () => {
                             </select>
                         </span>
                     </p>
+
+
                     <p className="field">
                         <label htmlFor="difficulty">Difficulty level of preparation</label>
                         <span className="input">
@@ -101,8 +159,10 @@ const CreateRecipe = () => {
                             </select>
                         </span>
                     </p>
+
                     <input className="button submit" type="submit" value="Add Recipe"
                            style={{"background": "#d36161"}}/>
+
                 </fieldset>
             </form>
         </section>

@@ -26,6 +26,9 @@ const EditRecipe = () => {
     const {recipeId} = useParams();
     const [recipe, setRecipe] = useRecipeState(recipeId);
     const [errors, setErrors] = useState({name: false});
+    const [errorsIngredients, setErrorsIngredients] = useState({name: false});
+    const [errorsDescription, setErrorsDescription] = useState({name: false});
+    const [errorsTime, setErrorsTime] = useState({name: false});
     const [type, setType] = useState(recipe.type);
 
     const recipeEditSubmitHandler = (e) => {
@@ -33,10 +36,37 @@ const EditRecipe = () => {
     }
     const nameChangeHandler = (e) => {
         let currentName = e.target.value;
-        if (currentName.length < 3) {
+        if (currentName.length < 2) {
             setErrors(state => ({...state, name: "Name of recipe should be at least 2 characters!"}))
         } else {
             setErrors(state => ({...state, name: false}));
+        }
+    }
+    const ingredientsChangeHandler = (e) => {
+        let currentIngredients = e.target.value;
+
+        if (currentIngredients.length < 10) {
+            setErrorsIngredients(state => ({...state, name: "Ingredients should be at least 10 characters!"}))
+        } else {
+            setErrorsIngredients(state => ({...state, name: false}));
+        }
+    }
+    const descriptionChangeHandler = (e) => {
+        let currentDescription = e.target.value;
+
+        if (currentDescription.length < 10) {
+            setErrorsDescription(state => ({...state, name: "Description should be at least 10 characters!"}))
+        } else {
+            setErrorsDescription(state => ({...state, name: false}));
+        }
+    }
+    const timeChangeHandler = (e) => {
+        let currentTime = e.target.value;
+
+        if (currentTime < 4) {
+            setErrorsTime(state => ({...state, name: "Time should be at least 4 minutes!"}))
+        } else {
+            setErrorsTime(state => ({...state, name: false}));
         }
     }
 
@@ -51,6 +81,7 @@ const EditRecipe = () => {
                         "font-weight": "bold"
                     }}>Edit my Recipe
                     </legend>
+
                     <p className="field">
                         <label htmlFor="name">Name</label>
                         <span className="input" style={{borderColor: errors.name ? 'red' : 'inherit'}}>
@@ -59,33 +90,52 @@ const EditRecipe = () => {
                         </span>
                         <Alert variant="warning" show={errors.name}>{errors.name}</Alert>
                     </p>
+
                     <p className="field">
                         <label htmlFor="ingredients">Ingredients</label>
-                        <span className="input">
+                        <span className="input" style={{borderColor: errorsIngredients.name ? 'red' : 'inherit'}}>
                             <textarea name="ingredients"
-                                      id="ingredients" defaultValue={recipe.ingredients}/>
+                                      id="ingredients" defaultValue={recipe.ingredients}
+                                      onBlur={ingredientsChangeHandler}
+                            />
                         </span>
+                        <Alert variant="warning" show={errorsIngredients.name}>{errorsIngredients.name}</Alert>
                     </p>
+
+
                     <p className="field">
                         <label htmlFor="description">Description</label>
-                        <span className="input">
+                        <span className="input" style={{borderColor: errorsDescription.name ? 'red' : 'inherit'}}>
                             <textarea name="description"
-                                      id="description" defaultValue={recipe.description}/>
+                                      id="description" defaultValue={recipe.description}
+                             onBlur={descriptionChangeHandler}
+                            />
                         </span>
+                        <Alert variant="warning" show={errorsDescription.name}>{errorsDescription.name}</Alert>
+
                     </p>
+
+
                     <p className="field">
                         <label htmlFor="timeCooking">Preparation time (minutes)</label>
-                        <span className="input">
+                        <span className="input" style={{borderColor: errorsTime.name ? 'red' : 'inherit'}}>
                             <input type="text" name="timeCooking"
-                                   id="timeCooking" defaultValue={recipe.timeCooking}/>
+                                   id="timeCooking" defaultValue={recipe.timeCooking}
+                                    onBlur={timeChangeHandler}
+                            />
                         </span>
+                        <Alert variant="warning" show={errorsTime.name}>{errorsTime.name}</Alert>
                     </p>
+
+
                     <p className="field">
                         <label htmlFor="image">Image</label>
                         <span className="input">
                             <input type="text" name="imageUrl" id="image" defaultValue={recipe.imageUrl}/>
                         </span>
                     </p>
+
+
                     <p className="field">
                         <label htmlFor="type">Type</label>
                         <span className="input">
@@ -96,6 +146,8 @@ const EditRecipe = () => {
                             </select>
                         </span>
                     </p>
+
+
                     <p className="field">
                         <label htmlFor="difficulty">Difficulty level of preparation</label>
                         <span className="input">
@@ -106,6 +158,7 @@ const EditRecipe = () => {
                             </select>
                         </span>
                     </p>
+
                     <input className="button submit" type="submit" value="Save"/>
                 </fieldset>
             </form>
