@@ -3,7 +3,7 @@
     background-repeat: no-repeat;
     background-size: 50%;
     display: block;
-    height: 500px;
+    height: 590px;
 }
 
 .p-on-about-us-image {
@@ -51,6 +51,7 @@
     text-align: center;
     background-color: rgba(168, 0, 0, 0.63);
     color: white;
+    margin-bottom: 1em;
 
 }
 .about-section h1 {

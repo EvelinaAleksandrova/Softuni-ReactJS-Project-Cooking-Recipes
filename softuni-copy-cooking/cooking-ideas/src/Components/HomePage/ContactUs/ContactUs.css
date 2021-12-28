@@ -6,6 +6,7 @@
     font-size: 45px;
     letter-spacing: 3px;
     margin-bottom: 0.5em;
+    margin-top: 1em;
 }
 
 .p-in-email-us {
@@ -96,8 +97,8 @@
 .more-info-contact-us {
     text-align: center;
     font-size: 18px;
-    margin-top: 3em;
-    margin-bottom: 6em;
+    margin-top: 4em;
+    margin-bottom: 6.5em;
 }
 
 @media screen and (max-width: 650px) {

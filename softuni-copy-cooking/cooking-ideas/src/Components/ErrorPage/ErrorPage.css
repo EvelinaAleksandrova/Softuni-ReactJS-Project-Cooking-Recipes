@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Lato');
-body {
-    background: rgb(245, 224, 224);
-}
+
 .top {
     margin-top: 30px;
 }
@@ -19,7 +17,7 @@ body {
     top: 10%;
     position: absolute;
     border-radius: 50% 50% 0 0;
-    background: #ededed;
+    background: rgb(245, 224, 224);
     border: 1px solid #b2b2b2;
     border-bottom: none;
     animation: float 2s ease-out infinite;
@@ -31,7 +29,7 @@ body {
     top: 10%;
     position: absolute;
     border-radius: 50% 50% 0 0;
-    background: #ededed;
+    background: rgb(245, 224, 224);
     border: 1px solid #bfc0c0;
     border-bottom: none;
     animation: float 2s ease-out infinite;
@@ -70,11 +68,11 @@ body {
 }
 .one, .two, .three, .four {
     position: absolute;
-    background: #ededed;
+    background: rgb(245, 224, 224);
     top: 85%;
     width: 25%;
     height: 23%;
-    border: 1px solid #bfc0c0;
+    border: 1px solid #afafaf;
     z-index: 0;
 }
 .one {
@@ -123,15 +121,15 @@ body {
     margin-top: 10px;
 }
 /*text styling*/
-h1 {
+.top h1 {
     font-family: 'Abril Fatface', serif;
-    color: #ededed;
+    color:rgb(245, 224, 224);
     text-align: center;
     font-size: 9em;
     margin: 0;
     text-shadow: -1px 0 #bfc0c0, 0 1px #bfc0c0, 1px 0 #bfc0c0, 0 -1px #bfc0c0;
 }
-h3 {
+.top h3 {
     font-family: 'Lato', sans-serif;
     font-size: 2em;
     text-transform: uppercase;
@@ -141,7 +139,7 @@ h3 {
     font-weight: 900;
     margin-bottom: 30px;
 }
-h4 {
+.bottom h4 {
     text-align: center;
     font-family: 'Lato', sans-serif;
     color: #585959;
