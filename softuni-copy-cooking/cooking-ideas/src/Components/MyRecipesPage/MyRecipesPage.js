@@ -4,13 +4,13 @@ import {useAuthContext} from '../../contexts/AuthContext';
 import RecipeList from "../RecipeList/RecipeList";
 
 const MyRecipesPage = () => {
-    const [recipes, setRecipes] = useState([]);
+    const [recipe, setRecipe] = useState([]);
     const {user} = useAuthContext();
 
     useEffect(() => {
         recipesService.getMyRecipes(user._id)
             .then(recipeResult => {
-                setRecipes(recipeResult);
+                setRecipe(recipeResult);
             });
     }, []);
 
@@ -18,9 +18,9 @@ const MyRecipesPage = () => {
         <section id="my-recipes-page" className="my-recipes">
             <h1>My Recipes</h1>
             {
-                recipes.length > 0
-                    ? <RecipeList recipe={recipes}/>
-                    : <p className="no-recipes">No recipes yet!</p>
+                recipe.length > 0
+                    ? <RecipeList recipe={recipe}/>
+                    : <p className="no-recipes">You don't create any recipes!</p>
             }
 
         </section>

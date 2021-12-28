@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {useAuthContext} from "../../contexts/AuthContext";
 import {useState} from "react";
 import {Alert} from "react-bootstrap";
+import {types, useNotificationContext} from "../../contexts/NotificationContext";
 
 const CreateArticle = () => {
     const {user} = useAuthContext();
@@ -10,6 +11,7 @@ const CreateArticle = () => {
 
     const [errors, setErrors] = useState({name: false});
     const [errorsDescription, setErrorsDescription] = useState({name: false});
+    const {addNotification} = useNotificationContext();
 
     const onArticleCreate = (e) => {
         e.preventDefault();
@@ -27,7 +29,8 @@ const CreateArticle = () => {
             type
         }, user.accessToken)
             .then(result => {
-            navigate('/all-articles');
+                addNotification('You create new article successfully.', types.info)
+            navigate('/my-articles');
         });
     }
     const nameChangeHandler = (e) => {

@@ -10,9 +10,23 @@ import PizzaList from "../RecipeList/CategoryRecipes/PizzaList";
 import SaladList from "../RecipeList/CategoryRecipes/SaladList";
 import DessertList from "../RecipeList/CategoryRecipes/DessertList";
 import Other from "../RecipeList/CategoryRecipes/Other";
+import {useEffect, useState} from "react";
+import * as recipesService from '../../services/recipesService';
 import "./AllRecipes.css";
 
+
 const AllRecipesPage = () => {
+    const [recipe, setRecipe] = useState([]);
+
+    useEffect(() => {
+        recipesService.getAll()
+            .then(result => {
+                setRecipe(result);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }, []);
 
     return (
         <section id="dashboard-page" className="dashboard">
@@ -33,7 +47,7 @@ const AllRecipesPage = () => {
 
             <section>
                 <Routes>
-                    <Route path="/" element={<RecipeList/>}/>
+                    <Route path="/" element={<RecipeList recipe={recipe}/>}/>
                     <Route path="/all-recipes-category" element={<AllRecipeCategory/>}/>
                     <Route path="/soup" element={<SoupList/>}/>
                     <Route path="/meat" element={<MeatList/>}/>

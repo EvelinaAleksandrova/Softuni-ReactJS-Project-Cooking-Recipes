@@ -6,8 +6,22 @@ import Herbs from "../ArticlesList/CategoryArticle/Herbs";
 import AllArticlesCategory from "../ArticlesList/AllArticlesCategory";
 import OtherArticle from "../ArticlesList/CategoryArticle/OtherArticle";
 import "./AllArticles.css";
+import {useEffect, useState} from "react";
+import * as articlesService from "../../services/articlesService";
 
 const AllArticlesPage = () => {
+
+    const [article, setArticle] = useState([]);
+
+    useEffect(() => {
+        articlesService.getAll()
+            .then(result => {
+                setArticle(result);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }, []);
 
     return (
         <section id="dashboard-page" className="dashboard">
@@ -24,7 +38,7 @@ const AllArticlesPage = () => {
             <section>
 
                 <Routes>
-                    <Route path="/" element={<ArticlesList/>}/>
+                    <Route path="/" element={<ArticlesList article={article}/>}/>
                     <Route path="/all-articles-category" element={<AllArticlesCategory/>}/>
                     <Route path="/fruit" element={<Fruit/>}/>
                     <Route path="/vegetable" element={<Vegetable/>}/>

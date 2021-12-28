@@ -16,12 +16,7 @@ export const getMyRecipes = (ownerId) => {
     let query = encodeURIComponent(`_ownerId="${ownerId}"`);
     return requestRecipe.get(`${baseUrl}/recipes?where=${query}`);
 }
-//
-// export const getMyPets = (ownerId) => {
-//     let query = encodeURIComponent(`_ownerId="${ownerId}"`);
-//
-//     return request.get(`${baseUrl}/pets?where=${query}`);
-// };
+
 
 export const update = (recipeId, recipeData) => {
     requestRecipe.put(`${baseUrl}/recipes/${recipeId}`, recipeData);

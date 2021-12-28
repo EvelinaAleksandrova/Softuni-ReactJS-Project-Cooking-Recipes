@@ -1,20 +1,8 @@
 import RecipeCard from "./RecipeCard/RecipeCard";
-import {useEffect, useState} from "react";
-import * as recipesService from "../../services/recipesService";
 import "./RecipeList.css";
 
-const RecipeList = () => {
+const RecipeList = ({recipe}) => {
 
-    const [recipe, setRecipe] = useState([]);
-    useEffect(() => {
-        recipesService.getAll()
-            .then(result => {
-                setRecipe(result);
-            })
-            .catch(error=>{
-                console.log(error);
-            })
-    }, []);
 
     return (
         <>

@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {useAuthContext} from "../../contexts/AuthContext";
 import {useState} from "react";
 import {Alert} from "react-bootstrap";
+import {types, useNotificationContext} from "../../contexts/NotificationContext";
 
 const CreateRecipe = () => {
     const {user} = useAuthContext();
@@ -12,6 +13,7 @@ const CreateRecipe = () => {
     const [errorsDescription, setErrorsDescription] = useState({name: false});
     const [errorsIngredients, setErrorsIngredients] = useState({name: false});
     const [errorsTime, setErrorsTime] = useState({name: false});
+    const {addNotification} = useNotificationContext();
 
     const onRecipeCreate = (e) => {
         e.preventDefault();
@@ -35,7 +37,8 @@ const CreateRecipe = () => {
             difficulty
         }, user.accessToken)
             .then(result => {
-                navigate('/all-recipes');
+                addNotification('You create new recipe successfully.', types.info)
+                navigate('/my-recipes');
             });
     }
     // const fileSelectedHandler = event => {

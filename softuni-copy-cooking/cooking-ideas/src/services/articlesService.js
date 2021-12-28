@@ -11,6 +11,11 @@ export const getAll = async () => {
     let result = await requestArticle.get(`${baseUrl}/articles`);
     return result;
 }
+export const getMyArticles = (ownerId) => {
+    let query = encodeURIComponent(`_ownerId="${ownerId}"`);
+    return requestArticle.get(`${baseUrl}/articles?where=${query}`);
+}
+
 export const update = (articleId, articleData) => {
     requestArticle.put(`${baseUrl}/articles/${articleId}`, articleData);
 };
