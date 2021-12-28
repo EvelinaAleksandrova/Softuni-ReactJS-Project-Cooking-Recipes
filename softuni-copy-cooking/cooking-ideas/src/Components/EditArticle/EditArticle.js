@@ -24,7 +24,7 @@ const EditArticle = () => {
     const nameChangeHandler = (e) => {
         let currentName = e.target.value;
         if (currentName.length < 3) {
-            setErrors(state => ({...state, name: "Your name shoul be at least 3 characters!"}));
+            setErrors(state => ({...state, name: "Name of article should be at least 2 characters!"}));
         } else {
             setErrors(state => ({...state, name: false}));
         }

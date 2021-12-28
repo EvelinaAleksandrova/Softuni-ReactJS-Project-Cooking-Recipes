@@ -15,11 +15,16 @@ const types = [
     {value: 'christmas', text: 'Christmas'},
     {value: 'other-recipe', text: 'Other'},
 ]
+const difficultyLevel = [
+    {value: 'beginner', text: 'Beginner'},
+    {value: 'medium', text: 'Medium'},
+    {value: 'advanced', text: 'Advanced'}
+]
 
 
 const EditRecipe = () => {
     const {recipeId} = useParams();
-    const [recipe,setRecipe] = useRecipeState(recipeId);
+    const [recipe, setRecipe] = useRecipeState(recipeId);
     const [errors, setErrors] = useState({name: false});
     const [type, setType] = useState(recipe.type);
 
@@ -29,7 +34,7 @@ const EditRecipe = () => {
     const nameChangeHandler = (e) => {
         let currentName = e.target.value;
         if (currentName.length < 3) {
-            setErrors(state => ({...state, name: "Your name shoul be at least 3 characters!"}))
+            setErrors(state => ({...state, name: "Name of recipe should be at least 2 characters!"}))
         } else {
             setErrors(state => ({...state, name: false}));
         }
@@ -39,20 +44,40 @@ const EditRecipe = () => {
         <section id="edit-page" className="edit">
             <form id="edit-form" method="POST" onSubmit={recipeEditSubmitHandler}>
                 <fieldset>
-                    <legend style={{"text-align": "center", "width": "101%", "font-size": "15px", "font-weight":"bold"}}>Edit my Recipe</legend>
+                    <legend style={{
+                        "text-align": "center",
+                        "width": "101%",
+                        "font-size": "15px",
+                        "font-weight": "bold"
+                    }}>Edit my Recipe
+                    </legend>
                     <p className="field">
                         <label htmlFor="name">Name</label>
                         <span className="input" style={{borderColor: errors.name ? 'red' : 'inherit'}}>
                             <input type="text" name="name" id="name" defaultValue={recipe.name}
                                    onBlur={nameChangeHandler}/>
                         </span>
-                        <Alert variant="warning" show={errors.name}  >{errors.name}</Alert>
+                        <Alert variant="warning" show={errors.name}>{errors.name}</Alert>
+                    </p>
+                    <p className="field">
+                        <label htmlFor="ingredients">Ingredients</label>
+                        <span className="input">
+                            <textarea name="ingredients"
+                                      id="ingredients" defaultValue={recipe.ingredients}/>
+                        </span>
                     </p>
                     <p className="field">
                         <label htmlFor="description">Description</label>
                         <span className="input">
                             <textarea name="description"
                                       id="description" defaultValue={recipe.description}/>
+                        </span>
+                    </p>
+                    <p className="field">
+                        <label htmlFor="timeCooking">Preparation time (minutes)</label>
+                        <span className="input">
+                            <input type="text" name="timeCooking"
+                                   id="timeCooking" defaultValue={recipe.timeCooking}/>
                         </span>
                     </p>
                     <p className="field">
@@ -68,6 +93,16 @@ const EditRecipe = () => {
                                     onChange={(e) => setRecipe(s =>
                                         ({...s, type: e.target.value}))}>>
                                 {types.map(x => <option key={x.value} value={x.value}>{x.text}</option>)}
+                            </select>
+                        </span>
+                    </p>
+                    <p className="field">
+                        <label htmlFor="difficulty">Difficulty level of preparation</label>
+                        <span className="input">
+                            <select id="difficulty" name="difficulty" value={recipe.difficulty}
+                                    onChange={(e) => setRecipe(s =>
+                                        ({...s, difficulty: e.target.value}))}>>
+                                {difficultyLevel.map(x => <option key={x.value} value={x.value}>{x.text}</option>)}
                             </select>
                         </span>
                     </p>
