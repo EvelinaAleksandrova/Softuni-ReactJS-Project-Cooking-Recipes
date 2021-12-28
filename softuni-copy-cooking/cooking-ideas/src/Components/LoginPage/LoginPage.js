@@ -28,7 +28,7 @@ const LoginPage = () => {
         <section id="login-page" className="login">
             <form id="login-form" onSubmit={onLoginHandler} method="POST">
                 <fieldset>
-                    <legend>Login Form</legend>
+                    <legend style={{"text-align": "center", "width": "101%", "font-size": "15px", "font-weight":"bold"}}>Login Form</legend>
                     <p className="field">
                         <label htmlFor="email">Email</label>
                         <span className="input">
@@ -41,7 +41,7 @@ const LoginPage = () => {
                             <input type="password" name="password" id="password" placeholder="Password" required/>
                         </span>
                     </p>
-                    <input className="button submit" type="submit" value="Login"/>
+                    <input className="button submit" type="submit" value="Login" style={{"background":"#d36161"}}/>
                 </fieldset>
             </form>
         </section>

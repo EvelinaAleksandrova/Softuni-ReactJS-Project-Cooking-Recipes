@@ -23,7 +23,7 @@ const RegisterPage = () => {
         <section id="register-page" className="register">
             <form id="register-form" action="" method="POST" onSubmit={registerSubmitHandler}>
                 <fieldset>
-                    <legend>Register Form</legend>
+                    <legend style={{"text-align": "center", "width": "101%", "font-size": "15px", "font-weight":"bold"}}>Register Form</legend>
                     <p className="field">
                         <label htmlFor="email">Email</label>
                         <span className="input">
@@ -42,7 +42,7 @@ const RegisterPage = () => {
                             <input type="password" name="confirm-pass" id="repeat-pass" placeholder="Repeat Password" required/>
                         </span>
                     </p>
-                    <input className="button submit" type="submit" value="Register"/>
+                    <input className="button submit" type="submit" value="Register" style={{"background":"#d36161"}}/>
                 </fieldset>
             </form>
         </section>
