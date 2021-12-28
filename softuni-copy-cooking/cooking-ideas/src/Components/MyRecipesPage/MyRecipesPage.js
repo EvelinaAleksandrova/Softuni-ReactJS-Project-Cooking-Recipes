@@ -6,13 +6,13 @@ import RecipeList from "../RecipeList/RecipeList";
 const MyRecipesPage = () => {
     const [recipes, setRecipes] = useState([]);
     const {user} = AuthContext();
-
-    useEffect(() => {
-        recipesService.getMyRecipes(user._id)
-            .then(recipeResult => {
-                setRecipes(recipeResult);
-            });
-    }, []);
+    //
+    // useEffect(() => {
+    //     recipesService.getMyRecipes(user._id)
+    //         .then(recipeResult => {
+    //             setRecipes(recipeResult);
+    //         });
+    // }, []);
 
     return (
         <section id="my-recipes-page" className="my-recipes">

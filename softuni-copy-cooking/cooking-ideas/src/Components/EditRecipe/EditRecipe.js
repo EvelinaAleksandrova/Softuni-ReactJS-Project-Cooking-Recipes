@@ -1,8 +1,10 @@
 import useRecipeState from "../../Hooks/useRecipeState";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import "./EditRecipe.css";
 import {useState} from "react";
 import {Alert} from "react-bootstrap";
+import * as recipesService from "../../services/recipesService";
+
 
 const types = [
     {value: 'soup', text: 'Soup'},
@@ -24,6 +26,8 @@ const difficultyLevel = [
 
 const EditRecipe = () => {
     const {recipeId} = useParams();
+    const navigate = useNavigate();
+
     const [recipe, setRecipe] = useRecipeState(recipeId);
     const [type, setType] = useState(recipe.type);
 
@@ -35,6 +39,10 @@ const EditRecipe = () => {
 
     const recipeEditSubmitHandler = (e) => {
         e.preventDefault();
+        let recipeData = Object.fromEntries(new FormData(e.currentTarget));
+        console.log(recipeData);
+        recipesService.update(recipe._id, recipeData);
+        navigate(`/details-recipe/${recipe._id}`);
     }
     const nameChangeHandler = (e) => {
         let currentName = e.target.value;
@@ -75,7 +83,7 @@ const EditRecipe = () => {
     return (
         <section id="edit-page" className="edit">
             <form id="edit-form" method="POST" onSubmit={recipeEditSubmitHandler}>
-                <fieldset style={{"box-shadow":"0 0 1rem 0.1rem rgb(211, 97, 97)"}}>
+                <fieldset style={{"box-shadow": "0 0 1rem 0.1rem rgb(211, 97, 97)"}}>
                     <legend style={{
                         "text-align": "center",
                         "width": "101%",
@@ -110,7 +118,7 @@ const EditRecipe = () => {
                         <span className="input" style={{borderColor: errorsDescription.name ? 'blue' : 'inherit'}}>
                             <textarea name="description"
                                       id="description" defaultValue={recipe.description}
-                             onBlur={descriptionChangeHandler}
+                                      onBlur={descriptionChangeHandler}
                             />
                         </span>
                         <Alert variant="primary" show={errorsDescription.name}>{errorsDescription.name}</Alert>
@@ -123,7 +131,7 @@ const EditRecipe = () => {
                         <span className="input" style={{borderColor: errorsTime.name ? 'blue' : 'inherit'}}>
                             <input type="text" name="timeCooking"
                                    id="timeCooking" defaultValue={recipe.timeCooking}
-                                    onBlur={timeChangeHandler}
+                                   onBlur={timeChangeHandler}
                             />
                         </span>
                         <Alert variant="primary" show={errorsTime.name}>{errorsTime.name}</Alert>

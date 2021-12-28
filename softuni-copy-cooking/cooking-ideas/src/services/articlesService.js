@@ -3,14 +3,17 @@
 // https://server-cooking.herokuapp.com/jsonstore
 // const baseUrl = 'https://server-cooking.herokuapp.com/jsonstore';
 
-import {requestArticle} from "./requestArticle";
+import * as requestArticle from "./requestArticle";
 
 const baseUrl = 'http://localhost:3030/data';
 
 export const getAll = async () => {
-    let result = await requestArticle(`${baseUrl}/articles`);
+    let result = await requestArticle.get(`${baseUrl}/articles`);
     return result;
 }
+export const update = (articleId, articleData) => {
+    requestArticle.put(`${baseUrl}/articles/${articleId}`, articleData);
+};
 
 export const create = async (articleData, token) => {
     let response = await fetch(`${baseUrl}/articles`, {

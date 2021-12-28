@@ -90,7 +90,7 @@ const DetailsRecipe = () => {
 
                     </div>
                 </div>
-                <div className="recipe-description">
+                <div className="recipe-description" style={{"margin-left":"50px"}}>
                     <h3 style={{"font-size": "25px"}}>Products</h3>
                     <p style={{"font-size": "18px"}}>{recipe.ingredients}</p>
                 </div>

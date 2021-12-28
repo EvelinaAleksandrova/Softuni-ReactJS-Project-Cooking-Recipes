@@ -11,7 +11,7 @@
 .type {
     font-weight: bold;
     margin-bottom: 5px;
-    text-decoration: underline #e8e71e;
+    /*text-decoration: underline #e8e71e;*/
 }
 
 .img-article-details {

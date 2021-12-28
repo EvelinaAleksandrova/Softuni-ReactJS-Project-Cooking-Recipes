@@ -1,19 +1,21 @@
 import useArticleState from '../../Hooks/useArticleState';
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import "./EditArticle.css";
 import {useState} from "react";
 import {Alert} from "react-bootstrap";
+import * as articlesService from "../../services/articlesService";
 
 const types = [
     {value: 'fruit', text: 'Fruit'},
     {value: 'vegetable', text: 'Vegetable'},
     {value: 'herbs', text: 'Herbs'},
     {value: 'other-article', text: 'Other'},
-    {value: 'dessert', text: 'Dessert'}
 ];
 
 const EditArticle = () => {
     const {articleId} = useParams();
+    const navigate = useNavigate();
+
     const [article, setArticle] = useArticleState(articleId);
     const [type, setType] = useState(article.type);
 
@@ -23,7 +25,11 @@ const EditArticle = () => {
 
     const articleEditSubmitHandler = (e) => {
         e.preventDefault();
+        let articleData = Object.fromEntries(new FormData(e.currentTarget));
+        articlesService.update(article._id, articleData);
+        navigate(`/details-article/${article._id}`);
     }
+
     const nameChangeHandler = (e) => {
         let currentName = e.target.value;
         if (currentName.length < 3) {
@@ -47,7 +53,7 @@ const EditArticle = () => {
     return (
         <section id="edit-page" className="edit">
             <form id="edit-form" method="POST" onSubmit={articleEditSubmitHandler}>
-                <fieldset style={{"box-shadow":"0 0 1rem 0.1rem rgb(211, 97, 97)"}}>
+                <fieldset style={{"box-shadow": "0 0 1rem 0.1rem rgb(211, 97, 97)"}}>
                     <legend style={{
                         "text-align": "center",
                         "width": "101%",

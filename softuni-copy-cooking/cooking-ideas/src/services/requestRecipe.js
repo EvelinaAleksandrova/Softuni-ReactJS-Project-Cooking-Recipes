@@ -1,20 +1,20 @@
-export const requestRecipe = async (url) => {
-    // let result = null;
-    //
-    // if (method === 'GET') {
-    //     result = fetch(url);
-    // } else {
-    //     result = fetch(url, {
-    //         method,
-    //         headers: {
-    //             'content-type': 'application/json',
-    //             'X-Authorization': getToken()
-    //         },
-    //         body: JSON.stringify(data)
-    //     });
-    // }
+export const requestRecipe = async (method, url, data) => {
+    let promise = null;
 
-    return fetch(url).then(responseHandler);
+    if (method === 'GET') {
+        promise = fetch(url);
+    } else {
+        promise = fetch(url, {
+            method,
+            headers: {
+                'content-type': 'application/json',
+                'X-Authorization': getToken()
+            },
+            body: JSON.stringify(data)
+        });
+    }
+
+    return promise.then(responseHandler);
 };
 
 async function responseHandler(res) {
