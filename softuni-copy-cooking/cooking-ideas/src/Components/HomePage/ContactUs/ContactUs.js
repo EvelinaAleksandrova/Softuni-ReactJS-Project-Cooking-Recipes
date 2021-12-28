@@ -24,20 +24,21 @@ const ContactUs = () => {
             .catch((err) => {
                 console.log('FAILED...', err);
             });
+
     };
 
     const handleChange = (e) => {
         setToSend({...toSend, [e.target.name]: e.target.value});
     };
 
-    const resetInputFields = () => {
-        setTimeout(() => {
-            document.getElementById("name").value = "";
-            document.getElementById("email-form").value = "";
-            document.getElementById("text").value = "";
-        }, 300);
-
-    };
+    // const resetInputFields = () => {
+    //     setTimeout(() => {
+    //         document.getElementById("name").value = "";
+    //         document.getElementById("email-form").value = "";
+    //         document.getElementById("text").value = "";
+    //     }, 300);
+    //
+    // };
     return (
         <>
             <h3 className="contact-us-h3">Contact Us</h3>
@@ -72,7 +73,9 @@ const ContactUs = () => {
                                   onChange={handleChange}
                                   required
                         />
-                        <input id="submit-contact" type="submit" value="Send Email" onClick={resetInputFields}/>
+                        <input id="submit-contact" type="submit" value="Send Email"
+                               // onClick={resetInputFields}
+                        />
                     </form>
                 </div>
             </div>

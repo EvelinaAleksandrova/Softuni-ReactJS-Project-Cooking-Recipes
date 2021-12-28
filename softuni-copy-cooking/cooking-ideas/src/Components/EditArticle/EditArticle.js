@@ -47,7 +47,7 @@ const EditArticle = () => {
     return (
         <section id="edit-page" className="edit">
             <form id="edit-form" method="POST" onSubmit={articleEditSubmitHandler}>
-                <fieldset>
+                <fieldset style={{"box-shadow":"0 0 1rem 0.1rem rgb(211, 97, 97)"}}>
                     <legend style={{
                         "text-align": "center",
                         "width": "101%",

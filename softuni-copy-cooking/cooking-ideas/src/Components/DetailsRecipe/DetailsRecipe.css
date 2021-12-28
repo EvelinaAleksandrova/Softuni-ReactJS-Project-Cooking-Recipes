@@ -1,5 +1,7 @@
 .recipe-information {
+    margin-top: 2%;
     margin-bottom: 100px;
+
 }
 
 .recipe-information h3 {
@@ -17,6 +19,7 @@
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid darkred;
+
 }
 
 .img-recipe-details::after {

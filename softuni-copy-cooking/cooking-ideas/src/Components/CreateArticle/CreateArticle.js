@@ -50,7 +50,7 @@ const CreateArticle = () => {
     return (
         <section id="create-page" className="create">
             <form id="create-form" onSubmit={onArticleCreate} method="POST">
-                <fieldset>
+                <fieldset style={{"box-shadow":"0 0 1rem 0.1rem rgb(211, 97, 97)"}}>
                     <legend style={{"text-align": "center", "width": "101%", "font-size": "15px", "font-weight":"bold"}}>Add new Article</legend>
                     <p className="field">
                         <label htmlFor="name">Name</label>

@@ -78,8 +78,9 @@ const CreateRecipe = () => {
     }
     return (
         <section id="create-page" className="create">
-            <form id="create-form" onSubmit={onRecipeCreate} method="POST">
-                <fieldset>
+            {/*box-shadow: 0 0 1rem 0.1rem rgb(211, 97, 97);*/}
+            <form id="create-form" onSubmit={onRecipeCreate} method="POST" >
+                <fieldset style={{"box-shadow":"0 0 1rem 0.1rem rgb(211, 97, 97)"}}>
                     <legend style={{
                         "text-align": "center",
                         "width": "101%",

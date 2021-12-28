@@ -59,7 +59,7 @@ const DetailsArticle = () => {
 
     const userButtons = (
         <>
-            <Button className="button" onClick={likeButtonClick}>Like</Button>
+            <Button className="button" onClick={likeButtonClick} style={{"background-color":"#ffd505", "color":"black"}}>Like</Button>
         </>
     )
 
