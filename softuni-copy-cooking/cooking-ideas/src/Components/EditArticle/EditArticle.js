@@ -4,6 +4,7 @@ import "./EditArticle.css";
 import {useState} from "react";
 import {Alert} from "react-bootstrap";
 import * as articlesService from "../../services/articlesService";
+import {useNotificationContext} from "../../contexts/NotificationContext";
 
 const types = [
     {value: 'fruit', text: 'Fruit'},
@@ -22,11 +23,13 @@ const EditArticle = () => {
     const [errors, setErrors] = useState({name: false});
     const [errorsDescription, setErrorsDescription] = useState({name: false});
 
+    const {addNotification} = useNotificationContext();
 
     const articleEditSubmitHandler = (e) => {
         e.preventDefault();
         let articleData = Object.fromEntries(new FormData(e.currentTarget));
         articlesService.update(article._id, articleData);
+        addNotification('You successfully edit this article.', types.success);
         navigate(`/details-article/${article._id}`);
     }
 

@@ -6,6 +6,7 @@ import {useAuthContext} from "../../contexts/AuthContext";
 import ConfirmDialogArticle from '../../Components/CommonDirectory/ConfirmDialogArticle';
 import {Button} from "react-bootstrap";
 import useArticleState from "../../Hooks/useArticleState";
+import {types, useNotificationContext} from "../../contexts/NotificationContext";
 
 
 const DetailsArticle = () => {
@@ -14,11 +15,14 @@ const DetailsArticle = () => {
     const {articleId} = useParams();
     const [article, setArticle] = useArticleState(articleId);
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+    const {addNotification} = useNotificationContext();
 
     const deleteHandler = (e) => {
         e.preventDefault();
+
         articlesService.removeArticle(articleId, user.accessToken)
             .then(() => {
+                addNotification('You successfully delete this article.', types.success);
                 navigate('/all-articles');
             })
             .finally(() => {
@@ -40,6 +44,7 @@ const DetailsArticle = () => {
         let likes = [...article.likes, user._id];
         let likedArticle = {...article, likes}
 
+        addNotification('You successfully liked this article.', types.success);
         articlesService.likeArticle(article._id, likedArticle, user.accessToken)
             .then(() => {
                 setArticle(state => ({
@@ -59,7 +64,7 @@ const DetailsArticle = () => {
 
     const userButtons = (
         <>
-            <Button className="button" onClick={likeButtonClick} style={{"background-color":"#ffd505", "color":"black"}}>Like</Button>
+            <Button className="button" onClick={likeButtonClick} style={{"background-color":"#efee65", "color":"black"}}>Like</Button>
         </>
     )
 

@@ -4,6 +4,7 @@ import "./EditRecipe.css";
 import {useState} from "react";
 import {Alert} from "react-bootstrap";
 import * as recipesService from "../../services/recipesService";
+import {useNotificationContext} from "../../contexts/NotificationContext";
 
 
 const types = [
@@ -36,12 +37,15 @@ const EditRecipe = () => {
     const [errorsDescription, setErrorsDescription] = useState({name: false});
     const [errorsTime, setErrorsTime] = useState({name: false});
 
+    const {addNotification} = useNotificationContext();
 
     const recipeEditSubmitHandler = (e) => {
         e.preventDefault();
         let recipeData = Object.fromEntries(new FormData(e.currentTarget));
         console.log(recipeData);
         recipesService.update(recipe._id, recipeData);
+        addNotification('You successfully edit this recipe.', types.success);
+
         navigate(`/details-recipe/${recipe._id}`);
     }
     const nameChangeHandler = (e) => {

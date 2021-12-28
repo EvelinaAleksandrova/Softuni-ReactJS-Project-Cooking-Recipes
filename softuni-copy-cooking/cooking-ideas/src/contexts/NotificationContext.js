@@ -7,6 +7,7 @@ export const types = {
     warn: 'warning',
     info: 'info',
     success: 'success',
+    light: 'light',
 };
 
 const initialNotificationState = {show: false, message: '', type: types.error};
@@ -21,7 +22,7 @@ export const NotificationProvider = ({
 
         setTimeout(() => {
             setNotification(initialNotificationState);
-        }, 6000);
+        }, 7000);
     }, [initialNotificationState]);
 
     const hideNotification = useCallback(() => setNotification(initialNotificationState),

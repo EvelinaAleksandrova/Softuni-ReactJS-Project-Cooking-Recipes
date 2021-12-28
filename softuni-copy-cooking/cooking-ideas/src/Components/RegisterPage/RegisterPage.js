@@ -19,7 +19,7 @@ const RegisterPage = () => {
         authService.register(email, password)
             .then(res => {
                 login(res);
-                addNotification('You successfully register in Cooking Ideas Page', types.info)
+                addNotification('You successfully register in Cooking Ideas Page', types.success)
                 navigate('/my-recipes');
             })
     }

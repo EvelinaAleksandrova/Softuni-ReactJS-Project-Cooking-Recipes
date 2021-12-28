@@ -7,6 +7,7 @@ import {useAuthContext} from "../../contexts/AuthContext";
 import ConfirmDialog from '../../Components/CommonDirectory/ConfirmDialog';
 import {Button} from "react-bootstrap";
 import useRecipeState from "../../Hooks/useRecipeState";
+import {types, useNotificationContext} from "../../contexts/NotificationContext";
 
 const DetailsRecipe = () => {
     const navigate = useNavigate();
@@ -14,13 +15,15 @@ const DetailsRecipe = () => {
     const {recipeId} = useParams();
     const [recipe, setRecipe] = useRecipeState(recipeId);
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
-
+    const {addNotification} = useNotificationContext();
 
 
     const deleteHandler = (e) => {
         e.preventDefault();
+
         recipesService.removeRecipe(recipeId, user.accessToken)
             .then(() => {
+                addNotification('You successfully delete this recipe.', types.success);
                 navigate('/all-recipes');
             })
             .finally(() => {
@@ -42,7 +45,7 @@ const DetailsRecipe = () => {
 
         let likes = [...recipe.likes, user._id];
         let likedRecipe = {...recipe, likes};
-
+        addNotification('You successfully liked this recipe.', types.success);
         recipesService.likeRecipe(recipe._id, likedRecipe, user.accessToken)
             .then(() => {
                 setRecipe(state => ({
@@ -61,7 +64,8 @@ const DetailsRecipe = () => {
 
     const userButtons = (
         <>
-            <Button className="button" onClick={likeButtonClick} style={{"background-color":"#ffd505", "color":"black"}}>Like</Button>
+            <Button className="button" onClick={likeButtonClick}
+                    style={{"background-color": "#efee65", "color": "black"}}>Like</Button>
         </>
     )
 
@@ -90,7 +94,7 @@ const DetailsRecipe = () => {
 
                     </div>
                 </div>
-                <div className="recipe-description" style={{"margin-left":"50px"}}>
+                <div className="recipe-description" style={{"margin-left": "50px"}}>
                     <h3 style={{"font-size": "25px"}}>Products</h3>
                     <p style={{"font-size": "18px"}}>{recipe.ingredients}</p>
                 </div>
