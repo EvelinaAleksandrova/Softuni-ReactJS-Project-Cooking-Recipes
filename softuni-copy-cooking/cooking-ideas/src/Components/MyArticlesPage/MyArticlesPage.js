@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {useAuthContext} from "../../contexts/AuthContext";
 import * as articlesService from "../../services/articlesService";
-import RecipeList from "../RecipeList/RecipeList";
+import ArticlesList from "../ArticlesList/ArticlesList";
 
 const MyArticlesPage = () => {
 
@@ -20,7 +20,7 @@ const MyArticlesPage = () => {
             <h1>My Articles</h1>
             {
                 article.length > 0
-                    ? <RecipeList recipe={article}/>
+                    ? <ArticlesList article={article}/>
                     : <p className="no-recipes">You don't create any articles!</p>
             }
 

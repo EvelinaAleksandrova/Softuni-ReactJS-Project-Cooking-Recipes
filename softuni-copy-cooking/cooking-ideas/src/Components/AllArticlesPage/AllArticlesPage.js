@@ -5,9 +5,9 @@ import Vegetable from "../ArticlesList/CategoryArticle/Vegetable";
 import Herbs from "../ArticlesList/CategoryArticle/Herbs";
 import AllArticlesCategory from "../ArticlesList/AllArticlesCategory";
 import OtherArticle from "../ArticlesList/CategoryArticle/OtherArticle";
-import "./AllArticles.css";
 import {useEffect, useState} from "react";
 import * as articlesService from "../../services/articlesService";
+import "./AllArticles.css";
 
 const AllArticlesPage = () => {
 
