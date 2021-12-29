@@ -1,6 +1,7 @@
 import {useParams, useNavigate, Link} from "react-router-dom";
 import * as recipesService from '../../services/recipesService';
-import {useState} from "react";
+import * as likeRecipe from "../../services/likeRecipe";
+import {useEffect, useState} from "react";
 import "./DetailsRecipe.css";
 import {useAuthContext} from "../../contexts/AuthContext";
 
@@ -17,6 +18,12 @@ const DetailsRecipe = () => {
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const {addNotification} = useNotificationContext();
 
+    useEffect(() => {
+        likeRecipe.getRecipeLikes(recipeId)
+            .then(likes => {
+                setRecipe(state => ({...state, likes}))
+            })
+    }, []);
 
     const deleteHandler = (e) => {
         e.preventDefault();
@@ -38,22 +45,21 @@ const DetailsRecipe = () => {
     }
 
     const likeButtonClick = () => {
+        if (user._id === recipe._ownerId) {
+            return;
+        }
+
         if (recipe.likes.includes(user._id)) {
-            console.log("User already liked recipe!");
             addNotification('You already liked this recipe.', types.warn);
             return;
         }
 
-        let likes = [...recipe.likes, user._id];
-        let likedRecipe = {...recipe, likes};
-        addNotification('You successfully liked this recipe.', types.success);
-        recipesService.likeRecipe(recipe._id, likedRecipe, user.accessToken)
+       likeRecipe.like(user._id, recipeId)
             .then(() => {
-                setRecipe(state => ({
-                    ...state,
-                    likes
-                }))
-            })
+                setRecipe(state => ({...state, likes: [...state.likes, user._id]}));
+
+                addNotification('You successfully liked this recipe.', types.success);
+            });
     }
 
     const ownerButtons = (
@@ -66,6 +72,7 @@ const DetailsRecipe = () => {
     const userButtons = (
         <>
             <Button className="button" onClick={likeButtonClick}
+                    disabled={recipe.likes?.includes(user._id)}
                     style={{"background-color": "#efee65", "color": "black"}}>Like</Button>
         </>
     )
@@ -90,7 +97,7 @@ const DetailsRecipe = () => {
 
                         <div className="likes">
                             <img style={{"margin-top": "6px"}} className="hearts" src="/images/heart.png"/>
-                            <span id="total-likes">Likes: {recipe.likes?.length}</span>
+                            <span id="total-likes">Likes: {recipe.likes?.length || 0}</span>
                         </div>
 
                     </div>
