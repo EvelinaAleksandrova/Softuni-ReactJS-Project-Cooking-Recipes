@@ -2,13 +2,12 @@ import {useParams, useNavigate, Link} from "react-router-dom";
 import * as recipesService from '../../services/recipesService';
 import * as likeRecipe from "../../services/likeRecipe";
 import {useEffect, useState} from "react";
-import "./DetailsRecipe.css";
 import {useAuthContext} from "../../contexts/AuthContext";
-
 import ConfirmDialog from '../../Components/CommonDirectory/ConfirmDialog';
 import {Button} from "react-bootstrap";
 import useRecipeState from "../../Hooks/useRecipeState";
 import {types, useNotificationContext} from "../../contexts/NotificationContext";
+import "./DetailsRecipe.css";
 
 const DetailsRecipe = () => {
     const navigate = useNavigate();

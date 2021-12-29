@@ -1,13 +1,14 @@
 import {useParams, useNavigate, Link} from "react-router-dom";
 import * as articlesService from '../../services/articlesService';
-import {useState} from "react";
-import "./DetailsArticle.css";
+import {useEffect, useState} from "react";
+
 import {useAuthContext} from "../../contexts/AuthContext";
 import ConfirmDialogArticle from '../../Components/CommonDirectory/ConfirmDialogArticle';
 import {Button} from "react-bootstrap";
 import useArticleState from "../../Hooks/useArticleState";
 import {types, useNotificationContext} from "../../contexts/NotificationContext";
-
+import * as likeArticle from "../../services/likeArticle";
+import "./DetailsArticle.css";
 
 const DetailsArticle = () => {
     const navigate = useNavigate();
@@ -16,6 +17,13 @@ const DetailsArticle = () => {
     const [article, setArticle] = useArticleState(articleId);
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const {addNotification} = useNotificationContext();
+
+    useEffect(() => {
+        likeArticle.getArticleLikes(articleId)
+            .then(likes => {
+                setArticle(state => ({...state, likes}))
+            })
+    }, []);
 
     const deleteHandler = (e) => {
         e.preventDefault();
@@ -36,23 +44,22 @@ const DetailsArticle = () => {
     }
 
     const likeButtonClick = () => {
+        if (user._id === article._ownerId) {
+            return;
+        }
         if (article.likes.includes(user._id)) {
-            console.log("User already liked article!");
             addNotification('You already liked this article.', types.warn);
             return;
         }
 
-        let likes = [...article.likes, user._id];
-        let likedArticle = {...article, likes}
 
-        addNotification('You successfully liked this article.', types.success);
-        articlesService.likeArticle(article._id, likedArticle, user.accessToken)
+
+        likeArticle.like(user._id, articleId)
             .then(() => {
-                setArticle(state => ({
-                    ...state,
-                    likes,
-                }))
-            })
+                setArticle(state => ({...state, likes: [...state.likes, user._id]}));
+
+                addNotification('You successfully liked this article.', types.success);
+            });
     }
 
 
@@ -65,13 +72,16 @@ const DetailsArticle = () => {
 
     const userButtons = (
         <>
-            <Button className="button" onClick={likeButtonClick} style={{"background-color":"#efee65", "color":"black"}}>Like</Button>
+            <Button className="button" onClick={likeButtonClick}
+                    disabled={article.likes?.includes(user._id)}
+                    style={{"background-color": "#efee65", "color": "black"}}>Like</Button>
         </>
     )
 
     return (
         <>
-            <ConfirmDialogArticle show={showDeleteDialog} onClose={() => setShowDeleteDialog(false)} onSave={deleteHandler}/>
+            <ConfirmDialogArticle show={showDeleteDialog} onClose={() => setShowDeleteDialog(false)}
+                                  onSave={deleteHandler}/>
             <section id="details-page" className="details">
                 <div className="article-information">
                     <h3 style={{"margin-bottom": "12px"}}>Name: {article.name}</h3>
@@ -85,7 +95,7 @@ const DetailsArticle = () => {
                         }
                         <div className="likes">
                             <img style={{"margin-top": "8px"}} className="hearts" src="/images/heart.png"/>
-                            <span id="total-likes">Likes: {article.likes?.length}</span>
+                            <span id="total-likes">Likes: {article.likes?.length || 0}</span>
                         </div>
                     </div>
                 </div>
