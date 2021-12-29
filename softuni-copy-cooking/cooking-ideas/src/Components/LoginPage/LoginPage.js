@@ -19,10 +19,11 @@ const LoginPage = () => {
         authService.login(email, password)
             .then(authData => {
                 login(authData);
-                addNotification('You logged in successfully', types.info)
+                addNotification('You logged in successfully.', types.info)
                 navigate('/my-recipes');
             }).catch(error => {
             console.log(error);
+            addNotification("Your email or password is invalid! or If you don't have account you need to register first!", types.warn)
         })
 
     }

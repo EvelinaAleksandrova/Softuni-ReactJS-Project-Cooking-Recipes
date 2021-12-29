@@ -10,18 +10,30 @@ const RegisterPage = () => {
     const {login} = useAuthContext();
     const [errorsPassword, setErrorsPassword] = useState({name: false});
     const {addNotification} = useNotificationContext();
+
     const registerSubmitHandler = (e) => {
         e.preventDefault();
 
-        let {email, password} = Object.fromEntries(new FormData(e.currentTarget));
-
+        let {email, password,confirm} = Object.fromEntries(new FormData(e.currentTarget));
+        // console.log(e.currentTarget.value);
+        //
+        // console.log(password);
+        // console.log(confirm);
+        // if(password.e.currentTarget.value === confirmPass.e.currentTarget.value){
+        //     console.log("Same password");
+        // }else{
+        //     console.log("Not same password");
+        // }
 
         authService.register(email, password)
+
             .then(res => {
                 login(res);
-                addNotification('You successfully register in Cooking Ideas Page', types.success)
+                addNotification('You successfully register in Cooking Ideas Page.', types.success);
                 navigate('/my-recipes');
-            })
+            }).catch(error => {
+            addNotification('Invalid email or password.', types.warn);
+        })
     }
 
     const passwordChangeHandler = (e) => {
@@ -38,7 +50,13 @@ const RegisterPage = () => {
         <section id="register-page" className="register">
             <form id="register-form" action="" method="POST" onSubmit={registerSubmitHandler}>
                 <fieldset>
-                    <legend style={{"text-align": "center", "width": "101%", "font-size": "15px", "font-weight":"bold"}}>Register Form</legend>
+                    <legend style={{
+                        "text-align": "center",
+                        "width": "101%",
+                        "font-size": "15px",
+                        "font-weight": "bold"
+                    }}>Register Form
+                    </legend>
                     <p className="field">
                         <label htmlFor="email">Email</label>
                         <span className="input">
@@ -61,7 +79,7 @@ const RegisterPage = () => {
                         </span>
                         <Alert variant="primary" show={errorsPassword.name}>{errorsPassword.name}</Alert>
                     </p>
-                    <input className="button submit" type="submit" value="Register" style={{"background":"#d36161"}}/>
+                    <input className="button submit" type="submit" value="Register" style={{"background": "#d36161"}}/>
                 </fieldset>
             </form>
         </section>
