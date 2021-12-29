@@ -1,4 +1,4 @@
-# Softuni ReactJS Project Cooking Ideas
+# Cooking Ideas
 
 📋 Cooking Ideas Page
 
