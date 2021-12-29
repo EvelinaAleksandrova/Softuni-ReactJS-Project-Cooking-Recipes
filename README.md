@@ -6,7 +6,7 @@ Softuni ReactJS course Project November 2021
 
 <!-- # DEMO-->
 
-# Technologies and libraries used in this project:
+# Technologies and libraries used in this project
 - HTML
 - CSS
 - JavaScript
